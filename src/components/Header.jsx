@@ -29,7 +29,7 @@ export default function Header() {
   }, []);
 
   return (
-    <nav className="Navbar fixed z-100 bg-white/80 border border-gray-300 rounded-2xl flex justify-between items-center left-0 right-0 mx-auto w-[calc(100%-1rem)] max-w-[calc(100%-1.5rem)] mt-4 p-4 backdrop-blur-sm hover:shadow-lg transition-shadow duration-300">
+    <nav className="Navbar fixed z-100 bg-white/40 rounded-2xl flex justify-between items-center left-0 right-0 mx-auto w-[calc(100%-1rem)] max-w-[calc(100%-1.5rem)] mt-4 p-4 backdrop-blur-sm hover:shadow-lg transition-shadow duration-300">
       <div className="NavbarLogo flex items-center">
         <Link to="/">
           <img className="h-8" alt="Logo" />

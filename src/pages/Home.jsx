@@ -6,8 +6,8 @@ export default function Home() {
   // Aquí defines la información de cada banner
   const slides = [
     {
-      title: 'Gran Tour de Copenague',
-      description: 'Descubre los rincones secretos de Copenague en nuestro tour guiado.',
+      title: 'Gran Tour de Copenhague',
+      description: 'Descubre los rincones secretos de Copenhague en nuestro tour guiado.',
       buttonText: 'Más info',
       link: '/Tour01',
       internal: true,
@@ -17,7 +17,7 @@ export default function Home() {
       title: 'Tivoli Gardens',
       description: 'Visita el famoso parque de atracciones y jardines de Copenhague.',
       buttonText: 'Más info',      
-      link: 'https://reservas-ejemplo.com/barco',
+      link: 'https://www.tivoli.dk/en',
       internal: false,
       image: 'https://media.cntraveler.com/photos/5eb55988f52f4c0911cac29f/16:9/w_5231,h_2942,c_limit/TivoliGarden-PTGJ35.jpg',
     },
@@ -25,12 +25,12 @@ export default function Home() {
       title: 'Paseo en barco',
       description: 'Navega los canales de la ciudad y disfruta de la vista.',
       buttonText: 'Reserva ahora',      
-      link: 'https://reservas-ejemplo.com/barco',
+      link: 'https://www.stromma.com/en-dk/copenhagen/sightseeing/sightseeing-by-boat/grand-tour/',
       internal: false,
       image: 'https://static.wixstatic.com/media/2fe4de_8fc0f272750244b0a8c4fb31c6931eee~mv2.jpg/v1/fill/w_2500,h_2000,al_c/2fe4de_8fc0f272750244b0a8c4fb31c6931eee~mv2.jpg',
     },
     {
-      title: 'Mira lo que Copenague tiene para ofrecerte',
+      title: 'Mira lo que Copenhague tiene para ofrecerte',
       description: 'Conoce los beneficios que la ciudad ofrece a sus visitantes.',
       buttonText: 'Más info',
       link: 'https://www.visitcopenhagen.com/copenpay',

@@ -2,6 +2,7 @@
 // import { useTranslation } from "react-i18next";
 import { Icon } from "@iconify/react";
 import { useState } from "react";
+import FooterImg from "../assets/Footer.png";
 
 function Footer() {
   // const { t } = useTranslation("global");
@@ -21,8 +22,9 @@ function Footer() {
   };
 
   return (
-    <footer className="footer bg-white rounded-t-2xl border border-gray-300 px-8 py-6">
-      <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+    <footer className="footer bg-white rounded-t-2xl pt-6 ">
+      
+      <div className="flex flex-col md:flex-row items-center justify-between gap-6 p-6">
         {/* Redes sociales */}
         <div className="flex gap-6">
           <a
@@ -68,6 +70,7 @@ function Footer() {
           </small>
         </div>
       </div>
+      <img src={FooterImg} className="w-full" alt="Footer" />
     </footer>
   );
 }

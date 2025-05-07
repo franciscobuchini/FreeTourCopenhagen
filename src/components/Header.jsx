@@ -30,7 +30,7 @@ export default function Header() {
   }, []);
 
   return (
-    <nav className="Navbar fixed z-100 bg-white/40 rounded-2xl flex justify-between items-center left-0 right-0 mx-auto w-[calc(100%-1rem)] max-w-[calc(100%-1.5rem)] mt-4 p-4 backdrop-blur-sm hover:shadow-lg transition-shadow duration-300">
+    <nav className="Navbar fixed z-100 bg-white/40 rounded-2xl flex justify-between items-center left-0 right-0 mx-auto w-[calc(100%-1rem)] max-w-[calc(100%-1.5rem)] mt-4 p-4 backdrop-blur-sm shadow-lg transition-shadow duration-300">
       <div className="NavbarLogo flex items-center">
         <Link to="/">
           <img src={Logo} className="h-10" alt="Logo" />
@@ -39,8 +39,8 @@ export default function Header() {
 
       {/* Navegación principal */}
       <div className="hidden md:flex gap-2">
-        <Link to="/" className="text-gray-700 hover:bg-gray-100 py-2 px-4 rounded-full">Inicio</Link>
-        <Link to="/Tour01" className="text-gray-700 hover:bg-gray-100 py-2 px-4 rounded-full">Tour</Link>
+        <Link to="/" className="text-gray-700 hover:bg-gray-100/40 hover:font-medium py-2 px-4 rounded-full">Inicio</Link>
+        <Link to="/Tour01" className="text-gray-700 hover:bg-gray-100/40 hover:font-medium py-2 px-4 rounded-full">Tour</Link>
       </div>
 
       {/* Menú móvil e idioma */}

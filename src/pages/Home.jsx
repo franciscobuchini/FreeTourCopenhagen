@@ -42,7 +42,7 @@ export default function Home() {
     return (
     <div className="flex-1 my-10 px-4">
       <div className="px-4 py-2">
-        <h1 className="text-5xl font-semibold text-red-800">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-red-800">
           Free Tours Copenhague – Tours Gratuitos y Visitas Guiadas
         </h1>
         <p className="mt-4 text-gray-600">

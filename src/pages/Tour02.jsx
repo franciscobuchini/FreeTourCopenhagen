@@ -1,4 +1,4 @@
-// pages/Tour01.jsx
+// pages/Tour02.jsx
 import React from 'react';
 import BookingCalendar from '../components/BookingCalendar';
 import TourDetails from '../components/TourDetails';
@@ -25,8 +25,8 @@ export default function Tour01() {
     <>
       <div className="w-full">
         <img
-          src="https://www.princess.com/content/dam/princess-headless/shorex/ports/copenhagen-denmark-waterway-night.jpg"
-          alt="Copenhague"
+          src="https://media.cntraveler.com/photos/5eb55988f52f4c0911cac29f/16:9/w_5231,h_2942,c_limit/TivoliGarden-PTGJ35.jpg"
+          alt="Tivoli Gardens"
           className="w-full h-64 md:h-80 lg:h-126 object-cover -mt-20"
         />
       </div>
@@ -34,12 +34,14 @@ export default function Tour01() {
         <div className="flex flex-col lg:flex-row gap-10 px-4 lg:px-8">
           <div className="w-full lg:w-1/2 flex flex-col gap-10">
             <div className="mt-10 flex flex-col gap-4">
-              <h1 className="text-5xl font-semibold text-red-700">Gran tour de Copenhague</h1>
-              <p>¡Sumate a nuestro Free Walking Tour y explorá lo mejor de Copenhague con un guía local apasionado! Durante aprox. 2 horas, recorreremos los puntos más emblemáticos de la ciudad mientras descubrimos su historia, cultura y curiosidades escondidas.
+              <h1 className="text-5xl font-semibold text-red-700">Tivoli Gardens Tour</h1>
+              <p>Unite a nuestro Free Walking Tour y descubrí la magia que rodea a Tivoli Gardens, uno de los parques de atracciones más antiguos y encantadores del mundo. Pero este tour es mucho más que un paseo por el parque: te llevamos a recorrer el corazón histórico y moderno de Copenhague que lo rodea.
               <br/><br/>
-              Desde el encantador puerto de Nyhavn y la famosa Sirenita, hasta el Palacio de Amalienborg y la vibrante calle Strøget, te llevamos a conocer la ciudad como un verdadero local. Aprendé sobre los vikingos, la monarquía danesa, el estilo de vida escandinavo y los secretos que hacen de Copenhague una de las capitales más felices del mundo.
+              En este tour de 1.5 a 2 horas, conocerás la historia detrás de Tivoli, su influencia en Walt Disney y su importancia cultural para los daneses. Pasearemos por la Plaza del Ayuntamiento, la bulliciosa Vesterbrogade, y exploraremos rincones escondidos con historias fascinantes, arquitectura impactante y leyendas urbanas.
               <br/><br/>
-              Nuestros tours son a base de propinas: vos decidís cuánto vale la experiencia. Ideal para mochileros, parejas, familias o viajeros curiosos que quieran conocer la ciudad de forma auténtica, entretenida y accesible.</p>
+              Perfecto para quienes quieren empaparse del ambiente vibrante de la ciudad, entender su vida cotidiana y ver cómo conviven lo clásico con lo contemporáneo. El tour es completamente gratuito, basado en propinas, y está guiado por un experto local que hará que te enamores de esta parte única de Copenhague.
+
+              </p>
             </div>
 
             {/* Le paso toda la data como props */}

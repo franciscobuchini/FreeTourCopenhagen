@@ -36,7 +36,7 @@ function Footer() {
           >
             <Icon
               icon="icon-park-twotone:instagram"
-              className="w-6 h-6 flex-shrink-0 text-pink-800"
+              className="w-6 h-6 flex-shrink-0 text-red-700"
             />
           </a>
           <div className="relative inline-block">
@@ -48,7 +48,7 @@ function Footer() {
             >
               <Icon
                 icon="icon-park-twotone:mail"
-                className="w-6 h-6 flex-shrink-0 text-pink-800"
+                className="w-6 h-6 flex-shrink-0 text-red-700"
               />
             </a>
             {copied && (

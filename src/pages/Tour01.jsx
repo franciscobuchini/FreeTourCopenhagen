@@ -23,18 +23,26 @@ export default function Tour01() {
 
   return (
     <>
-      <div className="w-full">
+      <div className="
+        overflow-hidden
+        w-screen
+        -mt-20
+        sm:-mx-8
+        md:-mx-16
+        lg:-mx-24
+        xl:-mx-36
+      ">
         <img
           src="https://www.princess.com/content/dam/princess-headless/shorex/ports/copenhagen-denmark-waterway-night.jpg"
           alt="Copenhague"
-          className="w-full h-64 md:h-80 lg:h-126 object-cover -mt-20"
+          className="w-screen h-64 md:h-80 lg:h-128 object-cover"
         />
       </div>
-      <main className="flex-1 mb-20 px-0 -mt-4 md:mx-4 rounded-2xl bg-gray-50">
-        <div className="flex flex-col lg:flex-row gap-10 px-4 lg:px-8">
+      <main className="flex-1 mb-20 md:mx-4 rounded-2xl bg-gray-50">
+        <div className="flex flex-col lg:flex-row gap-10 p-4 sm:p-6 md:p-8 lg:p-10">
           <div className="w-full lg:w-1/2 flex flex-col gap-10">
-            <div className="mt-10 flex flex-col gap-4">
-              <h1 className="text-5xl font-semibold text-red-700">Gran tour de Copenhague</h1>
+            <div className="mt-10 flex flex-col gap-4 p-2">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-red-800">Gran tour de Copenhague</h1>
               <p>¡Sumate a nuestro Free Walking Tour y explorá lo mejor de Copenhague con un guía local apasionado! Durante aprox. 2 horas, recorreremos los puntos más emblemáticos de la ciudad mientras descubrimos su historia, cultura y curiosidades escondidas.
               <br/><br/>
               Desde el encantador puerto de Nyhavn y la famosa Sirenita, hasta el Palacio de Amalienborg y la vibrante calle Strøget, te llevamos a conocer la ciudad como un verdadero local. Aprendé sobre los vikingos, la monarquía danesa, el estilo de vida escandinavo y los secretos que hacen de Copenhague una de las capitales más felices del mundo.

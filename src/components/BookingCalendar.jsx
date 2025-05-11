@@ -5,14 +5,13 @@ const languages = [
   { code: 'en', label: 'English' },
   { code: 'fr', label: 'Français' },
   { code: 'de', label: 'Deutsch' },
+  { code: 'it', label: 'Italiani' },
 ];
 
 const timeSlots = [
-  '09:00',
-  '11:00',
+  '10:00',
   '13:00',
   '15:00',
-  '17:00',
 ];
 
 function getTodayString() {

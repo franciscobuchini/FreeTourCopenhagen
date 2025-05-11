@@ -13,8 +13,7 @@ export default function App() {
     <Router>
       <div className="flex flex-col min-h-screen bg-gray-50">
         <Header />
-
-        <main className="flex-1 pt-20">
+        <main className="flex-1 pt-20 xl:px-36 lg:px-24 md:px-16 sm:px-8 px-0">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/Tour01" element={<Tour01 />} />

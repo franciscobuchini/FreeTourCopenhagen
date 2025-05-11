@@ -14,7 +14,7 @@ export default function TourDetails({
   contactPhone
 }) {
   return (
-    <div className="bg-white border border-gray-300 rounded-2xl shadow-0 p-6 space-y-6 transition-shadow duration-300 hover:shadow-lg">
+    <div className="bg-white border border-gray-300 rounded-2xl shadow-0 p-6 space-y-6 transition-shadow duration-300 hover:shadow-lg flex flex-col gap-1">
 
       {/* DETALLES */}
       <section className="space-y-4">

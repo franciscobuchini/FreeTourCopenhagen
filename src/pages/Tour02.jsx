@@ -23,18 +23,26 @@ export default function Tour01() {
 
   return (
     <>
-      <div className="w-full">
+      <div className="
+        overflow-hidden
+        w-screen
+        -mt-20
+        sm:-mx-8
+        md:-mx-16
+        lg:-mx-24
+        xl:-mx-36
+      ">
         <img
           src="https://media.cntraveler.com/photos/5eb55988f52f4c0911cac29f/16:9/w_5231,h_2942,c_limit/TivoliGarden-PTGJ35.jpg"
           alt="Tivoli Gardens"
-          className="w-full h-64 md:h-80 lg:h-126 object-cover -mt-20"
+          className="w-screen h-64 md:h-80 lg:h-128 object-cover"
         />
       </div>
-      <main className="flex-1 mb-20 px-0 -mt-4 md:mx-4 rounded-2xl bg-gray-50">
-        <div className="flex flex-col lg:flex-row gap-10 px-4 lg:px-8">
+      <main className="flex-1 mb-20 md:mx-4 rounded-2xl bg-gray-50">
+        <div className="flex flex-col lg:flex-row gap-10 p-10 lg:px-8">
           <div className="w-full lg:w-1/2 flex flex-col gap-10">
             <div className="mt-10 flex flex-col gap-4">
-              <h1 className="text-5xl font-semibold text-red-700">Tivoli Gardens Tour</h1>
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-red-800">Tivoli Gardens Tour</h1>
               <p>Unite a nuestro Free Walking Tour y descubrí la magia que rodea a Tivoli Gardens, uno de los parques de atracciones más antiguos y encantadores del mundo. Pero este tour es mucho más que un paseo por el parque: te llevamos a recorrer el corazón histórico y moderno de Copenhague que lo rodea.
               <br/><br/>
               En este tour de 1.5 a 2 horas, conocerás la historia detrás de Tivoli, su influencia en Walt Disney y su importancia cultural para los daneses. Pasearemos por la Plaza del Ayuntamiento, la bulliciosa Vesterbrogade, y exploraremos rincones escondidos con historias fascinantes, arquitectura impactante y leyendas urbanas.

@@ -20,7 +20,7 @@ export default function Carousel({ slides = [], interval = 5000 }) {
   const handlePrev = () => setCurrent(prev => (prev === 0 ? length - 1 : prev - 1));
 
   return (
-    <div className="relative w-full overflow-hidden mt-8 h-96 lg:h-[32rem] rounded-2xl">
+    <div className="relative w-full overflow-hidden mt-8 h-96 lg:h-140 rounded-2xl">
       {/* Slides Container */}
 <div
   className="flex transition-transform duration-600 h-full"

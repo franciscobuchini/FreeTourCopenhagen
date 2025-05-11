@@ -45,7 +45,7 @@ export default function Reviews() {
   };
 
   return (
-    <div className="bg-white/80 border border-gray-300 rounded-2xl backdrop-blur-sm shadow-0 p-6 space-y-6 transition-shadow duration-300 hover:shadow-lg">
+    <div className="bg-white border border-gray-300 rounded-2xl shadow-0 p-6 space-y-6 transition-shadow duration-300 hover:shadow-lg flex flex-col gap-1">
       <h3 className="text-xl font-semibold mb-4 text-red-800">Opiniones de Clientes</h3>
       <div className="space-y-4">
         {reviews.map((r, idx) => (

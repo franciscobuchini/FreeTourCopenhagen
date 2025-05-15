@@ -42,14 +42,15 @@ export default function Home() {
     return (
     <div className="flex-1 my-10 px-4">
       <div className="px-4 py-2">
-      <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-red-800">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-red-800">
           Free Tours Copenhague – Tours Gratuitos y Visitas Guiadas
         </h1>
         <p className="mt-4 text-gray-600">
-          Únete a nuestros Free Tours en Copenhague y descubre los lugares más icónicos de la ciudad sin coste alguno. 
-          Ofrecemos tours gratuitos en Copenhague con guías locales expertos que te mostrarán el encantador Nyhavn, 
-          la impresionante Sirenita y los recónditos rincones de la capital danesa. Reserva tu plaza hoy y vive la 
-          mejor experiencia de visitas guiadas gratis en Copenhague.
+          Conocé Copenhague como un local. Walking tours y paseos en barco en
+          español e inglés. Grupos pequeños, historias reales, guías
+          apasionados.
+          ¡Reservá ahora y descubrí la ciudad con alma!
+
         </p>
       </div>
 

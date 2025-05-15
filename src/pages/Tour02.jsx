@@ -8,15 +8,15 @@ export default function Tour01() {
   const handleBooking = data => console.log('Nueva reserva:', data);
 
   const detailsData = {
-    duration: 'Aprox. 2 horas',
+    duration: '2 horas aproximadamente',
     includes: ['Guía local profesional', 'Auriculares para escuchar al guía'],
     tips: ['Llevar bebida', 'Llevar piloto de lluvia'],
     accessibility: 'Recorrido apto para silla de ruedas',
     operator: 'Tour Operadores XYZ',
-    pets: 'Se admiten mascotas',
-    meetingPoint: 'Kongens Nytorv, frente a la estatua central.',
+    price: '120 €',
+    meetingPoint: 'Ayuntamiento (Rådhuspladsen)',
     mapUrl:
-      'https://www.google.com/maps/place/Kongens+Nytorv/@55.680525,12.5833821,532m/data=!3m2!1e3!4b1!4m6!3m5!1s0x465253182013b227:0x36248075ccf0be0!8m2!3d55.680522!4d12.585957!16zL20vMGdqbnA1?entry=ttu',
+      "https://www.google.com/maps/place/55%C2%B040'32.8%22N+12%C2%B034'09.4%22E/@55.675781,12.569285,532m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d55.675781!4d12.569285?entry=ttu&g_ep=EgoyMDI1MDUxMi4wIKXMDSoASAFQAw%3D%3D",
     contactEmail: 'info@freewalkingtour.com',
     contactPhone: '+34 600 000 000'
   };
@@ -34,7 +34,7 @@ export default function Tour01() {
       ">
         <img
           src="https://media.cntraveler.com/photos/5eb55988f52f4c0911cac29f/16:9/w_5231,h_2942,c_limit/TivoliGarden-PTGJ35.jpg"
-          alt="Tivoli Gardens"
+          alt="Paseo en Barco + Walking Tour"
           className="w-screen h-64 md:h-80 lg:h-128 object-cover"
         />
       </div>
@@ -42,13 +42,13 @@ export default function Tour01() {
         <div className="flex flex-col lg:flex-row gap-10 p-10 lg:px-8">
           <div className="w-full lg:w-1/2 flex flex-col gap-10">
             <div className="mt-10 flex flex-col gap-4">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-red-800">Tivoli Gardens Tour</h1>
-              <p>Unite a nuestro Free Walking Tour y descubrí la magia que rodea a Tivoli Gardens, uno de los parques de atracciones más antiguos y encantadores del mundo. Pero este tour es mucho más que un paseo por el parque: te llevamos a recorrer el corazón histórico y moderno de Copenhague que lo rodea.
-              <br/><br/>
-              En este tour de 1.5 a 2 horas, conocerás la historia detrás de Tivoli, su influencia en Walt Disney y su importancia cultural para los daneses. Pasearemos por la Plaza del Ayuntamiento, la bulliciosa Vesterbrogade, y exploraremos rincones escondidos con historias fascinantes, arquitectura impactante y leyendas urbanas.
-              <br/><br/>
-              Perfecto para quienes quieren empaparse del ambiente vibrante de la ciudad, entender su vida cotidiana y ver cómo conviven lo clásico con lo contemporáneo. El tour es completamente gratuito, basado en propinas, y está guiado por un experto local que hará que te enamores de esta parte única de Copenhague.
-
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-red-800">Paseo en Barco + Walking Tour</h1>
+              <p>En este recorrido los llevaremos en un fascinante viaje por los puntos
+              más representativos de la ciudad, donde podrán descubrir tanto la vida
+              cotidiana local como la historia que la envuelve.
+              <br/>
+              Luego, subiremos a un bote para recorrer los encantadores canales y los barrios modernos
+              rodeados por agua, una manera relajada y mágica de ver la ciudad desde otra perspectiva.
               </p>
             </div>
 

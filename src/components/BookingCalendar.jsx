@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 
 const languages = [
   { code: 'es', label: 'Español' },
-  { code: 'en', label: 'English' },
-  { code: 'fr', label: 'Français' },
-  { code: 'de', label: 'Deutsch' },
-  { code: 'it', label: 'Italiani' },
+  { code: 'en', label: 'Ingles' },
+  { code: 'fr', label: 'Frances' },
+  { code: 'de', label: 'Aleman' },
+  { code: 'it', label: 'Italiano' },
 ];
 
 const timeSlots = [
@@ -36,6 +36,7 @@ export default function BookingCalendar({ onSubmit }) {
   const [participants, setParticipants] = useState(1);
   const [language, setLanguage] = useState(languages[0].code);
   const [notes, setNotes] = useState('');
+  const [mail, setMail] = useState('');
   const [availableSlots, setAvailableSlots] = useState([]);
 
   useEffect(() => {
@@ -69,43 +70,45 @@ export default function BookingCalendar({ onSubmit }) {
     >
       <h3 className="text-xl font-semibold mb-4 text-red-800">Reserva tu Tour</h3>
 
-      {/* Fecha */}
-      <label className="block mb-4">
-        <span className="block font-medium text-gray-600">Fecha del Tour</span>
-        <input
-          type="date"
-          required
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
-          min={todayStr}
-          className="mt-1 block w-full rounded-2xl border border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:border-indigo-300 p-2 text-gray-400"
-        />
-      </label>
-
-      {/* Hora */}
-      <label className="block mb-4">
-        <span className="block font-medium text-gray-600">Hora de Inicio</span>
-        <select
-          value={time}
-          onChange={(e) => setTime(e.target.value)}
-          required
-          className="mt-1 block w-full rounded-2xl border border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:border-indigo-300 p-2 text-gray-400"
-        >
-          {availableSlots.length > 0 ? (
-            availableSlots.map((slot) => (
-              <option key={slot} value={slot} className="text-gray-800">
-                {slot}
-              </option>
-            ))
-          ) : (
-            <option value="" disabled>No hay franjas disponibles</option>
-          )}
-        </select>
-      </label>
+      {/* Fecha y Hora en la misma fila */}
+      <div className="flex flex-col md:flex-row gap-4">
+        {/* Fecha */}
+        <label className="flex-1 block">
+          <span className="block font-medium text-gray-600">Selecciona fecha:</span>
+          <input
+            type="date"
+            required
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+            min={todayStr}
+            className="mt-1 block w-full rounded-2xl border border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:border-indigo-300 p-2 text-gray-700"
+          />
+        </label>
+        {/* Hora */}
+        <label className="flex-1 block">
+          <span className="block font-medium text-gray-600">Hora de Inicio:</span>
+          <select
+            value={time}
+            onChange={(e) => setTime(e.target.value)}
+            required
+            className="mt-1 block w-full rounded-2xl border border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:border-indigo-300 p-2 text-gray-700"
+          >
+            {availableSlots.length > 0 ? (
+              availableSlots.map((slot) => (
+                <option key={slot} value={slot} className="text-gray-800">
+                  {slot}
+                </option>
+              ))
+            ) : (
+              <option value="" disabled>No hay franjas disponibles</option>
+            )}
+          </select>
+        </label>
+      </div>
 
       {/* Participantes */}
       <label className="block mb-4">
-        <span className="block font-medium text-gray-600">Número de Personas</span>
+        <span className="block font-medium text-gray-600">Número de Personas:</span>
         <input
           type="number"
           min="1"
@@ -119,8 +122,9 @@ export default function BookingCalendar({ onSubmit }) {
 
       {/* Idioma */}
       <label className="block mb-4">
-        <span className="block font-medium text-gray-600">Idioma del Tour</span>
+        <span className="block font-medium text-gray-600">Idioma preferido:</span>
         <select
+          required
           value={language}
           onChange={(e) => setLanguage(e.target.value)}
           className="mt-1 block w-full rounded-2xl border border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:border-indigo-300 p-2 text-gray-400"
@@ -135,11 +139,22 @@ export default function BookingCalendar({ onSubmit }) {
 
       {/* Notas */}
       <label className="block mb-6">
-        <span className="block font-medium text-gray-600">Notas / Solicitudes Especiales</span>
+        <span className="block font-medium text-gray-600">Notas ó solicitudes:</span>
         <textarea
-          rows="3"
+          rows="2"
           value={notes}
           onChange={(e) => setNotes(e.target.value)}
+          className="mt-1 block w-full rounded-2xl border border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:border-indigo-300 p-2 text-gray-400"
+        />
+      </label>
+
+      {/* Email */}
+      <label className="block mb-6">
+        <span className="block font-medium text-gray-600">Email de contacto:</span>
+        <input
+          required
+          value={mail}
+          onChange={(e) => setMail(e.target.value)}
           className="mt-1 block w-full rounded-2xl border border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:border-indigo-300 p-2 text-gray-400"
         />
       </label>

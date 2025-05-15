@@ -1,5 +1,4 @@
 // pages/Tour01.jsx
-import React from 'react';
 import BookingCalendar from '../components/BookingCalendar';
 import TourDetails from '../components/TourDetails';
 import Reviews from '../components/Reviews';

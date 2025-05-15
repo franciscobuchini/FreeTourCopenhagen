@@ -39,7 +39,7 @@ export default function Tour01() {
         />
       </div>
       <main className="flex-1 mb-20 md:mx-4 rounded-2xl bg-gray-50">
-        <div className="flex flex-col lg:flex-row gap-10 p-4 sm:p-6 md:p-8 lg:p-10">
+        <div className="flex flex-col lg:flex-row gap-10 p-2 sm:p-6 md:p-8 lg:p-10">
           <div className="w-full lg:w-1/2 flex flex-col gap-10">
             <div className="mt-10 flex flex-col gap-4 p-2">
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-red-800">Gran tour de Copenhague</h1>

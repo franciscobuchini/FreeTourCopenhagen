@@ -14,20 +14,12 @@ export default function Home() {
       image: 'https://www.princess.com/content/dam/princess-headless/shorex/ports/copenhagen-denmark-waterway-night.jpg',
     },
     {
-      title: 'Tivoli Gardens',
-      description: 'Visita el famoso parque de atracciones y jardines de Copenhague.',
+      title: 'Paseo en Bote + Walking Tour',
+      description: 'Navega los canales de la ciudad en un tour exclusivo.',
       buttonText: 'Más info',      
       link: '/Tour02',
       internal: true,
-      image: 'https://media.cntraveler.com/photos/5eb55988f52f4c0911cac29f/16:9/w_5231,h_2942,c_limit/TivoliGarden-PTGJ35.jpg',
-    },
-    {
-      title: 'Paseo en barco',
-      description: 'Navega los canales de la ciudad y disfruta de la vista.',
-      buttonText: 'Reservar',      
-      link: 'https://www.stromma.com/en-dk/copenhagen/sightseeing/sightseeing-by-boat/grand-tour/',
-      internal: false,
-      image: 'https://static.wixstatic.com/media/2fe4de_8fc0f272750244b0a8c4fb31c6931eee~mv2.jpg/v1/fill/w_2500,h_2000,al_c/2fe4de_8fc0f272750244b0a8c4fb31c6931eee~mv2.jpg',
+      image: 'https://media.cntraveler.com/photos/5c005edf7732ca62ae9f71bc/16:9/w_2560,c_limit/GoBoatCopenhagen_Abdellah-Ihadian_GoBoat-Abdellah-Ihadian-5561.jpg',
     },
     {
       title: 'Mira lo que Copenhague tiene para ofrecerte',

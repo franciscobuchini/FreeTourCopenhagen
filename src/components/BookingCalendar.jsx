@@ -2,17 +2,11 @@ import React, { useState, useEffect } from 'react';
 
 const languages = [
   { code: 'es', label: 'Español' },
-  { code: 'en', label: 'Ingles' },
-  { code: 'fr', label: 'Frances' },
-  { code: 'de', label: 'Aleman' },
-  { code: 'it', label: 'Italiano' },
+  { code: 'en', label: 'Inglés' },
+  { code: 'other', label: 'Otro (dejar en los comentarios)' },
 ];
 
-const timeSlots = [
-  '10:00',
-  '13:00',
-  '15:00',
-];
+const timeSlots = ['10:00', '13:00', '15:00'];
 
 function getTodayString() {
   const today = new Date();
@@ -29,7 +23,10 @@ function getCurrentTimeString() {
   return `${hh}:${min}`;
 }
 
-export default function BookingCalendar({ onSubmit }) {
+export default function BookingCalendar({
+  onSubmit,
+  maxParticipants = 30
+}) {
   const todayStr = getTodayString();
   const [date, setDate] = useState(todayStr);
   const [time, setTime] = useState('');
@@ -58,7 +55,7 @@ export default function BookingCalendar({ onSubmit }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const bookingData = { date, time, participants, language, notes };
+    const bookingData = { date, time, participants, language, notes, mail };
     if (onSubmit) onSubmit(bookingData);
     console.log('Booking submitted:', bookingData);
   };
@@ -112,12 +109,13 @@ export default function BookingCalendar({ onSubmit }) {
         <input
           type="number"
           min="1"
-          max="20"
+          max={maxParticipants}
           required
           value={participants}
           onChange={(e) => setParticipants(Number(e.target.value))}
           className="mt-1 block w-full rounded-2xl border border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:border-indigo-300 p-2 text-gray-400"
         />
+        <p className="text-sm text-gray-500 mt-1">Máximo permitido: {maxParticipants}</p>
       </label>
 
       {/* Idioma */}
@@ -152,6 +150,7 @@ export default function BookingCalendar({ onSubmit }) {
       <label className="block mb-6">
         <span className="block font-medium text-gray-600">Email de contacto:</span>
         <input
+          type="email"
           required
           value={mail}
           onChange={(e) => setMail(e.target.value)}

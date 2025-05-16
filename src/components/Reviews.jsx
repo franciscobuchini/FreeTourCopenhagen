@@ -1,5 +1,7 @@
 // Reviews.jsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
+const STORAGE_KEY = 'freeWalkingTour_reviews';
 
 const initialReviews = [
   { name: 'Laura García', country: 'España', group: 'Solo', date: '2025-04-20', rating: 5, text: '¡Increíble experiencia! El guía era muy conocedor y súper simpático.' },
@@ -18,12 +20,22 @@ function getTodayString() {
 }
 
 export default function Reviews() {
-  const [reviews, setReviews] = useState(initialReviews);
+  // Cargar reseñas guardadas o usar initialReviews
+  const [reviews, setReviews] = useState(() => {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    return saved ? JSON.parse(saved) : initialReviews;
+  });
+
   const [name, setName] = useState('');
   const [country, setCountry] = useState('');
   const [group, setGroup] = useState('Solo');
   const [comment, setComment] = useState('');
   const [rating, setRating] = useState(5);
+
+  // Cada vez que cambian las reseñas, persistir en LocalStorage
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(reviews));
+  }, [reviews]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -37,6 +49,7 @@ export default function Reviews() {
       text: comment.trim(),
     };
     setReviews([newReview, ...reviews]);
+    // Reiniciar campos de formulario
     setName('');
     setCountry('');
     setGroup('Solo');

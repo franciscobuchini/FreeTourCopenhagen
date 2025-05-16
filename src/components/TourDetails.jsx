@@ -4,35 +4,28 @@ export default function TourDetails({
   includes,
   tips,
   accessibility,
-  operator,
+  warnings,
   price,
   meetingPoint,
   mapUrl,
   contactEmail,
   contactPhone
 }) {
-  const hasDetails = [
-    duration,
-    includes?.length,
-    tips?.length,
-    accessibility,
-    operator,
-    price
-  ].some(Boolean);
+  const hasDetails = duration || includes?.length || tips?.length || accessibility || warnings || price;
 
   return (
-    <div className="bg-white border border-gray-300 rounded-2xl shadow-0 p-6 space-y-6 transition-shadow duration-300 hover:shadow-lg flex flex-col gap-1">
-
+    <div className="bg-white border border-gray-300 rounded-2xl shadow-0 p-6 hover:shadow-lg transition-shadow duration-300 flex flex-col gap-6">
+      
       {/* DETALLES */}
       {hasDetails && (
-        <section className="space-y-4">
+        <section>
           <h3 className="text-xl font-semibold mb-4 text-red-800">Detalles</h3>
           <div className="grid grid-cols-1 gap-4">
             {duration && <DetailCard title="Duración" value={duration} />}
             {includes?.length > 0 && <DetailList title="Qué incluye" items={includes} />}
             {tips?.length > 0 && <DetailList title="Consejos" items={tips} />}
             {accessibility && <DetailCard title="Accesibilidad" value={accessibility} />}
-            {operator && <DetailCard title="Operador" value={operator} />}
+            {warnings && <DetailCard title="Advertencias" value={warnings} />}
             {price && <DetailCard title="Precio" value={price} />}
           </div>
         </section>

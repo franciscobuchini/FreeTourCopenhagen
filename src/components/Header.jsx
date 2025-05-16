@@ -1,4 +1,4 @@
-//Header.jsx
+// Header.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Icon } from '@iconify/react';
@@ -40,22 +40,30 @@ export default function Header() {
       {/* Navegación principal */}
       <div className="hidden md:flex gap-2">
         <Link to="/" className="text-blue-950 hover:bg-gray-100 py-2 px-4 rounded-full">Inicio</Link>
-        <Link to="/Tour01" className="text-blue-950 hover:bg-gray-100 py-2 px-4 rounded-full">Copenhague</Link>
-        <Link to="/Tour02" className="text-blue-950 hover:bg-gray-100 py-2 px-4 rounded-full">Tivoli</Link>
+        <Link to="/Tour01" className="text-blue-950 hover:bg-gray-100 py-2 px-4 rounded-full">Walking Tour</Link>
+        <Link to="/Tour02" className="text-blue-950 hover:bg-gray-100 py-2 px-4 rounded-full">Paseo en Bote</Link>
       </div>
 
       {/* Menú móvil e idioma */}
       <div className="flex gap-4 items-center">
+        {/* Selector de idioma */}
         <div className="relative" ref={languageRef}>
           <button onClick={() => setIsLanguageOpen(!isLanguageOpen)} className="p-2 rounded-full hover:bg-gray-100 hover:cursor-pointer">
             <Icon icon={languageIcons['es']} className="w-6 h-6" />
           </button>
           {isLanguageOpen && (
             <ul className="absolute right-0 mt-2 bg-white border border-gray-300 rounded-2xl p-2">
-              {['en','es'].map((lang) => (
+              {['en', 'es'].map((lang) => (
                 <li key={lang}>
-                  <button onClick={() => {/* i18n.changeLanguage(lang) */}} className="flex items-center gap-2 w-full px-4 py-2 hover:bg-gray-100 hover:cursor-pointer rounded-2xl">
-                    <Icon icon={languageIcons[lang]} className="w-5 h-5" />{lang.toUpperCase()}
+                  <button
+                    onClick={() => {
+                      /* i18n.changeLanguage(lang) */
+                      setIsLanguageOpen(false);
+                    }}
+                    className="flex items-center gap-2 w-full px-4 py-2 hover:bg-gray-100 hover:cursor-pointer rounded-2xl"
+                  >
+                    <Icon icon={languageIcons[lang]} className="w-5 h-5" />
+                    {lang.toUpperCase()}
                   </button>
                 </li>
               ))}
@@ -63,16 +71,47 @@ export default function Header() {
           )}
         </div>
 
-        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden p-2 rounded-full hover:bg-gray-100" ref={menuRef}>
-          <Icon icon="icon-park-twotone:app-switch" className="w-6 h-6 text-red-700" />
-        </button>
+        {/* Menú móvil */}
+        <div className="relative md:hidden" ref={menuRef}>
+          <button
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+            className="p-2 rounded-full hover:bg-gray-100"
+          >
+            <Icon icon="icon-park-twotone:app-switch" className="w-6 h-6 text-red-700" />
+          </button>
 
-        {isMenuOpen && (
-          <ul className="absolute right-4 top-16 bg-white border border-gray-300 rounded-2xl p-4 flex flex-col gap-2">
-            <Link to="/" onClick={() => setIsMenuOpen(false)} className="hover:text-red-800">Inicio</Link>
-            <Link to="/Tour01" onClick={() => setIsMenuOpen(false)} className="hover:text-red-800">Tour</Link>
-          </ul>
-        )}
+          {isMenuOpen && (
+            <ul className="absolute right-0 mt-2 bg-white border border-gray-300 rounded-2xl p-4 flex flex-col gap-2">
+              <li>
+                <Link
+                  to="/"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block px-4 py-2 hover:text-red-800 rounded-2xl"
+                >
+                  Inicio
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/Tour01"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block px-4 py-2 hover:text-red-800 rounded-2xl"
+                >
+                  Walking Tour
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/Tour02"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block px-4 py-2 hover:text-red-800 rounded-2xl"
+                >
+                  Paseo en Bote
+                </Link>
+              </li>
+            </ul>
+          )}
+        </div>
       </div>
     </nav>
   );

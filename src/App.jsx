@@ -7,6 +7,7 @@ import Header from './components/Header';
 import Home from './pages/Home';
 import Tour01 from './pages/Tour01';
 import Tour02 from './pages/Tour02';
+import Tour03 from './pages/Tour03';
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/Tour01" element={<Tour01 />} />
             <Route path="/Tour02" element={<Tour02 />} />
+            <Route path="/Tour03" element={<Tour03 />} />
           </Routes>
         </main>
 

@@ -31,24 +31,39 @@ export default function Home() {
     },
     // Agrega más objetos para más banners...
   ];
-    return (
-    <div className="flex-1 my-10 px-4">
-      <div className="px-4 py-2">
+return (
+  <div className="flex-1 my-10 px-4">
+    <div className="px-4 py-2">
       <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-red-800">
-          Free Tours Copenhague – Tours Gratuitos y Visitas Guiadas
-        </h1>
-        <p className="mt-4 text-gray-600">
-          Conocé Copenhague como un local. Walking tours y paseos en barco en
-          español e inglés. Grupos pequeños, historias reales, guías
-          apasionados.
-          ¡Reservá ahora y descubrí la ciudad con alma!
-
-        </p>
-      </div>
-
-      {/* Carousel con tu array de slides */}
-      <Carousel slides={slides} interval={4000} />
-
+        Free Tours Copenhague – Tours Gratuitos y Visitas Guiadas
+      </h1>
+      <p className="mt-4 text-gray-600">
+        Conocé Copenhague como un local. Walking tours y paseos en barco en
+        español e inglés. Grupos pequeños, historias reales, guías
+        apasionados.
+        ¡Reservá ahora y descubrí la ciudad con alma!
+      </p>
     </div>
-  );
+
+    <Carousel slides={slides} interval={4000} />
+
+    {/* Sección Quiénes Somos */}
+    <section className="mt-10 p-6">
+      <h2 className="text-xl sm:text-2xl font-semibold text-red-800 mb-4">
+        ¿Quiénes somos?
+      </h2>
+      <p className="text-gray-700 leading-relaxed">
+        ¡Bienvenido a <strong>FREE TOUR CPH</strong>!  
+        Somos una agencia joven y apasionada, especializada en ofrecer <strong>free walking tours en Copenhague en español e ingles</strong>. 
+        Nuestro objetivo es mostrarte lo mejor de la ciudad más encantadora del norte de Europa a través de una experiencia cercana, auténtica y divertida.
+        <br /><br />
+        Nuestro equipo está formado por <strong>guías locales</strong> que aman lo que hacen: caminar, compartir historias y conectar con personas de todo el mundo. 
+        Nos encanta recorrer a pie el centro histórico, navegar los canales como los antiguos comerciantes y revelar datos curiosos que no vas a encontrar en las guías tradicionales.
+        <br /><br />
+        Si estás buscando un <strong>tour en español o ingles por Copenhague</strong> con anécdotas, lugares imperdibles y rincones ocultos, estás en el lugar correcto. 
+        ¡Te esperamos para descubrir juntos lo mejor de la capital danesa!
+      </p>
+    </section>
+  </div>
+);
 }

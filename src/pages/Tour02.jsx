@@ -9,15 +9,15 @@ export default function Tour01() {
 
   const detailsData = {
     duration: '2 horas aproximadamente',
-    includes: ['Guía local profesional', 'Paseo en bote'],
-    tips: ['Llevar bebida', 'Llevar piloto de lluvia'],
-    accessibility: 'Recorrido apto para silla de ruedas',
-    price: '120 € / 1000 DKK por bote (máx. 7 personas)',
+    includes: ['Guía local profesional', 'Paseo en bote privado'],
+    tips: ['Llevar snacks y/o bebida', 'Llevar piloto de lluvia'],
+    warnings: ['En caso de lluvia realizamos el tour normalmente. Solo cancelamos por tormentas fuertes.'],
+    price: '120 € / 1000 DKK por bote (máx. 7 personas). Efectivo (DKK/EUR) o transferencia bancaria.',
     meetingPoint: 'Ayuntamiento (Rådhuspladsen)',
     mapUrl:
       "https://www.google.com/maps/place/55%C2%B040'32.8%22N+12%C2%B034'09.4%22E/@55.675781,12.569285,532m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d55.675781!4d12.569285?entry=ttu&g_ep=EgoyMDI1MDUxMi4wIKXMDSoASAFQAw%3D%3D",
-    contactEmail: 'info@freewalkingtour.com',
-    contactPhone: '+34 600 000 000',
+    contactEmail: 'info@freetourcph.com',
+    contactPhone: '+34 51 99 94 00',
     maxParticipants: 7,
   };
 

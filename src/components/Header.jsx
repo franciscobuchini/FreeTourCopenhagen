@@ -6,6 +6,9 @@ import Logo from '../assets/Logo.png';
 
 export default function Header() {
   const navigate = useNavigate();
+
+  // 1. Estado para el idioma
+  const [language, setLanguage] = useState('es'); 
   const languageIcons = {
     en: 'twemoji:flag-united-kingdom',
     es: 'twemoji:flag-spain',
@@ -48,8 +51,9 @@ export default function Header() {
       <div className="flex gap-4 items-center">
         {/* Selector de idioma */}
         <div className="relative" ref={languageRef}>
+          {/* 2. Mostrar según el estado `language` */}
           <button onClick={() => setIsLanguageOpen(!isLanguageOpen)} className="p-2 rounded-full hover:bg-gray-100 hover:cursor-pointer">
-            <Icon icon={languageIcons['es']} className="w-6 h-6" />
+            <Icon icon={languageIcons[language]} className="w-6 h-6" />
           </button>
           {isLanguageOpen && (
             <ul className="absolute right-0 mt-2 bg-white border border-gray-300 rounded-2xl p-2">
@@ -57,6 +61,7 @@ export default function Header() {
                 <li key={lang}>
                   <button
                     onClick={() => {
+                      setLanguage(lang);         // 3. Actualizar el estado
                       /* i18n.changeLanguage(lang) */
                       setIsLanguageOpen(false);
                     }}

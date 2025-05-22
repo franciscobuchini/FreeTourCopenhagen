@@ -1,5 +1,6 @@
 // Reviews.jsx
 import React, { useState, useEffect } from 'react';
+import emailjs from '@emailjs/browser';
 
 const STORAGE_KEY = 'freeWalkingTour_reviews';
 
@@ -31,6 +32,7 @@ export default function Reviews() {
   const [group, setGroup] = useState('Solo');
   const [comment, setComment] = useState('');
   const [rating, setRating] = useState(5);
+  const [sending, setSending] = useState(false);
 
   // Cada vez que cambian las reseñas, persistir en LocalStorage
   useEffect(() => {
@@ -40,6 +42,7 @@ export default function Reviews() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!name.trim() || !comment.trim() || !country.trim()) return;
+
     const newReview = {
       name: name.trim(),
       country: country.trim(),
@@ -48,13 +51,38 @@ export default function Reviews() {
       rating,
       text: comment.trim(),
     };
-    setReviews([newReview, ...reviews]);
-    // Reiniciar campos de formulario
-    setName('');
-    setCountry('');
-    setGroup('Solo');
-    setComment('');
-    setRating(5);
+
+    // Envía reseña por email
+    setSending(true);
+    const templateParams = {
+      reviewer_name: newReview.name,
+      reviewer_country: newReview.country,
+      reviewer_group: newReview.group,
+      review_date: newReview.date,
+      review_rating: newReview.rating,
+      review_text: newReview.text,
+    };
+    emailjs.send(
+      'YOUR_SERVICE_ID',    // reemplaza con tu service ID
+      'YOUR_TEMPLATE_ID',   // reemplaza con tu template ID
+      templateParams,
+      'YOUR_USER_ID'        // reemplaza con tu user ID (public key)
+    )
+    .then(() => {
+      // Actualizar localStorage y lista
+      setReviews([newReview, ...reviews]);
+      // Reset fields
+      setName('');
+      setCountry('');
+      setGroup('Solo');
+      setComment('');
+      setRating(5);
+      alert('Reseña enviada correctamente. ¡Gracias!');
+    }, (error) => {
+      console.error('Error al enviar reseña:', error);
+      alert('Error al enviar tu reseña. Intenta de nuevo.');
+    })
+    .finally(() => setSending(false));
   };
 
   return (
@@ -78,12 +106,8 @@ export default function Reviews() {
                 : 'Hizo el tour en grupo'}
             </div>
             <div className="mb-2">
-              {Array.from({ length: r.rating }).map((_, i) => (
-                <span key={`full-${i}`} className="text-yellow-500">★</span>
-              ))}
-              {Array.from({ length: 5 - r.rating }).map((_, i) => (
-                <span key={`empty-${i}`} className="text-gray-300">★</span>
-              ))}
+              {Array.from({ length: r.rating }).map((_, i) => <span key={`full-${i}`} className="text-yellow-500">★</span>)}
+              {Array.from({ length: 5 - r.rating }).map((_, i) => <span key={`empty-${i}`} className="text-gray-300">★</span>)}
             </div>
             <p className="text-gray-700">{r.text}</p>
           </div>
@@ -129,30 +153,15 @@ export default function Reviews() {
           <span className="text-gray-700 font-medium">Hice el tour:</span>
           <div className="flex gap-6">
             <label className="flex items-center space-x-2">
-              <input
-                type="radio"
-                value="Solo"
-                checked={group === 'Solo'}
-                onChange={() => setGroup('Solo')}
-              />
+              <input type="radio" value="Solo" checked={group === 'Solo'} onChange={() => setGroup('Solo')} />
               <span className="text-gray-700">Solo</span>
             </label>
             <label className="flex items-center space-x-2">
-              <input
-                type="radio"
-                value="Pareja"
-                checked={group === 'Pareja'}
-                onChange={() => setGroup('Pareja')}
-              />
+              <input type="radio" value="Pareja" checked={group === 'Pareja'} onChange={() => setGroup('Pareja')} />
               <span className="text-gray-700">Pareja</span>
             </label>
             <label className="flex items-center space-x-2">
-              <input
-                type="radio"
-                value="Grupo"
-                checked={group === 'Grupo'}
-                onChange={() => setGroup('Grupo')} 
-              />
+              <input type="radio" value="Grupo" checked={group === 'Grupo'} onChange={() => setGroup('Grupo')} />
               <span className="text-gray-700">Grupo</span>
             </label>
           </div>
@@ -167,9 +176,10 @@ export default function Reviews() {
         />
         <button
           type="submit"
-          className="py-2 px-4 bg-blue-700 text-white rounded-2xl transition-colors duration-300"
+          disabled={sending}
+          className="py-2 px-4 bg-blue-700 text-white rounded-2xl transition-colors duration-300 disabled:opacity-50"
         >
-          Enviar Reseña
+          {sending ? 'Enviando...' : 'Enviar Reseña'}
         </button>
       </form>
     </div>

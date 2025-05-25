@@ -16,7 +16,7 @@ function getDatePlusDays(days) {
   const yyyy = date.getFullYear();
   const mm = String(date.getMonth() + 1).padStart(2, '0');
   const dd = String(date.getDate()).padStart(2, '0');
-  return `${yyyy}-${mm}-${dd}`;
+  return `${dd}-${mm}-${yyyy}`;
 }
 
 function isSunday(dateStr) {
@@ -58,10 +58,10 @@ export default function BookingCalendar({ tourName, maxParticipants = 30 }) {
 
     emailjs
       .send(
-        'YOUR_SERVICE_ID',      // reemplaza con tu service ID
-        'YOUR_TEMPLATE_ID',     // reemplaza con tu template ID
+        'service_r9951ua',      // reemplaza con tu service ID
+        'template_cmubhxk',     // reemplaza con tu template ID
         templateParams,
-        'YOUR_USER_ID'          // reemplaza con tu user ID (public key)
+        'pahGhN_NUndIlVHnB'          // reemplaza con tu user ID (public key)
       )
       .then(
         () => {

@@ -172,7 +172,7 @@ export default function BookingCalendar({ tourName, maxParticipants = 30 }) {
       <button
         type="submit"
         className="w-full py-2 px-4 bg-blue-700 text-white rounded-2xl transition duration-300 hover:bg-blue-800 hover:cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
-        disabled={!date || !time || !participants || !mail}
+        disabled={!date || !time || !participants || !mail || sending}
       >
         Reservar Ahora
       </button>

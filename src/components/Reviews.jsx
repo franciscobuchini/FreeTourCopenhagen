@@ -1,32 +1,40 @@
-// Reviews.jsx
+// 1) Imports al principio
 import React, { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 
 const STORAGE_KEY = 'freeWalkingTour_reviews';
+const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRN0BGSsWf09JTisfIPOGPniK2BSkR__17oZM_RuJa4mtbcWsHQeCMTS7vIjrfJjjpZG0TLroojotkg/pub?gid=0&single=true&output=csv';
 
-const initialReviews = [
-  { name: 'Laura García', country: 'España', group: 'Solo', date: '2025-04-20', rating: 5, text: '¡Increíble experiencia! El guía era muy conocedor y súper simpático.' },
-  { name: 'Mark Johnson', country: 'USA', group: 'Pareja', date: '2025-04-18', rating: 4, text: 'Me encantaron los lugares que visitamos, aunque echamos en falta más tiempo en la catedral.' },
-  { name: 'Sophie Müller', country: 'Alemania', group: 'Grupo', date: '2025-04-15', rating: 5, text: 'Un tour perfecto para conocer la ciudad de forma auténtica y divertida.' },
-  { name: 'Carlos Fernández', country: 'España', group: 'Solo', date: '2025-04-10', rating: 4, text: 'Muy recomendable, sólo mejorar la señalización del punto de encuentro.' },
-  { name: 'Emma Smith', country: 'Reino Unido', group: 'Pareja', date: '2025-04-05', rating: 5, text: 'El mejor free walking tour que he tomado. ¡Gracias por todo!' },
-];
+// (Opcional) función para parsear CSV
+function parseCSV(text) {
+  const lines = text.trim().split('\n');
+  // Normalizar: pasar a minúsculas y recortar espacios
+  const headers = lines.shift()
+    .split(',')
+    .map(h => h.trim().toLowerCase());
 
-function getTodayString() {
-  const today = new Date();
-  const yyyy = today.getFullYear();
-  const mm = String(today.getMonth() + 1).padStart(2, '0');
-  const dd = String(today.getDate()).padStart(2, '0');
-  return `${yyyy}-${mm}-${dd}`;
+  const rowRegex = /("([^"]|"")*"|[^,]+)(?=,|$)/g;
+  return lines.map(line => {
+    const cols = [];
+    let match;
+    while ((match = rowRegex.exec(line))) {
+      let cell = match[0];
+      if (cell.startsWith('"') && cell.endsWith('"')) {
+        cell = cell.slice(1, -1).replace(/""/g, '"');
+      }
+      cols.push(cell);
+    }
+    // Construye el objeto usando headers normalizados
+    return headers.reduce((obj, h, i) => {
+      obj[h] = cols[i] || '';
+      return obj;
+    }, {});
+  });
 }
 
+// 2) Componente Reviews
 export default function Reviews() {
-  // Cargar reseñas guardadas o usar initialReviews
-  const [reviews, setReviews] = useState(() => {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    return saved ? JSON.parse(saved) : initialReviews;
-  });
-
+  const [reviews, setReviews] = useState([]);
   const [name, setName] = useState('');
   const [country, setCountry] = useState('');
   const [group, setGroup] = useState('Solo');
@@ -34,52 +42,48 @@ export default function Reviews() {
   const [rating, setRating] = useState(5);
   const [sending, setSending] = useState(false);
 
-  // Cada vez que cambian las reseñas, persistir en LocalStorage
+  // Al montar, cargo desde Google Sheets
+  useEffect(() => {
+    fetch(SHEET_CSV_URL)
+      .then(res => res.text())
+      .then(csvText => setReviews(parseCSV(csvText)))
+      .catch(err => console.error('Error fetching reviews:', err));
+  }, []);
+
+  // Persistir en localStorage cuando cambian reviews
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(reviews));
   }, [reviews]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!name.trim() || !comment.trim() || !country.trim()) return;
+    if (!name.trim() || !country.trim() || !comment.trim()) return;
 
-    const newReview = {
-      name: name.trim(),
-      country: country.trim(),
-      group,
-      date: getTodayString(),
-      rating,
-      text: comment.trim(),
-    };
+    const today = new Date().toISOString().slice(0, 10);
+    const newReview = { name, country, group, date: today, rating, text: comment };
 
-    // Envía reseña por email
     setSending(true);
-    const templateParams = {
-      reviewer_name: newReview.name,
-      reviewer_country: newReview.country,
-      reviewer_group: newReview.group,
-      review_date: newReview.date,
-      review_rating: newReview.rating,
-      review_text: newReview.text,
-    };
     emailjs.send(
-      'YOUR_SERVICE_ID',    // reemplaza con tu service ID
-      'YOUR_TEMPLATE_ID',   // reemplaza con tu template ID
-      templateParams,
-      'YOUR_USER_ID'        // reemplaza con tu user ID (public key)
+      'service_r9951ua',
+      'template_vka4pcv',
+      {
+        reviewer_name: newReview.name,
+        reviewer_country: newReview.country,
+        reviewer_group: newReview.group,
+        review_date: newReview.date,
+        review_rating: newReview.rating,
+        review_text: newReview.text,
+      },
+      'pahGhN_NUndIlVHnB'
     )
     .then(() => {
-      // Actualizar localStorage y lista
       setReviews([newReview, ...reviews]);
-      // Reset fields
-      setName('');
-      setCountry('');
-      setGroup('Solo');
-      setComment('');
-      setRating(5);
+      setName(''); setCountry(''); setGroup('Solo');
+      setComment(''); setRating(5);
       alert('Reseña enviada correctamente. ¡Gracias!');
-    }, (error) => {
-      console.error('Error al enviar reseña:', error);
+    })
+    .catch(err => {
+      console.error('Error al enviar reseña:', err);
       alert('Error al enviar tu reseña. Intenta de nuevo.');
     })
     .finally(() => setSending(false));
@@ -88,9 +92,11 @@ export default function Reviews() {
   return (
     <div className="bg-white border border-gray-300 rounded-2xl shadow-0 p-6 space-y-6 transition-shadow duration-300 hover:shadow-lg flex flex-col gap-1">
       <h3 className="text-xl font-semibold mb-4 text-red-800">Opiniones de Clientes</h3>
-      <div className="space-y-4">
-        {reviews.map((r, idx) => (
-          <div key={idx} className="p-4 bg-white rounded-2xl border border-gray-200">
+      
+      {/* Grid de reviews */}
+      <div className="reviews-grid">
+        {reviews.map((r, i) => (
+          <div key={i} className="review-card p-4 bg-white rounded-2xl border border-gray-200">
             <div className="flex justify-between items-center mb-1">
               <div>
                 <span className="font-medium text-gray-800">{r.name}</span>
@@ -106,8 +112,12 @@ export default function Reviews() {
                 : 'Hizo el tour en grupo'}
             </div>
             <div className="mb-2">
-              {Array.from({ length: r.rating }).map((_, i) => <span key={`full-${i}`} className="text-yellow-500">★</span>)}
-              {Array.from({ length: 5 - r.rating }).map((_, i) => <span key={`empty-${i}`} className="text-gray-300">★</span>)}
+              {Array.from({ length: r.rating }).map((_, j) => (
+                <span key={`full-${j}`} className="text-yellow-500">★</span>
+              ))}
+              {Array.from({ length: 5 - r.rating }).map((_, j) => (
+                <span key={`empty-${j}`} className="text-gray-300">★</span>
+              ))}
             </div>
             <p className="text-gray-700">{r.text}</p>
           </div>
@@ -117,7 +127,6 @@ export default function Reviews() {
       {/* Form para dejar reseña */}
       <form onSubmit={handleSubmit} className="space-y-4 pt-4 border-t border-gray-200">
         <h4 className="text-lg font-medium text-red-800">Deja tu reseña</h4>
-        {/* Selector de estrellas */}
         <div className="flex items-center space-x-2">
           {Array.from({ length: 5 }).map((_, i) => {
             const value = i + 1;
@@ -128,7 +137,9 @@ export default function Reviews() {
                 onClick={() => setRating(value)}
                 className="focus:outline-none"
               >
-                <span className={rating >= value ? 'text-yellow-500 text-2xl' : 'text-gray-300 text-2xl'}>★</span>
+                <span className={rating >= value ? 'text-yellow-500 text-2xl' : 'text-gray-300 text-2xl'}>
+                  ★
+                </span>
               </button>
             );
           })}
@@ -176,8 +187,8 @@ export default function Reviews() {
         />
         <button
           type="submit"
-          disabled={sending}
-          className="py-2 px-4 bg-blue-700 text-white rounded-2xl transition-colors duration-300 disabled:opacity-50"
+          disabled={ !comment || !country || !name || sending }
+          className="py-2 px-4 bg-blue-700 text-white rounded-2xl transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-blue-800 hover:cursor-pointer w-full"
         >
           {sending ? 'Enviando...' : 'Enviar Reseña'}
         </button>

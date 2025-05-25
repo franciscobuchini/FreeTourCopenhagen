@@ -31,31 +31,42 @@ export default function Tour({
           className="w-screen h-64 md:h-80 lg:h-128 object-cover"
         />
       </div>
-      <main className="flex-1 mb-20 md:mx-4 rounded-2xl bg-gray-50">
-        <div className="flex flex-col lg:flex-row gap-10 p-2 sm:p-6 md:p-8 lg:p-10">
-          {/* Left Column: Details + Reviews */}
-          <div className="w-full lg:w-1/2 flex flex-col gap-10">
-            <div className="mt-10 flex flex-col gap-4">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-red-800">
-                {title}
-              </h1>
-              <p>{description}</p>
-            </div>
+<main className="flex-1 mb-20 md:mx-4 rounded-2xl bg-gray-50">
+  <div className="flex flex-col lg:flex-row gap-10 p-4 sm:p-6 md:p-8 lg:p-10">
 
-            <TourDetails {...detailsData} />
+    {/* Left Column on desktop — all content on mobile */}
+    <div className="w-full flex flex-col gap-10 lg:w-1/2">
+      <div className="mt-10 flex flex-col gap-4">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-red-800">
+          {title}
+        </h1>
+        <p>{description}</p>
+      </div>
 
-            <Reviews />
-          </div>
+      <TourDetails {...detailsData} />
 
-          {/* Right Column: Booking */}
-          <div className="w-full lg:w-1/2 lg:sticky lg:top-40 flex flex-col mt-10">
-            <BookingCalendar
-              tourName={title}                     
-              maxParticipants={maxParticipants}
-            />
-          </div>
-        </div>
-      </main>
+      {/* Show BookingCalendar here on mobile */}
+      <div className="block lg:hidden">
+        <BookingCalendar
+          tourName={title}
+          maxParticipants={maxParticipants}
+        />
+      </div>
+
+      <Reviews />
+    </div>
+
+    {/* Right Column: Booking (only on desktop) */}
+    <div className="hidden lg:block w-full lg:w-1/2 lg:sticky lg:top-40">
+      <BookingCalendar
+        tourName={title}
+        maxParticipants={maxParticipants}
+      />
+    </div>
+
+  </div>
+</main>
+
     </>
   );
 }

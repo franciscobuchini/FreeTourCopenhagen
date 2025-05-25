@@ -37,6 +37,7 @@ export default function BookingCalendar({ tourName, maxParticipants = 30 }) {
   const [language, setLanguage] = useState(languages[0].code);
   const [notes, setNotes] = useState('');
   const [mail, setMail] = useState('');
+  const [sending, setSending] = useState(false);
 
   const handleDateChange = (e) => {
     const selected = e.target.value;
@@ -56,6 +57,7 @@ export default function BookingCalendar({ tourName, maxParticipants = 30 }) {
       user_email: mail,
     };
 
+    setSending(true);
     emailjs
       .send(
         'service_r9951ua',      // reemplaza con tu service ID
@@ -79,6 +81,7 @@ export default function BookingCalendar({ tourName, maxParticipants = 30 }) {
           alert('Error al enviar tu reserva. Intenta de nuevo.');
         }
       );
+    setSending(false);
   };
 
   return (
@@ -174,7 +177,7 @@ export default function BookingCalendar({ tourName, maxParticipants = 30 }) {
         className="w-full py-2 px-4 bg-blue-700 text-white rounded-2xl transition duration-300 hover:bg-blue-800 hover:cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
         disabled={!date || !time || !participants || !mail || sending}
       >
-        Reservar Ahora
+        {sending ? 'Reservando...' : 'Reservar Tour'}
       </button>
     </form>
   );

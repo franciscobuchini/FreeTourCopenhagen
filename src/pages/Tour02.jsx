@@ -31,9 +31,8 @@ export default function Tour02() {
       title="Paseo en Bote + Walking Tour"
       description={
         <>
-          <p>En este recorrido vivirás una experiencia íntima y exclusiva, limitada hasta solo 7 personas, para que disfrutes al máximo de cada detalle. Primero exploraremos los puntos más representativos de la ciudad, descubriendo su vida cotidiana e historia.
+          En este recorrido vivirás una experiencia íntima y exclusiva, limitada hasta solo 7 personas, para que disfrutes al máximo de cada detalle. Primero exploraremos los puntos más representativos de la ciudad, descubriendo su vida cotidiana e historia.
           Después, subiremos a un bote para navegar por los encantadores canales y barrios modernos rodeados de agua, ofreciendo una perspectiva relajada y mágica que solo un grupo pequeño puede disfrutar.
-          </p>
         </>
       }
       imageSrc="https://media.cntraveler.com/photos/5c005edf7732ca62ae9f71bc/16:9/w_2560,c_limit/GoBoatCopenhagen_Abdellah-Ihadian_GoBoat-Abdellah-Ihadian-5561.jpg"

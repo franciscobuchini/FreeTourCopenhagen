@@ -23,19 +23,15 @@ export default function Tour01() {
       title="Gran tour de Copenhague"
   description={
     <>
-      <p>
         ¡Sumate a nuestro Free Walking Tour y explorá lo mejor de Copenhague
         con un guía local apasionado! Descubriremos monumentos, palacios y
         rincones llenos de historia, caminando por sus calles como si fuéramos
         locales, sintiendo el pulso cotidiano de la vida danesa.
-      </p>
-      <p>
         Desde el encantador puerto de Nyhavn y la famosa Sirenita, hasta el
         Palacio de Amalienborg y la vibrante calle Strøget, te llevamos a
         conocer la ciudad como un verdadero local. Aprendé sobre los vikingos,
         la monarquía danesa, el estilo de vida escandinavo y los secretos que
         hacen de Copenhague una de las capitales más felices del mundo.
-      </p>
     </>
   }
       imageSrc="https://www.princess.com/content/dam/princess-headless/shorex/ports/copenhagen-denmark-waterway-night.jpg"

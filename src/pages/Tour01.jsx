@@ -24,7 +24,7 @@ export default function Tour01() {
   description={
     <>
         ¡Sumate a nuestro Free Walking Tour y explorá lo mejor de Copenhague
-        con un guía local apasionado! Descubriremos monumentos, palacios y
+        con un guía experimentado y apasionado! Descubriremos monumentos, palacios y
         rincones llenos de historia, caminando por sus calles como si fuéramos
         locales, sintiendo el pulso cotidiano de la vida danesa.
         Desde el encantador puerto de Nyhavn y la famosa Sirenita, hasta el

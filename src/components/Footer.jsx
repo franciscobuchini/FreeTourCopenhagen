@@ -34,7 +34,7 @@ function Footer() {
         <div>
           <h4 className="text-xl font-semibold mb-4">Sobre Free Tour Cph</h4>
           <p className="text-sm leading-relaxed">
-            Descubre Copenhague con los mejores guías locales. Tours personalizados,
+            Descubre Copenhague con los mejores guías de la ciudad. Tours personalizados,
             rutas exclusivas y experiencias únicas para todos los viajeros.
           </p>
         </div>
@@ -66,7 +66,7 @@ function Footer() {
           </div>
           <div className=" flex mt-2 text-sm">
             <Icon icon="icon-park-twotone:phone-incoming" className="w-6 h-6 mr-2 text-red-800" />
-            <span>+45 12 34 56 78</span>
+            <span>+34 51 99 94 00</span>
           </div>
           <a className=" flex mt-2 text-sm" href="https://www.instagram.com/freetourcph" target="_blank" rel="noopener noreferrer">
             <Icon icon="icon-park-twotone:instagram" className="w-6 h-6 mr-2 text-red-800" />

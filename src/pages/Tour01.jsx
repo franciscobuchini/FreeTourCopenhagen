@@ -4,12 +4,12 @@ import Tour from '../components/Tour';
 
 export default function Tour01() {
   const detailsData = {
-    duration: '1 hora aproximadamente',
-    includes: ['Guía local profesional', 'Auriculares para escuchar al guía'],
+    duration: '2 horas / 2.5 horas',
+    // includes: ['Guía local profesional',],
     tips: ['Traer bebida', 'Traer piloto de lluvia o paraguas'],
-    accessibility: 'Recorrido apto para silla de ruedas, avisar con anticipación.',
+    // accessibility: 'Recorrido apto para silla de ruedas, avisar con anticipación.',
     warnings: ['En caso de lluvia realizamos el tour normalmente. Solo cancelamos por tormentas fuertes.'],
-    price: 'Tour gratuito (propinas bienvenidas)',
+    price: 'Basado en propinas.',
     meetingPoint: 'Ayuntamiento (Rådhuspladsen)',
     mapUrl:
       "https://www.google.com/maps/place/55%C2%B040'32.8%22N+12%C2%B034'09.4%22E/",

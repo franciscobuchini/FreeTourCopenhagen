@@ -13,7 +13,7 @@ export default function Tour02() {
     'Llevar snacks y/o bebida',
     'Llevar piloto de lluvia'
   ],
-  accessibility: 'Recorrido apto para silla de ruedas, avisar con anticipación.',
+  // accessibility: 'Recorrido apto para silla de ruedas, avisar con anticipación.',
   warnings: [
     'En caso de lluvia realizamos el tour normalmente. Solo cancelamos por tormentas fuertes.'
   ],

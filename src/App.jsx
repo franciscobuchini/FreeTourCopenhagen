@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import Tour01 from './pages/Tour01';
 import Tour02 from './pages/Tour02';
 import Tour03 from './pages/Tour03';
+import NotFound from './pages/NotFound';
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
             <Route path="/Tour01" element={<Tour01 />} />
             <Route path="/Tour02" element={<Tour02 />} />
             <Route path="/Tour03" element={<Tour03 />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
 

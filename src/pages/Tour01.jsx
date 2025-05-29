@@ -14,7 +14,7 @@ export default function Tour01() {
     mapUrl:
       "https://www.google.com/maps/place/55%C2%B040'32.8%22N+12%C2%B034'09.4%22E/",
     contactEmail: 'info@freetourcph.com',
-    contactPhone: '+34 51 99 94 00'
+    contactPhone: '+45 71 61 79 70'
   };
   const handleBooking = (data) => console.log('Nueva reserva Tour01:', data);
 

@@ -66,7 +66,7 @@ function Footer() {
           </div>
           <div className=" flex mt-2 text-sm">
             <Icon icon="icon-park-twotone:phone-incoming" className="w-6 h-6 mr-2 text-red-800" />
-            <span>+34 51 99 94 00</span>
+            <span>+45 71 61 79 70</span>
           </div>
           <a className=" flex mt-2 text-sm" href="https://www.instagram.com/freetourcph" target="_blank" rel="noopener noreferrer">
             <Icon icon="icon-park-twotone:instagram" className="w-6 h-6 mr-2 text-red-800" />

@@ -1,32 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
+import Papa from 'papaparse';
 
 const STORAGE_KEY = 'freeWalkingTour_reviews';
 const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRN0BGSsWf09JTisfIPOGPniK2BSkR__17oZM_RuJa4mtbcWsHQeCMTS7vIjrfJjjpZG0TLroojotkg/pub?gid=0&single=true&output=csv';
 
-function parseCSV(text) {
-  const lines = text.trim().split('\n');
-  const headers = lines.shift().split(',').map(h => h.trim().toLowerCase());
-  const rowRegex = /("([^"]|"")*"|[^,]+)(?=,|$)/g;
-  return lines.map(line => {
-    const cols = [];
-    let match;
-    while ((match = rowRegex.exec(line))) {
-      let cell = match[0];
-      if (cell.startsWith('"') && cell.endsWith('"')) {
-        cell = cell.slice(1, -1).replace(/""/g, '"');
-      }
-      cols.push(cell);
-    }
-    return headers.reduce((obj, h, i) => ({ ...obj, [h]: cols[i] || '' }), {});
-  });
-}
-
 export default function Reviews() {
   const location = useLocation();
   const path = location.pathname;
-  // Determinar código de tour para enviar por email
   let tourCode = '00';
   if (path.includes('/Tour01')) tourCode = '01';
   else if (path.includes('/Tour02')) tourCode = '02';
@@ -42,7 +24,13 @@ export default function Reviews() {
   useEffect(() => {
     fetch(SHEET_CSV_URL)
       .then(res => res.text())
-      .then(csvText => setReviews(parseCSV(csvText)))
+      .then(csvText => {
+        Papa.parse(csvText, {
+          header: true,
+          skipEmptyLines: true,
+          complete: ({ data }) => setReviews(data),
+        });
+      })
       .catch(err => console.error('Error fetching reviews:', err));
   }, []);
 
@@ -84,48 +72,22 @@ export default function Reviews() {
     .finally(() => setSending(false));
   };
 
-  function getReviewDescription(tour, group) {
-  const tours = {
-    '1': 'walking tour',
-    '2': 'paseo en bote',
-  };
-
-  // recortamos espacios y pasamos group a minúsculas
-  const grp = String(group).trim().toLowerCase();
-
-  // recortamos tour por si acaso
-  const t = String(tour).trim();
-
-  const tourLabel = tours[t] || 'tour';
-
-  switch (grp) {
-    case 'solo':
-      return `Hizo el ${tourLabel} solo`;
-    case 'pareja':
-      return `Hizo el ${tourLabel} en pareja`;
-    case 'grupo':
-      return `Hizo el ${tourLabel} en grupo`;
-    default:
-      return `Hizo el ${tourLabel}`;
-  }
-}
-
   return (
     <div className="bg-white border border-gray-300 rounded-2xl shadow-0 p-6 space-y-6 hover:shadow-lg flex flex-col gap-1">
       <h3 className="text-xl font-semibold text-red-800">Opiniones de Clientes</h3>
       <div className="reviews-grid">
         {reviews.map((r, i) => (
-          <div key={i} className="review-card p-4 bg-white rounded-2xl border border-gray-200">
+          <div key={i} className="review-card p-4 mb-4 bg-white rounded-2xl border border-gray-200">
             <div className="flex justify-between mb-1">
               <div><strong>{r.name}</strong>, {r.country}</div>
               <div className="text-sm text-gray-500">{r.date}</div>
             </div>
-              <div className="text-sm text-gray-400 mb-2">
-                {getReviewDescription(r.tour, r.group)}
-              </div>
+            <div className="text-sm text-gray-400 mb-2">
+              {r.group === 'Solo' ? 'Hizo el tour solo' : r.group === 'Pareja' ? 'Hizo el tour en pareja' : 'Hizo el tour en grupo'}
+            </div>
             <div className="mb-2">
-              {Array.from({ length: r.rating }).map((_, j) => <span key={`full-${j}`} className="text-yellow-500">★</span>)}
-              {Array.from({ length: 5 - r.rating }).map((_, j) => <span key={`empty-${j}`} className="text-gray-300">★</span>)}
+              {Array.from({ length: Number(r.rating) }).map((_, j) => <span key={`full-${j}`} className="text-yellow-500">★</span>)}
+              {Array.from({ length: 5 - Number(r.rating) }).map((_, j) => <span key={`empty-${j}`} className="text-gray-300">★</span>)}
             </div>
             <p>{r.text}</p>
           </div>
@@ -140,8 +102,8 @@ export default function Reviews() {
             </button>
           ))}
         </div>
-        <input type="text" placeholder="Tu nombre" value={name} onChange={e=>setName(e.target.value)} className="w-full border rounded p-2" required />
-        <input type="text" placeholder="País" value={country} onChange={e=>setCountry(e.target.value)} className="w-full border rounded p-2" required />
+        <input type="text" placeholder="Tu nombre" value={name} onChange={e=>setName(e.target.value)} className="w-full border border-gray-300 rounded-2xl p-2" required />
+        <input type="text" placeholder="País" value={country} onChange={e=>setCountry(e.target.value)} className="w-full border border-gray-300 rounded-2xl p-2" required />
         <div>
           <span className="text-gray-700 font-medium">Hice el tour:</span>
           <div className="flex gap-6 mt-1">
@@ -153,8 +115,8 @@ export default function Reviews() {
             ))}
           </div>
         </div>
-        <textarea rows="3" placeholder="Tu comentario" value={comment} onChange={e=>setComment(e.target.value)} className="w-full border rounded p-2" required />
-        <button type="submit" disabled={!comment||!country||!name||sending} className="w-full bg-blue-700 text-white py-2 rounded transition disabled:opacity-50">
+        <textarea rows="3" placeholder="Tu comentario" value={comment} onChange={e=>setComment(e.target.value)} className="w-full border border-gray-300 rounded-2xl p-2" required />
+        <button type="submit" disabled={!comment||!country||!name||sending} className="w-full bg-blue-700 text-white py-2 rounded-2xl transition disabled:opacity-50">
           {sending?'Enviando...':'Enviar Reseña'}
         </button>
       </form>

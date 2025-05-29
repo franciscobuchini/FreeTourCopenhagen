@@ -50,12 +50,15 @@ export default function BookingCalendar({ tourName, maxParticipants = 30 }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Obtener la etiqueta del idioma seleccionado
+    const languageLabel = languages.find(l => l.code === language)?.label || '';
+
     const templateParams = {
       tour_name: tourName,
       tour_date: date,
       tour_time: time,
       participants,
-      language,
+      language: languageLabel,
       notes,
       user_email: mail,
     };
@@ -64,6 +67,7 @@ export default function BookingCalendar({ tourName, maxParticipants = 30 }) {
     emailjs.send('service_r9951ua', 'template_cmubhxk', templateParams, 'pahGhN_NUndIlVHnB')
       .then(() => {
         alert(`Reserva para \"${tourName}\" enviada correctamente. ¡Gracias!`);
+        // resetear formulario
         setDate('');
         setTime('');
         setParticipants('');

@@ -21,14 +21,14 @@ export default function Home() {
       internal: true,
       image: 'https://media.cntraveler.com/photos/5c005edf7732ca62ae9f71bc/16:9/w_2560,c_limit/GoBoatCopenhagen_Abdellah-Ihadian_GoBoat-Abdellah-Ihadian-5561.jpg',
     },
-    {
-      title: 'Mira lo que Copenhague tiene para ofrecerte',
-      description: 'Conoce los beneficios que la ciudad ofrece a sus visitantes.',
-      buttonText: 'Ver sitio',
-      link: 'https://www.visitcopenhagen.com/copenpay',
-      internal: false,
-      image: 'https://cdn-kabof.nitrocdn.com/nfjHFOYSVknMSLxSPIZUhvuJiKcRMGGc/assets/images/optimized/rev-ca84acd/img.locationscout.net/images/2017-06/tivoli-garden-sunset-denmark_l.jpeg',
-    },
+    // {
+    //   title: 'Mira lo que Copenhague tiene para ofrecerte',
+    //   description: 'Conoce los beneficios que la ciudad ofrece a sus visitantes.',
+    //   buttonText: 'Ver sitio',
+    //   link: 'https://www.visitcopenhagen.com/copenpay',
+    //   internal: false,
+    //   image: 'https://cdn-kabof.nitrocdn.com/nfjHFOYSVknMSLxSPIZUhvuJiKcRMGGc/assets/images/optimized/rev-ca84acd/img.locationscout.net/images/2017-06/tivoli-garden-sunset-denmark_l.jpeg',
+    // },
     // Agrega más objetos para más banners...
   ];
 return (

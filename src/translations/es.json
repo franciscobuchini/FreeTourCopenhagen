@@ -1,0 +1,34 @@
+{  
+  "booking": {
+    "title": "Reserva tu Tour",
+    "select_date": "Selecciona fecha:",
+    "sunday": "Domingos no disponibles.",
+    "sunday_not_available": "Los domingos no están disponibles para reserva.",
+    "start_time": "Hora de Inicio:",
+    "select_time": "Selecciona hora",
+    "people": "Personas:",
+    "max_allowed": "Máximo permitido: {{max}}",
+    "language": "Idioma:",
+    "select_language": "Selecciona idioma",
+    "notes": "Notas ó solicitudes:",
+    "contact_email": "Email de contacto:",
+    "reserving": "Reservando...",
+    "reserve": "Reservar Tour",
+    "success": "Reserva para \"{{tour}}\" enviada correctamente. ¡Gracias!",
+    "error": "Error al enviar tu reserva. Intenta de nuevo."
+  },
+  "footer": {
+    "about_title": "Sobre Free Tour Cph",
+    "about_text": "Descubre Copenhague con los mejores guías de la ciudad. Tours personalizados, rutas exclusivas y experiencias únicas para todos los viajeros.",
+    "quick_links_title": "Enlaces Rápidos",
+    "link_home": "Inicio",
+    "link_walking_tour": "Free walking tour",
+    "link_boat_tour": "Tour en bote",
+    "link_winter_tour": "Tour de invierno",
+    "contact_title": "Contacto",
+    "contact_email_address": "info@freetourcph.com",
+    "contact_phone": "+45 71 61 79 70",
+    "copied": "Copiado",
+    "image_alt": "Imagen de pie de página"
+  }
+}

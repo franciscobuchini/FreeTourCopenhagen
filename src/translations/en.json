@@ -1,0 +1,34 @@
+{
+  "booking": {
+    "title": "Book Your Tour",
+    "select_date": "Select Date:",
+    "sunday": "Sundays not available.",
+    "sunday_not_available": "Sundays are not available for booking.",
+    "start_time": "Start Time:",
+    "select_time": "Select time",
+    "people": "People:",
+    "max_allowed": "Max allowed: {{max}}",
+    "language": "Language:",
+    "select_language": "Select language",
+    "notes": "Notes or requests:",
+    "contact_email": "Contact Email:",
+    "reserving": "Reserving...",
+    "reserve": "Reserve Tour",
+    "success": "Booking for \"{{tour}}\" sent successfully. Thank you!",
+    "error": "Error sending your booking. Please try again."
+  },
+  "footer": {
+    "about_title": "About Free Tour Cph",
+    "about_text": "Discover Copenhagen with the city's best guides. Personalized tours, exclusive routes, and unique experiences for every traveler.",
+    "quick_links_title": "Quick Links",
+    "link_home": "Home",
+    "link_walking_tour": "Free walking tour",
+    "link_boat_tour": "Boat tour",
+    "link_winter_tour": "Winter tour",
+    "contact_title": "Contact",
+    "contact_email_address": "info@freetourcph.com",
+    "contact_phone": "+45 71 61 79 70",
+    "copied": "Copied",
+    "image_alt": "Footer image"
+  }
+}

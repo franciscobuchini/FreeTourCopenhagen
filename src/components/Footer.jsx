@@ -1,29 +1,19 @@
-// Footer.jsx
-import { Icon } from "@iconify/react";
-import { useState } from "react";
-import FooterImg from "../assets/cph.webp";
+import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Icon } from '@iconify/react';
+import FooterImg from '../assets/cph.webp';
 
 function Footer() {
-  const [email, setEmail] = useState("");
+  const { t } = useTranslation();
+  const [email, setEmail] = useState('');
   const [copied, setCopied] = useState(false);
-  const [subscribed, setSubscribed] = useState(false);
 
   const copyEmail = (e) => {
     e.preventDefault();
-    navigator.clipboard.writeText("Tour01cph@info.com").then(() => {
+    navigator.clipboard.writeText(t('footer.contact_email_address')).then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     });
-  };
-
-  const handleSubscribe = (e) => {
-    e.preventDefault();
-    if (email) {
-      // aquí podrías integrar con tu API de suscripción
-      setSubscribed(true);
-      setEmail("");
-      setTimeout(() => setSubscribed(false), 3000);
-    }
   };
 
   return (
@@ -32,47 +22,56 @@ function Footer() {
       <div className="container mx-auto px-6 lg:px-20 grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Sobre nosotros */}
         <div>
-          <h4 className="text-xl font-semibold mb-4">Sobre Free Tour Cph</h4>
-          <p className="text-sm leading-relaxed">
-            Descubre Copenhague con los mejores guías de la ciudad. Tours personalizados,
-            rutas exclusivas y experiencias únicas para todos los viajeros.
-          </p>
+          <h4 className="text-xl font-semibold mb-4">{t('footer.about_title')}</h4>
+          <p className="text-sm leading-relaxed">{t('footer.about_text')}</p>
         </div>
         {/* Enlaces rápidos */}
         <div>
-          <h4 className="text-xl font-semibold mb-4">Enlaces Rápidos</h4>
+          <h4 className="text-xl font-semibold mb-4">{t('footer.quick_links_title')}</h4>
           <ul className="space-y-2 text-sm">
-            <li><a href="/" className="hover:text-red-800">Inicio</a></li>
-            <li><a href="/Tour01" className="hover:text-red-800">Free walking tour</a></li>
-            <li><a href="/Tour02" className="hover:text-red-800">Tour en bote</a></li>
-            <li><a href="/contacto" className="hover:text-red-800">Tour de invierno</a></li>
+            <li><a href="/" className="hover:text-red-800">{t('footer.link_home')}</a></li>
+            <li><a href="/Tour01" className="hover:text-red-800">{t('footer.link_walking_tour')}</a></li>
+            <li><a href="/Tour02" className="hover:text-red-800">{t('footer.link_boat_tour')}</a></li>
+            <li><a href="/contacto" className="hover:text-red-800">{t('footer.link_winter_tour')}</a></li>
           </ul>
         </div>
+        {/* Contacto */}
         <div>
-          <h4 className="text-xl font-semibold mb-4">Contacto</h4>
-            <div className="flex items-center">
+          <h4 className="text-xl font-semibold mb-4">{t('footer.contact_title')}</h4>
+          <div className="flex items-center">
             <a
               href="#"
               onClick={copyEmail}
-              className="flex items-center text-sm hover:text-red-800">
+              className="flex items-center text-sm hover:text-red-800"
+            >
               <Icon icon="icon-park-twotone:mail" className="w-6 h-6 mr-2 text-red-800" />
-              <span>info@freetourcph.com</span>
+              <span>{t('footer.contact_email_address')}</span>
             </a>
             {copied && (
               <span className="ml-2 text-xs bg-red-500 text-white px-2 rounded">
-                Copiado
+                {t('footer.copied')}
               </span>
             )}
           </div>
-          <div className=" flex mt-2 text-sm">
+          <div className="flex mt-2 text-sm">
             <Icon icon="icon-park-twotone:phone-incoming" className="w-6 h-6 mr-2 text-red-800" />
-            <span>+45 71 61 79 70</span>
+            <span>{t('footer.contact_phone')}</span>
           </div>
-          <a className=" flex mt-2 text-sm" href="https://www.instagram.com/freetourcph" target="_blank" rel="noopener noreferrer">
+          <a
+            className="flex mt-2 text-sm"
+            href="https://www.instagram.com/freetourcph"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Icon icon="icon-park-twotone:instagram" className="w-6 h-6 mr-2 text-red-800" />
             <span>@freetourcph</span>
           </a>
-          <a className=" flex mt-2 text-sm" href="https://www.facebook.com/freetourcph" target="_blank" rel="noopener noreferrer">
+          <a
+            className="flex mt-2 text-sm"
+            href="https://www.facebook.com/freetourcph"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Icon icon="icon-park-twotone:facebook" className="w-6 h-6 mr-2 text-red-800" />
             <span>@freetourcph</span>
           </a>
@@ -80,10 +79,10 @@ function Footer() {
       </div>
 
       <div className="mt-12 overflow-hidden">
-      <img
+        <img
           src={FooterImg}
           className="w-full object-cover object-center h-36"
-          alt="Footer"
+          alt={t('footer.image_alt')}
         />
       </div>
     </footer>

@@ -2,13 +2,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Icon } from '@iconify/react';
+import { useTranslation } from 'react-i18next';
 import Logo from '../assets/Logo.png';
 
 export default function Header() {
   const navigate = useNavigate();
+  const { t, i18n } = useTranslation();
 
-  // 1. Estado para el idioma
-  const [language, setLanguage] = useState('es'); 
+  const [language, setLanguage] = useState(i18n.language || 'es');
   const languageIcons = {
     en: 'twemoji:flag-united-kingdom',
     es: 'twemoji:flag-spain',
@@ -32,6 +33,12 @@ export default function Header() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  const changeLanguage = (lang) => {
+    setLanguage(lang);
+    i18n.changeLanguage(lang);
+    setIsLanguageOpen(false);
+  };
+
   return (
     <nav className="Navbar fixed z-100 bg-white rounded-2xl flex justify-between items-center left-0 right-0 mx-auto w-[calc(100%-1rem)] max-w-[calc(100%-1.5rem)] mt-4 p-4 backdrop-blur-sm shadow-lg transition-shadow duration-300">
       <div className="NavbarLogo flex items-center">
@@ -42,16 +49,15 @@ export default function Header() {
 
       {/* Navegación principal */}
       <div className="hidden md:flex gap-2">
-        <Link to="/" className="text-blue-950 hover:bg-gray-100 py-2 px-4 rounded-full">Inicio</Link>
-        <Link to="/Tour01" className="text-blue-950 hover:bg-gray-100 py-2 px-4 rounded-full">Walking Tour</Link>
-        <Link to="/Tour02" className="text-blue-950 hover:bg-gray-100 py-2 px-4 rounded-full">Paseo en Bote</Link>
+        <Link to="/" className="text-blue-950 hover:bg-gray-100 py-2 px-4 rounded-full">{t('header.home')}</Link>
+        <Link to="/Tour01" className="text-blue-950 hover:bg-gray-100 py-2 px-4 rounded-full">{t('header.tour01')}</Link>
+        <Link to="/Tour02" className="text-blue-950 hover:bg-gray-100 py-2 px-4 rounded-full">{t('header.tour02')}</Link>
       </div>
 
       {/* Menú móvil e idioma */}
       <div className="flex gap-4 items-center">
         {/* Selector de idioma */}
         <div className="relative" ref={languageRef}>
-          {/* 2. Mostrar según el estado `language` */}
           <button onClick={() => setIsLanguageOpen(!isLanguageOpen)} className="p-2 rounded-full hover:bg-gray-100 hover:cursor-pointer">
             <Icon icon={languageIcons[language]} className="w-6 h-6" />
           </button>
@@ -60,11 +66,7 @@ export default function Header() {
               {['en', 'es'].map((lang) => (
                 <li key={lang}>
                   <button
-                    onClick={() => {
-                      setLanguage(lang);         // 3. Actualizar el estado
-                      /* i18n.changeLanguage(lang) */
-                      setIsLanguageOpen(false);
-                    }}
+                    onClick={() => changeLanguage(lang)}
                     className="flex items-center gap-2 w-full px-4 py-2 hover:bg-gray-100 hover:cursor-pointer rounded-2xl"
                   >
                     <Icon icon={languageIcons[lang]} className="w-5 h-5" />
@@ -93,7 +95,7 @@ export default function Header() {
                   onClick={() => setIsMenuOpen(false)}
                   className="block px-4 py-2 hover:text-red-800 rounded-2xl"
                 >
-                  Inicio
+                  {t('header.home')}
                 </Link>
               </li>
               <li>
@@ -102,7 +104,7 @@ export default function Header() {
                   onClick={() => setIsMenuOpen(false)}
                   className="block px-4 py-2 hover:text-red-800 rounded-2xl"
                 >
-                  Walking Tour
+                  {t('header.tour01')}
                 </Link>
               </li>
               <li>
@@ -111,7 +113,7 @@ export default function Header() {
                   onClick={() => setIsMenuOpen(false)}
                   className="block px-4 py-2 hover:text-red-800 rounded-2xl"
                 >
-                  Paseo en Bote
+                  {t('header.tour02')}
                 </Link>
               </li>
             </ul>

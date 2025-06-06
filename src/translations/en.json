@@ -17,6 +17,11 @@
     "success": "Booking for \"{{tour}}\" sent successfully. Thank you!",
     "error": "Error sending your booking. Please try again."
   },
+  "header": {
+    "home": "Home",
+    "tour01": "Walking Tour",
+    "tour02": "Boat Tour"
+  },
   "footer": {
     "about_title": "About Free Tour Cph",
     "about_text": "Discover Copenhagen with the city's best guides. Personalized tours, exclusive routes, and unique experiences for every traveler.",
@@ -30,5 +35,103 @@
     "contact_phone": "+45 71 61 79 70",
     "copied": "Copied",
     "image_alt": "Footer image"
+  },
+  "reviews": {
+    "title": "Reviews",
+    "loading": "Loading reviews...",
+    "loading_error": "Error loading reviews.",
+    "no_reviews": "There are no reviews yet.",
+    "prev": "Previous",
+    "next": "Next",
+    "sent_success": "Review sent successfully. Thank you!",
+    "sent_error": "Error sending your review. Please try again.",
+    "form_title": "Leave Your Review",
+    "rating": "Rating",
+    "set_rating": "Set rating to {{count}} stars",
+    "name_label": "Name",
+    "name_placeholder": "Your name",
+    "country_label": "Country",
+    "country_placeholder": "Your country",
+    "tour_group": "Group type",
+    "comment_label": "Comment",
+    "comment_placeholder": "Write your comment",
+    "send_button": "Submit review",
+    "sending": "Sending...",
+    "single": "Single",
+    "couple": "Couple",
+    "group": "Group"
+  },
+  "tourDetails": {
+    "details": "Details",
+    "duration": "Duration",
+    "includes": "What is Included",
+    "tips": "Tips",
+    "accessibility": "Accessibility",
+    "warnings": "Warnings",
+    "price": "Price",
+    "meeting_point": "Meeting Point",
+    "view_on_map": "View on Google Maps",
+    "contact_us": "Contact Us",
+    "email": "Email",
+    "phone": "Phone"
+  },
+  "home": {
+    "title": "Free Tours Copenhagen - Free Walking Tours and Guided Visits",
+    "subtitle": "Explore Copenhagen like a local. Walking tours and boat rides in Spanish and English. Small groups, real stories, passionate guides. Book now and discover the city with soul!",
+    "slides": [
+      {
+        "title": "Grand Tour of Copenhagen",
+        "description": "Discover Copenhagen's hidden gems on our guided tour.",
+        "buttonText": "Learn more"
+      },
+      {
+        "title": "Boat Ride + Walking Tour",
+        "description": "Sail through the city's canals in an exclusive tour.",
+        "buttonText": "Learn more"
+      }
+    ],
+    "about": {
+      "title": "Who are we?",
+      "paragraph1": "Welcome to FREE TOUR CPH! We are a young and passionate agency, specialized in offering free walking tours in Copenhagen in Spanish and English. Our goal is to show you the best of the most charming city in Northern Europe through a close, authentic, and fun experience.",
+      "paragraph2": "Our team is made up of guides who love what they do: walking, sharing stories, and connecting with people from around the world. We love walking through the historic center, sailing the canals like the old merchants, and revealing fun facts you won't find in typical guidebooks.",
+      "paragraph3": "If you're looking for a Spanish or English tour in Copenhagen with anecdotes, must-see spots, and hidden corners — you're in the right place. Join us and discover the best of the Danish capital!"
+    }
+  },
+  "notFound": {
+    "title": "Page not found",
+    "message": "Sorry, the page you are looking for does not exist or has been moved.",
+    "backHome": "Back to home"
+  },
+  "tour01": {
+    "title": "Grand Tour of Copenhagen",
+    "description": [
+      "Join our Free Walking Tour and explore the best of Copenhagen with an experienced and passionate guide!",
+      "We’ll discover monuments, palaces, and hidden corners full of history, walking its streets like locals.",
+      "From the charming Nyhavn harbor and the famous Little Mermaid, to Amalienborg Palace and the vibrant Strøget street, we’ll show you the city like a true local.",
+      "Learn about the Vikings, the Danish monarchy, Scandinavian lifestyle, and the secrets that make Copenhagen one of the happiest capitals in the world."
+    ],
+    "details": {
+      "duration": "2 hours / 2.5 hours",
+      "tips": ["Bring water", "Bring a raincoat or umbrella"],
+      "warnings": ["Tours operate in the rain. We only cancel in case of severe storms."],
+      "price": "Tip-based.",
+      "meetingPoint": "City Hall (Rådhuspladsen)"
+    }
+  },
+  "tour02": {
+    "title": "Boat Ride + Walking Tour",
+    "description": [
+      "This tour offers an intimate and exclusive experience, limited to only 7 people so you can enjoy every detail to the fullest.",
+      "We'll start by exploring the city's most iconic spots, discovering its everyday life and rich history.",
+      "Then, we'll hop on a boat to navigate through the charming canals and modern neighborhoods surrounded by water, giving you a relaxed and magical perspective that only a small group can enjoy."
+    ],
+    "details": {
+      "duration": "Approximately 2 hours",
+      "includes": ["Professional local guide", "Private boat ride"],
+      "tips": ["Bring snacks and/or drinks", "Bring a raincoat"],
+      "warnings": ["Tours operate in the rain. We only cancel in case of severe storms."],
+      "price": "€120 / 1000 DKK per boat (max. 7 people). Cash (DKK/EUR) or bank transfer.",
+      "meetingPoint": "City Hall (Rådhuspladsen)"
+    }
   }
 }

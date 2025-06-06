@@ -17,6 +17,11 @@
     "success": "Reserva para \"{{tour}}\" enviada correctamente. ¡Gracias!",
     "error": "Error al enviar tu reserva. Intenta de nuevo."
   },
+    "header": {
+    "home": "Inicio",
+    "tour01": "Walking Tour",
+    "tour02": "Paseo en Bote"
+  },
   "footer": {
     "about_title": "Sobre Free Tour Cph",
     "about_text": "Descubre Copenhague con los mejores guías de la ciudad. Tours personalizados, rutas exclusivas y experiencias únicas para todos los viajeros.",
@@ -30,5 +35,103 @@
     "contact_phone": "+45 71 61 79 70",
     "copied": "Copiado",
     "image_alt": "Imagen de pie de página"
+  },
+    "reviews": {
+      "title": "Reseñas",
+      "loading": "Cargando reseñas...",
+      "loading_error": "Error al cargar las reseñas.",
+      "no_reviews": "Aún no hay reseñas.",
+      "prev": "Anterior",
+      "next": "Siguiente",
+      "sent_success": "Reseña enviada correctamente. ¡Gracias!",
+      "sent_error": "Error al enviar tu reseña. Intenta de nuevo.",
+      "form_title": "Deja tu reseña",
+      "rating": "Calificación",
+      "set_rating": "Darme {{count}} estrellas",
+      "name_label": "Nombre",
+      "name_placeholder": "Tu nombre",
+      "country_label": "País",
+      "country_placeholder": "Tu país",
+      "tour_group": "Tipo de grupo",
+      "comment_label": "Comentario",
+      "comment_placeholder": "Escribe tu comentario",
+      "send_button": "Enviar reseña",
+      "sending": "Enviando...",
+      "single": "Solo",
+      "couple": "Pareja",
+      "group": "Grupo"
+  },
+    "tourDetails": {
+    "details": "Detalles",
+    "duration": "Duración",
+    "includes": "Qué incluye",
+    "tips": "Consejos",
+    "accessibility": "Accesibilidad",
+    "warnings": "Advertencias",
+    "price": "Precio",
+    "meeting_point": "Punto de encuentro",
+    "view_on_map": "Ver en Google Maps",
+    "contact_us": "Contáctanos",
+    "email": "Email",
+    "phone": "Teléfono"
+  },
+  "home": {
+    "title": "Free Tours Copenhague – Tours Gratuitos y Visitas Guiadas",
+    "subtitle": "Conocé Copenhague como un local. Walking tours y paseos en barco en español e inglés. Grupos pequeños, historias reales, guías apasionados. ¡Reservá ahora y descubrí la ciudad con alma!",
+    "slides": [
+      {
+        "title": "Gran Tour de Copenhague",
+        "description": "Descubre los rincones secretos de Copenhague en nuestro tour guiado.",
+        "buttonText": "Conocer más"
+      },
+      {
+        "title": "Paseo en Bote + Walking Tour",
+        "description": "Navega los canales de la ciudad en un tour exclusivo.",
+        "buttonText": "Conocer más"
+      }
+    ],
+    "about": {
+      "title": "¿Quiénes somos?",
+      "paragraph1": "¡Bienvenido a FREE TOUR CPH! Somos una agencia joven y apasionada, especializada en ofrecer free walking tours en Copenhague en español e inglés. Nuestro objetivo es mostrarte lo mejor de la ciudad más encantadora del norte de Europa a través de una experiencia cercana, auténtica y divertida.",
+      "paragraph2": "Nuestro equipo está formado por guías que aman lo que hacen: caminar, compartir historias y conectar con personas de todo el mundo. Nos encanta recorrer a pie el centro histórico, navegar los canales como los antiguos comerciantes y revelar datos curiosos que no vas a encontrar en las guías tradicionales.",
+      "paragraph3": "Si estás buscando un tour en español o inglés por Copenhague con anécdotas, lugares imperdibles y rincones ocultos, estás en el lugar correcto. ¡Te esperamos para descubrir juntos lo mejor de la capital danesa!"
+    }
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "message": "Lo sentimos, la página que buscas no existe o ha sido movida.",
+    "backHome": "Volver al inicio"
+  },
+  "tour01": {
+    "title": "Gran tour de Copenhague",
+    "description": [
+      "¡Sumate a nuestro Free Walking Tour y explorá lo mejor de Copenhague con un guía experimentado y apasionado!",
+      "Descubriremos monumentos, palacios y rincones llenos de historia, caminando por sus calles como si fuéramos locales.",
+      "Desde el encantador puerto de Nyhavn y la famosa Sirenita, hasta el Palacio de Amalienborg y la vibrante calle Strøget, te llevamos a conocer la ciudad como un verdadero local.",
+      "Aprendé sobre los vikingos, la monarquía danesa, el estilo de vida escandinavo y los secretos que hacen de Copenhague una de las capitales más felices del mundo."
+    ],
+    "details": {
+      "duration": "2 horas / 2.5 horas",
+      "tips": ["Traer bebida", "Traer piloto de lluvia o paraguas"],
+      "warnings": ["En caso de lluvia realizamos el tour normalmente. Solo cancelamos por tormentas fuertes."],
+      "price": "Basado en propinas.",
+      "meetingPoint": "Ayuntamiento (Rådhuspladsen)"
+    }
+  },
+  "tour02": {
+    "title": "Paseo en Bote + Walking Tour",
+    "description": [
+      "En este recorrido vivirás una experiencia íntima y exclusiva, limitada hasta solo 7 personas, para que disfrutes al máximo de cada detalle.",
+      "Primero exploraremos los puntos más representativos de la ciudad, descubriendo su vida cotidiana e historia.",
+      "Después, subiremos a un bote para navegar por los encantadores canales y barrios modernos rodeados de agua, ofreciendo una perspectiva relajada y mágica que solo un grupo pequeño puede disfrutar."
+    ],
+    "details": {
+      "duration": "2 horas aproximadamente",
+      "includes": ["Guía local profesional", "Paseo en bote privado"],
+      "tips": ["Llevar snacks y/o bebida", "Llevar piloto de lluvia"],
+      "warnings": ["En caso de lluvia realizamos el tour normalmente. Solo cancelamos por tormentas fuertes."],
+      "price": "120 € / 1000 DKK por bote (máx. 7 personas). Efectivo (DKK/EUR) o transferencia bancaria.",
+      "meetingPoint": "Ayuntamiento (Rådhuspladsen)"
+    }
   }
 }

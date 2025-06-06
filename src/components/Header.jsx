@@ -40,10 +40,10 @@ export default function Header() {
   };
 
   return (
-    <nav className="Navbar fixed z-100 bg-white rounded-2xl flex justify-between items-center left-0 right-0 mx-auto w-[calc(100%-1rem)] max-w-[calc(100%-1.5rem)] mt-4 p-4 backdrop-blur-sm shadow-lg transition-shadow duration-300">
+    <nav className="Navbar fixed z-100 bg-white rounded-2xl flex justify-between items-center left-0 right-0 mx-auto w-[calc(100%-1rem)] max-w-[calc(100%-1.5rem)] mt-4 py-2 px-4 backdrop-blur-sm shadow-lg transition-shadow duration-300">
       <div className="NavbarLogo flex items-center">
         <Link to="/">
-          <img src={Logo} className="h-10" alt="Logo" />
+          <img src={Logo} className="h-14" alt="Logo" />
         </Link>
       </div>
 

@@ -2,6 +2,11 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import emailjs from '@emailjs/browser';
+import {
+  SERVICE_ID,
+  PUBLIC_KEY,
+  TEMPLATE_ID_BOOKING
+} from '../config/email';
 
 const languages = [
   { code: 'es', label: 'Español' },
@@ -25,14 +30,10 @@ function isSunday(dateStr) {
   return d.getDay() === 0;
 }
 
-/**
- * @param {Object} props
- * @param {string} props.tourName
- * @param {number} [props.maxParticipants]
- */
+emailjs.init(PUBLIC_KEY);
+
 export default function BookingCalendar({ tourName, maxParticipants = 30 }) {
   const { t } = useTranslation();
-
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
   const [participants, setParticipants] = useState('');
@@ -41,7 +42,7 @@ export default function BookingCalendar({ tourName, maxParticipants = 30 }) {
   const [mail, setMail] = useState('');
   const [sending, setSending] = useState(false);
 
-  const minSelectableDate = getTodayPlusDays(3); // bloquea hoy y próximos 2 días
+  const minSelectableDate = getTodayPlusDays(3);
 
   const handleDateChange = (e) => {
     const selected = e.target.value;
@@ -55,7 +56,6 @@ export default function BookingCalendar({ tourName, maxParticipants = 30 }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     const languageLabel = languages.find((l) => l.code === language)?.label || '';
-
     const templateParams = {
       tour_name: tourName,
       tour_date: date,
@@ -68,7 +68,7 @@ export default function BookingCalendar({ tourName, maxParticipants = 30 }) {
 
     setSending(true);
     emailjs
-      .send('service_r9951ua', 'template_cmubhxk', templateParams, 'pahGhN_NUndIlVHnB')
+      .send(SERVICE_ID, TEMPLATE_ID_BOOKING, templateParams, PUBLIC_KEY)
       .then(() => {
         alert(t('booking.success', { tour: tourName }));
         setDate('');
@@ -83,7 +83,7 @@ export default function BookingCalendar({ tourName, maxParticipants = 30 }) {
         alert(t('booking.error'));
       })
       .finally(() => setSending(false));
-  };
+};
 
   return (
     <form

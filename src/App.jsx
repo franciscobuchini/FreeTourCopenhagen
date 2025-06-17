@@ -3,8 +3,8 @@ import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import { useEffect } from 'react';
 import emailjs from '@emailjs/browser';
-emailjs.init(process.env.REACT_APP_EMAILJS_USER_ID);
 
 // páginas
 import Home from './pages/Home';
@@ -15,7 +15,13 @@ import NotFound from './pages/NotFound';
 // Importar y ejecutar la configuración de i18n
 import './i18n';
 
+
 export default function App() {
+  
+ useEffect(() => {
+    emailjs.init(import.meta.env.VITE_EMAILJS_USER_ID);
+  }, []);
+  
   return (
     // Suspense: muestra fallback mientras se carga la traducción inicial
     <Suspense fallback={<div className="h-screen flex items-center justify-center">Loading…</div>}>

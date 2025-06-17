@@ -1,23 +1,29 @@
+// src/components/Reviews.jsx
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 import Papa from 'papaparse';
 import { useTranslation } from 'react-i18next';
+import {
+  SERVICE_ID,
+  PUBLIC_KEY,
+  TEMPLATE_ID_REVIEW
+} from '../config/email';
 
 const SHEET_CSV_URL =
   'https://docs.google.com/spreadsheets/d/e/2PACX-1vRN0BGSsWf09JTisfIPOGPniK2BSkR__17oZM_RuJa4mtbcWsHQeCMTS7vIjrfJjjpZG0TLroojotkg/pub?gid=0&single=true&output=csv';
+
+emailjs.init(PUBLIC_KEY);
 
 export default function Reviews() {
   const { t } = useTranslation();
   const location = useLocation();
   const match = location.pathname.match(/\/(Tour\d+)/i);
-  // tourCode será "Tour01" o "Tour02"
   const tourCode = match ? match[1] : 'Tour00';
 
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
   const [formData, setFormData] = useState({
     name: '',
     country: '',
@@ -29,18 +35,19 @@ export default function Reviews() {
 
   useEffect(() => {
     fetch(SHEET_CSV_URL)
-      .then((res) => {
-        if (!res.ok) throw new Error('Network response was not ok');
-        return res.text();
-      })
+      .then((res) => res.ok ? res.text() : Promise.reject('Network error'))
       .then((csvText) => {
         Papa.parse(csvText, {
           header: true,
           skipEmptyLines: true,
           transformHeader: (h) => h.trim().toLowerCase(),
           complete: ({ data }) => {
-            // Ahora comparamos directamente item.tour === tourCode
-            const filtered = data.filter((item) => item.tour === tourCode);
+            const filtered = data
+              .filter((item) => item.tour === tourCode)
+              .map((item, idx) => ({
+                ...item,
+                id: item.id || `${tourCode}-${idx}-${item.date}-${item.name}`,
+              }));
             setReviews(filtered);
             setLoading(false);
           },
@@ -64,33 +71,18 @@ export default function Reviews() {
     if (!name.trim() || !country.trim() || !comment.trim()) return;
 
     const today = new Date().toISOString().slice(0, 10);
-    const newReview = {
-      id: `${Date.now()}`,
-      name: name.trim(),
-      country: country.trim(),
-      group,
-      date: today,
-      rating,
-      text: comment.trim(),
-      tour: tourCode, // "Tour01" o "Tour02"
-    };
-
+    const newReview = { id: `${Date.now()}`, name: name.trim(), country: country.trim(), group, date: today, rating, text: comment.trim(), tour: tourCode };
     setSending(true);
     try {
-      await emailjs.send(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID,
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-        {
-          reviewer_name: newReview.name,
-          reviewer_country: newReview.country,
-          reviewer_group: newReview.group,
-          review_date: newReview.date,
-          review_rating: newReview.rating,
-          review_text: newReview.text,
-          tour: newReview.tour,
-        },
-        process.env.REACT_APP_EMAILJS_USER_ID
-      );
+      await emailjs.send(SERVICE_ID, TEMPLATE_ID_REVIEW, {
+        reviewer_name: newReview.name,
+        reviewer_country: newReview.country,
+        reviewer_group: newReview.group,
+        review_date: newReview.date,
+        review_rating: newReview.rating,
+        review_text: newReview.text,
+        tour: newReview.tour,
+      }, PUBLIC_KEY);
       setReviews((prev) => [newReview, ...prev]);
       setFormData({ name: '', country: '', group: 'Single', comment: '', rating: 5 });
       alert(t('reviews.sent_success'));
@@ -115,10 +107,7 @@ export default function Reviews() {
       ) : (
         <div className="grid grid-cols-1 gap-4">
           {reviews.map((r) => (
-            <div
-              key={r.id}
-              className="review-card p-4 bg-white rounded-2xl border border-gray-200"
-            >
+            <div key={r.id} className="review-card p-4 bg-white rounded-2xl border border-gray-200">
               <div className="flex justify-between mb-1">
                 <div>
                   <strong>{r.name}</strong>, {r.country}
@@ -143,14 +132,10 @@ export default function Reviews() {
               </div>
               <div className="mb-2" aria-label={`Calificación: ${r.rating} de 5`}>
                 {Array.from({ length: Number(r.rating) }).map((_, j) => (
-                  <span key={`full-${j}`} className="text-yellow-500" aria-hidden="true">
-                    ★
-                  </span>
+                  <span key={`full-${j}`} aria-hidden="true">★</span>
                 ))}
                 {Array.from({ length: 5 - Number(r.rating) }).map((_, j) => (
-                  <span key={`empty-${j}`} className="text-gray-300" aria-hidden="true">
-                    ★
-                  </span>
+                  <span key={`empty-${j}`} aria-hidden="true">☆</span>
                 ))}
               </div>
               <p>{r.text}</p>
@@ -161,7 +146,6 @@ export default function Reviews() {
 
       <form onSubmit={handleSubmit} className="space-y-4 pt-4 border-t border-gray-200">
         <h4 className="text-lg font-medium text-red-800">{t('reviews.form_title')}</h4>
-
         <div className="flex items-center space-x-2" role="radiogroup" aria-label={t('reviews.rating')}>
           {Array.from({ length: 5 }).map((_, i) => (
             <button
@@ -172,11 +156,7 @@ export default function Reviews() {
               onClick={() => setFormData((prev) => ({ ...prev, rating: i + 1 }))}
               className="focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
-              <span
-                className={
-                  formData.rating >= i + 1 ? 'text-yellow-500 text-2xl' : 'text-gray-300 text-2xl'
-                }
-              >
+              <span className={formData.rating >= i + 1 ? 'text-yellow-500 text-2xl' : 'text-gray-300 text-2xl'}>
                 ★
               </span>
             </button>
@@ -242,12 +222,7 @@ export default function Reviews() {
 
         <button
           type="submit"
-          disabled={
-            !formData.comment.trim() ||
-            !formData.country.trim() ||
-            !formData.name.trim() ||
-            sending
-          }
+          disabled={!formData.comment.trim() || !formData.country.trim() || !formData.name.trim() || sending}
           className="w-full bg-blue-700 text-white py-2 rounded-2xl transition disabled:opacity-50"
         >
           {sending ? t('reviews.sending') : t('reviews.send_button')}

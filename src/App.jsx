@@ -3,6 +3,8 @@ import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import emailjs from '@emailjs/browser';
+emailjs.init(process.env.REACT_APP_EMAILJS_USER_ID);
 
 // páginas
 import Home from './pages/Home';

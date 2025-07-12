@@ -29,7 +29,7 @@
     "link_home": "Home",
     "link_walking_tour": "Free walking tour",
     "link_boat_tour": "Boat tour",
-    "link_winter_tour": "Winter tour",
+    "link_special_tour": "Specials tours",
     "contact_title": "Contact",
     "contact_email_address": "info@freetourcph.com",
     "contact_phone": "+45 71 61 79 70",
@@ -133,5 +133,10 @@
       "price": "€120 / 1000 DKK per boat (max. 7 people). Cash (DKK/EUR) or bank transfer.",
       "meetingPoint": "City Hall (Rådhuspladsen)"
     }
+  },
+  "special": {
+    "title": "Special and Winter Tours",
+    "description": "We organize private, themed or off-season tours.",
+    "contact_prompt": "For more info or availability, contact us at:"
   }
 }

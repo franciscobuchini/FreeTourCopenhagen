@@ -29,7 +29,7 @@
     "link_home": "Inicio",
     "link_walking_tour": "Free walking tour",
     "link_boat_tour": "Tour en bote",
-    "link_winter_tour": "Tour de invierno",
+    "link_special_tour": "Tours especiales",
     "contact_title": "Contacto",
     "contact_email_address": "info@freetourcph.com",
     "contact_phone": "+45 71 61 79 70",
@@ -133,5 +133,10 @@
       "price": "120 € / 1000 DKK por bote (máx. 7 personas). Efectivo (DKK/EUR) o transferencia bancaria.",
       "meetingPoint": "Ayuntamiento (Rådhuspladsen)"
     }
+  },
+  "special": {
+    "title": "Tours especiales y de invierno",
+    "description": "Organizamos tours privados, temáticos o fuera de temporada.",
+    "contact_prompt": "Para más información o para consultar disponibilidad, escribinos a:"
   }
 }

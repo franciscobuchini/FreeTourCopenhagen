@@ -83,7 +83,7 @@ export default function BookingCalendar({ tourName, maxParticipants = 30 }) {
         alert(t('booking.error'));
       })
       .finally(() => setSending(false));
-};
+  };
 
   return (
     <form

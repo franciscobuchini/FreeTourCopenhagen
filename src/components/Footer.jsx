@@ -59,7 +59,7 @@ function Footer() {
           </div>
           <a
             className="flex mt-2 text-sm"
-            href="https://www.instagram.com/freetourcph"
+            href="https://www.instagram.com/free.tourcph"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -68,7 +68,7 @@ function Footer() {
           </a>
           <a
             className="flex mt-2 text-sm"
-            href="https://www.facebook.com/freetourcph"
+            href="https://www.facebook.com/profile.php?id=61578180240831&rdid=RQjha5at7dVD4Uip&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18yGpzwhQD%2F#"
             target="_blank"
             rel="noopener noreferrer"
           >

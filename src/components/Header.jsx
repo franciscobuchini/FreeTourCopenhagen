@@ -120,14 +120,14 @@ export default function Header() {
               </li>
               <li>
                 <Link
-                  to="/Tour01"
+                  to="/Tour03"
                   onClick={() => setIsMenuOpen(false)}
                   className="block px-4 py-2 hover:text-red-800 rounded-2xl"
                 >
                   {t('header.tour03')}
                 </Link>
                                 <Link
-                  to="/Tour01"
+                  to="/Tour04"
                   onClick={() => setIsMenuOpen(false)}
                   className="block px-4 py-2 hover:text-red-800 rounded-2xl"
                 >

@@ -95,7 +95,7 @@ export default function Reviews() {
   };
 
   return (
-    <div className="bg-white border border-gray-300 rounded-2xl shadow p-6 space-y-6 hover:shadow-lg flex flex-col gap-1">
+    <div className="bg-white border border-gray-300 rounded-2xl p-6 space-y-6 hover:shadow-lg flex flex-col gap-1">
       <h3 className="text-xl font-semibold text-red-800">{t('reviews.title')}</h3>
 
       {loading ? (

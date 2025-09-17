@@ -1,13 +1,23 @@
 // Tour03.jsx / Tour de invierno o tours especiales
+import { useState } from "react"
 import { Icon } from "@iconify/react"
 import { useTranslation } from "react-i18next"
 
 const Tour03 = () => {
   const { t } = useTranslation()
+  const [copied, setCopied] = useState(false)
 
-  // número en formato internacional sin "+"
+  const email = "info@freetourcph.com"
   const whatsappNumber = "4571617970"
   const whatsappLink = `https://wa.me/${whatsappNumber}`
+
+  const handleCopy = (e) => {
+    e.preventDefault()
+    navigator.clipboard.writeText(email).then(() => {
+      setCopied(true)
+      setTimeout(() => setCopied(false), 1500)
+    })
+  }
 
   return (
     <>
@@ -31,14 +41,23 @@ const Tour03 = () => {
         </p>
 
         <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="mailto:info@freetourcph.com"
-            className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-2xl shadow w-64"
-          >
-            <Icon icon="mdi:email-outline" className="text-2xl" />
-            Email
-          </a>
+          {/* Botón copiar email */}
+          <div className="relative">
+            <button
+              onClick={handleCopy}
+              className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-2xl shadow w-64"
+            >
+              <Icon icon="mdi:email-outline" className="text-2xl" />
+              {email}
+            </button>
+            {copied && (
+              <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-black text-white text-sm px-3 py-1 rounded-lg shadow">
+                Copied
+              </span>
+            )}
+          </div>
 
+          {/* Botón WhatsApp */}
           <a
             href={whatsappLink}
             target="_blank"

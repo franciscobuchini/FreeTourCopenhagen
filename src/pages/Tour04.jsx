@@ -1,13 +1,23 @@
 // Tour04.jsx / Pub Crawl
-import { Icon } from "@iconify/react";
-import { useTranslation } from "react-i18next";
+import { useState } from "react"
+import { Icon } from "@iconify/react"
+import { useTranslation } from "react-i18next"
 
 const Tour04 = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
+  const [copied, setCopied] = useState(false)
 
-  // número en formato internacional sin "+"
-  const whatsappNumber = "4571617970";
-  const whatsappLink = `https://wa.me/${whatsappNumber}`;
+  const email = "info@freetourcph.com"
+  const whatsappNumber = "4571617970"
+  const whatsappLink = `https://wa.me/${whatsappNumber}`
+
+  const handleCopy = (e) => {
+    e.preventDefault()
+    navigator.clipboard.writeText(email).then(() => {
+      setCopied(true)
+      setTimeout(() => setCopied(false), 1500)
+    })
+  }
 
   return (
     <>
@@ -29,30 +39,38 @@ const Tour04 = () => {
           <br />
           {t("special.contact_prompt")}
         </p>
-        <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
-        <a
-            href="mailto:info@freetourcph.com"
-            className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-2xl shadow w-64"
-        >
-            <Icon icon="mdi:email-outline" className="text-2xl" />
-            Email
-        </a>
 
-        <a
+        <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
+          {/* Botón copiar email */}
+          <div className="relative">
+            <button
+              onClick={handleCopy}
+              className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-2xl shadow w-64"
+            >
+              <Icon icon="mdi:email-outline" className="text-2xl" />
+              {email}
+            </button>
+            {copied && (
+              <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-black text-white text-sm px-3 py-1 rounded-lg shadow">
+                Copied
+              </span>
+            )}
+          </div>
+
+          {/* Botón WhatsApp */}
+          <a
             href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-2xl shadow w-64"
-        >
+          >
             <Icon icon="mdi:whatsapp" className="text-2xl" />
             WhatsApp
-        </a>
+          </a>
         </div>
-
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Tour04;
-
+export default Tour04

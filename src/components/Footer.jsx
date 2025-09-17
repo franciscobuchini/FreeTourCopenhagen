@@ -33,6 +33,7 @@ function Footer() {
             <li><a href="/Tour01" className="hover:text-red-800">{t('footer.link_walking_tour')}</a></li>
             <li><a href="/Tour02" className="hover:text-red-800">{t('footer.link_boat_tour')}</a></li>
             <li><a href="/Tour03" className="hover:text-red-800">{t('footer.link_special_tour')}</a></li>
+            <li><a href="/Tour04" className="hover:text-red-800">{t('footer.link_pub_crawl')}</a></li>
           </ul>
         </div>
         {/* Contacto */}

@@ -52,6 +52,8 @@ export default function Header() {
         <Link to="/" className="text-blue-950 hover:bg-gray-100 py-2 px-4 rounded-full">{t('header.home')}</Link>
         <Link to="/Tour01" className="text-blue-950 hover:bg-gray-100 py-2 px-4 rounded-full">{t('header.tour01')}</Link>
         <Link to="/Tour02" className="text-blue-950 hover:bg-gray-100 py-2 px-4 rounded-full">{t('header.tour02')}</Link>
+        <Link to="/Tour03" className="text-blue-950 hover:bg-gray-100 py-2 px-4 rounded-full">{t('header.tour03')}</Link>
+        <Link to="/Tour04" className="text-blue-950 hover:bg-gray-100 py-2 px-4 rounded-full">{t('header.tour04')}</Link>
       </div>
 
       {/* Menú móvil e idioma */}
@@ -114,6 +116,22 @@ export default function Header() {
                   className="block px-4 py-2 hover:text-red-800 rounded-2xl"
                 >
                   {t('header.tour02')}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/Tour01"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block px-4 py-2 hover:text-red-800 rounded-2xl"
+                >
+                  {t('header.tour03')}
+                </Link>
+                                <Link
+                  to="/Tour01"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block px-4 py-2 hover:text-red-800 rounded-2xl"
+                >
+                  {t('header.tour04')}
                 </Link>
               </li>
             </ul>

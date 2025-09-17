@@ -20,7 +20,9 @@
     "header": {
     "home": "Inicio",
     "tour01": "Walking Tour",
-    "tour02": "Paseo en Bote"
+    "tour02": "Paseo en Bote",
+    "tour03": "Tours Especiales",
+    "tour04": "Pub Crawl"
   },
   "footer": {
     "about_title": "Sobre Free Tour Cph",
@@ -30,6 +32,7 @@
     "link_walking_tour": "Free walking tour",
     "link_boat_tour": "Tour en bote",
     "link_special_tour": "Tours especiales",
+    "link_pub_crawl": "Pub Crawl",
     "contact_title": "Contacto",
     "contact_email_address": "info@freetourcph.com",
     "contact_phone": "+45 71 61 79 70",
@@ -138,5 +141,9 @@
     "title": "Tours especiales y de invierno",
     "description": "Organizamos tours privados, temáticos o fuera de temporada.",
     "contact_prompt": "Para más información o para consultar disponibilidad, escribinos a:"
+  },
+  "pubcrawl": {
+    "title": "Pub Crawl Copenhague",
+    "description": "¡Experimenta la vibrante vida nocturna de Copenhague con nuestro Pub Crawl! Únete a nosotros para una noche inolvidable mientras exploramos algunos de los mejores bares y pubs de la ciudad, conocemos gente nueva y disfrutamos de excelentes bebidas en un ambiente divertido y animado. Ya seas local o visitante, nuestro Pub Crawl es la manera perfecta de descubrir la escena nocturna de Copenhague. ¡Reserva tu lugar ahora y prepárate para una noche épica!"
   }
 }

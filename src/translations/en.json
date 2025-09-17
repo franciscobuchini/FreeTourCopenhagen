@@ -20,7 +20,9 @@
   "header": {
     "home": "Home",
     "tour01": "Walking Tour",
-    "tour02": "Boat Tour"
+    "tour02": "Boat Tour",
+    "tour03": "Special Tours",
+    "tour04": "Pub Crawl"
   },
   "footer": {
     "about_title": "About Free Tour Cph",
@@ -30,6 +32,7 @@
     "link_walking_tour": "Free walking tour",
     "link_boat_tour": "Boat tour",
     "link_special_tour": "Specials tours",
+    "link_pub_crawl": "Pub Crawl",
     "contact_title": "Contact",
     "contact_email_address": "info@freetourcph.com",
     "contact_phone": "+45 71 61 79 70",
@@ -138,5 +141,11 @@
     "title": "Special and Winter Tours",
     "description": "We organize private, themed or off-season tours.",
     "contact_prompt": "For more info or availability, contact us at:"
+  },
+
+  "pubcrawl": {
+    "title": "Pub Crawl Copenhagen",
+    "description": "Experience the vibrant nightlife of Copenhagen with our Pub Crawl! Join us for an unforgettable evening as we explore some of the city's best bars and pubs, meet new people, and enjoy great drinks in a fun and lively atmosphere. Whether you're a local or a visitor, our Pub Crawl is the perfect way to discover Copenhagen's nightlife scene. Book your spot now and get ready for an epic night out!"
   }
+  
 }

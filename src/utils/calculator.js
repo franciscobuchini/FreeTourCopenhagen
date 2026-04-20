@@ -6,8 +6,6 @@ export const TOUR_DEFAULTS = {
   'Walking Tour':           { hours: 3,   venues: [], transport: 'Bus + Caminata', sights: 'La Sirenita, Kastellet, Gefion Fountain, Amalienborg, Nyhavn, Regreso al puerto', busHours: 3 },
   'Panoramic Tour':         { hours: 3.5, venues: [], transport: 'Bus', sights: 'Vistas panorámicas principales' },
   'Private Transfers':      { hours: 1,   venues: [], transport: 'Traslado directo', sights: 'Aeropuerto ↔ Puerto u Hotel' },
-  'One Day in Copenhagen':  { hours: 7,   venues: ['Canal Boat', 'Tivoli', 'Christianborg'], transport: 'Bus + Bote', sights: 'Canales, Tivoli, Christiansborg + highlights ciudad' },
-  'Harbour Tour':           { hours: 3,   venues: ['Canal Boat'], transport: 'Bote por canales', sights: 'Vistas desde el agua' },
 };
 
 function getMarkupPercentage(email, config) {

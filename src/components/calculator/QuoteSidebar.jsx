@@ -58,7 +58,26 @@ export default function QuoteSidebar({ currentQuote, isAdminMode, onToggleAdmin,
   const inEur = Math.round(result.totalPrice / DKK_TO_EUR);
   const eurPerPerson = Math.round(inEur / d.pax);
 
+  const handleEmailInvoice = () => {
+      const selected = new Date(data.date);
+      const today = new Date();
+      today.setHours(0,0,0,0);
+      if (selected < today) {
+          alert(t('calculator.past_date_alert', 'Atención: La fecha ingresada ya pasó.'));
+          return;
+      }
+      onEmailInvoice();
+  };
+
   const handleCopyText = (e) => {
+      const selected = new Date(data.date);
+      const today = new Date();
+      today.setHours(0,0,0,0);
+      if (selected < today) {
+          alert(t('calculator.past_date_alert', 'Atención: La fecha ingresada ya pasó.'));
+          return;
+      }
+
       const btn = e.currentTarget;
       let txt = `B2B TOUR COPENHAGEN — QUOTE\n`;
       txt += `----------------------------------\n`;
@@ -213,7 +232,7 @@ export default function QuoteSidebar({ currentQuote, isAdminMode, onToggleAdmin,
             <button onClick={handleCopyText} className="flex-1 bg-white/5 hover:bg-white/10 text-white font-semibold py-3.5 rounded-xl transition flex justify-center border border-white/10 text-sm">
                  <span className="flex items-center gap-2"><Icon icon="ph:copy-bold" className="text-lg"/> {t('calculator.copy_btn', 'Copy Text')}</span>
             </button>
-            <button onClick={onEmailInvoice} className="flex-[1.5] bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-500 hover:to-orange-400 text-white font-bold py-3.5 rounded-xl transition shadow-[0_0_20px_rgba(255,107,0,0.4)] hover:shadow-[0_0_25px_rgba(255,107,0,0.5)] flex justify-center text-sm">
+            <button onClick={handleEmailInvoice} className="flex-[1.5] bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-500 hover:to-orange-400 text-white font-bold py-3.5 rounded-xl transition shadow-[0_0_20px_rgba(255,107,0,0.4)] hover:shadow-[0_0_25px_rgba(255,107,0,0.5)] flex justify-center text-sm">
                  <span className="flex items-center gap-2"><Icon icon="ph:paper-plane-right-fill" className="text-lg"/> {t('calculator.email_btn', 'Email Invoice')}</span>
             </button>
         </div>

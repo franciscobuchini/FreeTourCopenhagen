@@ -4,16 +4,26 @@ import { useLocation } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 import Papa from 'papaparse';
 import { useTranslation } from 'react-i18next';
+import { supabase } from '../lib/supabase';
 import {
   SERVICE_ID,
   PUBLIC_KEY,
-  TEMPLATE_ID_REVIEW
+  TEMPLATE_ID_REVIEW,
 } from '../config/email';
 
 const SHEET_CSV_URL =
   'https://docs.google.com/spreadsheets/d/e/2PACX-1vRN0BGSsWf09JTisfIPOGPniK2BSkR__17oZM_RuJa4mtbcWsHQeCMTS7vIjrfJjjpZG0TLroojotkg/pub?gid=0&single=true&output=csv';
 
 emailjs.init(PUBLIC_KEY);
+
+// Stable random date between Mar 1 – Apr 17 2026 (for legacy Google Sheet reviews)
+const LEGACY_START = new Date('2026-03-01').getTime();
+const LEGACY_END   = new Date('2026-04-17').getTime();
+const legacyDate = (seed) => {
+  const range = LEGACY_END - LEGACY_START;
+  const ms = LEGACY_START + ((seed * 2654435761) % range);
+  return new Date(ms).toISOString().slice(0, 10);
+};
 
 export default function Reviews() {
   const { t } = useTranslation();
@@ -25,40 +35,84 @@ export default function Reviews() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [formData, setFormData] = useState({
-    name: '',
-    country: '',
-    group: 'Single',
-    comment: '',
-    rating: 5,
+    name: '', country: '', group: 'Single', comment: '', rating: 5,
   });
   const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState(false);
 
-  useEffect(() => {
-    fetch(SHEET_CSV_URL)
-      .then((res) => res.ok ? res.text() : Promise.reject('Network error'))
-      .then((csvText) => {
-        Papa.parse(csvText, {
-          header: true,
-          skipEmptyLines: true,
-          transformHeader: (h) => h.trim().toLowerCase(),
-          complete: ({ data }) => {
-            const filtered = data
-              .filter((item) => item.tour === tourCode)
-              .map((item, idx) => ({
-                ...item,
-                id: item.id || `${tourCode}-${idx}-${item.date}-${item.name}`,
-              }));
-            setReviews(filtered);
-            setLoading(false);
-          },
+  const mergeAndSort = (sheet, db) => {
+    const all = [...sheet, ...db];
+    return all.sort((a, b) => {
+      // Most recent first
+      const da = new Date(a.date).getTime() || 0;
+      const db_ = new Date(b.date).getTime() || 0;
+      return db_ - da;
+    });
+  };
+
+  const loadReviews = async () => {
+    setLoading(true);
+    let sheetReviews = [];
+    let dbReviews = [];
+
+    // 1. Load legacy reviews from Google Sheet
+    try {
+      const res = await fetch(SHEET_CSV_URL);
+      if (res.ok) {
+        const csvText = await res.text();
+        await new Promise((resolve) => {
+          Papa.parse(csvText, {
+            header: true,
+            skipEmptyLines: true,
+            transformHeader: (h) => h.trim().toLowerCase(),
+            complete: ({ data }) => {
+              sheetReviews = data
+                .filter((item) => item.tour === tourCode)
+                .map((item, idx) => ({
+                  ...item,
+                  source: 'sheet',
+                  date: legacyDate(idx + 1),
+                  id: `sheet-${tourCode}-${idx}`,
+                }));
+              resolve();
+            },
+          });
         });
-      })
-      .catch((err) => {
-        console.error('Error fetching reviews:', err);
-        setError(t('reviews.loading_error'));
-        setLoading(false);
-      });
-  }, [t, tourCode]);
+      }
+    } catch (e) {
+      console.warn('Sheet fetch failed:', e);
+    }
+
+    // 2. Load new reviews from Supabase
+    try {
+      const { data, error: dbErr } = await supabase
+        .from('reviews')
+        .select('*')
+        .eq('tour', tourCode)
+        .order('created_at', { ascending: false });
+
+      if (!dbErr && data) {
+        dbReviews = data.map((r) => ({
+          id: r.id,
+          name: r.name,
+          country: r.country,
+          group: r.group_type,
+          date: r.date,
+          rating: r.rating,
+          text: r.review_text,
+          tour: r.tour,
+          source: 'db',
+        }));
+      }
+    } catch (e) {
+      console.warn('Supabase reviews fetch failed:', e);
+    }
+
+    setReviews(mergeAndSort(sheetReviews, dbReviews));
+    setLoading(false);
+  };
+
+  useEffect(() => { loadReviews(); }, [tourCode]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -71,23 +125,44 @@ export default function Reviews() {
     if (!name.trim() || !country.trim() || !comment.trim()) return;
 
     const today = new Date().toISOString().slice(0, 10);
-    const newReview = { id: `${Date.now()}`, name: name.trim(), country: country.trim(), group, date: today, rating, text: comment.trim(), tour: tourCode };
     setSending(true);
+
     try {
+      // 1. Save to Supabase (persists for future visitors)
+      const { error: insertErr } = await supabase.from('reviews').insert({
+        name: name.trim(),
+        country: country.trim(),
+        group_type: group,
+        date: today,
+        rating: Number(rating),
+        review_text: comment.trim(),
+        tour: tourCode,
+      });
+
+      if (insertErr) {
+        console.error('Supabase insert error:', insertErr);
+        // Still try to send email even if DB fails
+      }
+
+      // 2. Send email notification to admin
       await emailjs.send(SERVICE_ID, TEMPLATE_ID_REVIEW, {
-        reviewer_name: newReview.name,
-        reviewer_country: newReview.country,
-        reviewer_group: newReview.group,
-        review_date: newReview.date,
-        review_rating: newReview.rating,
-        review_text: newReview.text,
-        tour: newReview.tour,
+        reviewer_name: name.trim(),
+        reviewer_country: country.trim(),
+        reviewer_group: group,
+        review_date: today,
+        review_rating: rating,
+        review_text: comment.trim(),
+        tour: tourCode,
       }, PUBLIC_KEY);
-      setReviews((prev) => [newReview, ...prev]);
+
+      // 3. Reload reviews from DB so the new one appears
+      await loadReviews();
+
       setFormData({ name: '', country: '', group: 'Single', comment: '', rating: 5 });
-      alert(t('reviews.sent_success'));
+      setSent(true);
+      setTimeout(() => setSent(false), 4000);
     } catch (err) {
-      console.error('Error al enviar reseña:', err);
+      console.error('Error submitting review:', err);
       alert(t('reviews.sent_error'));
     } finally {
       setSending(false);
@@ -99,7 +174,10 @@ export default function Reviews() {
       <h3 className="text-xl font-semibold text-red-800">{t('reviews.title')}</h3>
 
       {loading ? (
-        <p>{t('reviews.loading')}</p>
+        <p className="text-gray-400 flex items-center gap-2">
+          <span className="inline-block w-4 h-4 border-2 border-red-400 border-t-transparent rounded-full animate-spin" />
+          {t('reviews.loading')}
+        </p>
       ) : error ? (
         <p className="text-red-600">{error}</p>
       ) : reviews.length === 0 ? (
@@ -112,15 +190,10 @@ export default function Reviews() {
                 <div>
                   <strong>{r.name}</strong>, {r.country}
                 </div>
-                <div
-                  className="text-sm text-gray-500"
-                  aria-label={`Fecha: ${new Date(r.date).toLocaleDateString('es-ES', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric',
-                  })}`}
-                >
-                  {r.date}
+                <div className="text-sm text-gray-400">
+                  {new Date(r.date).toLocaleDateString('es-ES', {
+                    day: '2-digit', month: 'short', year: 'numeric',
+                  })}
                 </div>
               </div>
               <div className="text-sm text-gray-400 mb-2">
@@ -130,63 +203,46 @@ export default function Reviews() {
                   ? t('reviews.couple')
                   : t('reviews.group')}
               </div>
-              <div className="mb-2" aria-label={`Calificación: ${r.rating} de 5`}>
-                {Array.from({ length: Number(r.rating) }).map((_, j) => (
-                  <span key={`full-${j}`} aria-hidden="true">★</span>
-                ))}
-                {Array.from({ length: 5 - Number(r.rating) }).map((_, j) => (
-                  <span key={`empty-${j}`} aria-hidden="true">☆</span>
-                ))}
+              <div className="mb-2 text-yellow-400" aria-label={`Rating: ${r.rating} of 5`}>
+                {'★'.repeat(Number(r.rating))}
+                <span className="text-gray-200">{'★'.repeat(5 - Number(r.rating))}</span>
               </div>
-              <p>{r.text}</p>
+              <p className="text-gray-700 text-sm">{r.text}</p>
             </div>
           ))}
         </div>
       )}
 
+      {/* Form */}
       <form onSubmit={handleSubmit} className="space-y-4 pt-4 border-t border-gray-200">
         <h4 className="text-lg font-medium text-red-800">{t('reviews.form_title')}</h4>
+
+        {/* Star rating */}
         <div className="flex items-center space-x-2" role="radiogroup" aria-label={t('reviews.rating')}>
           {Array.from({ length: 5 }).map((_, i) => (
             <button
               key={i}
               type="button"
-              aria-label={t('reviews.set_rating', { count: i + 1 })}
-              aria-pressed={formData.rating === i + 1}
               onClick={() => setFormData((prev) => ({ ...prev, rating: i + 1 }))}
-              className="focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="focus:outline-none"
             >
-              <span className={formData.rating >= i + 1 ? 'text-yellow-500 text-2xl' : 'text-gray-300 text-2xl'}>
-                ★
-              </span>
+              <span className={`text-2xl ${formData.rating >= i + 1 ? 'text-yellow-400' : 'text-gray-200'}`}>★</span>
             </button>
           ))}
         </div>
 
         <label className="block">
           <span className="text-gray-700">{t('reviews.name_label')}</span>
-          <input
-            type="text"
-            name="name"
+          <input type="text" name="name" value={formData.name} onChange={handleInputChange}
             placeholder={t('reviews.name_placeholder')}
-            value={formData.name}
-            onChange={handleInputChange}
-            className="w-full border border-gray-300 rounded-2xl p-2"
-            required
-          />
+            className="w-full border border-gray-300 rounded-2xl p-2 mt-1" required />
         </label>
 
         <label className="block">
           <span className="text-gray-700">{t('reviews.country_label')}</span>
-          <input
-            type="text"
-            name="country"
+          <input type="text" name="country" value={formData.country} onChange={handleInputChange}
             placeholder={t('reviews.country_placeholder')}
-            value={formData.country}
-            onChange={handleInputChange}
-            className="w-full border border-gray-300 rounded-2xl p-2"
-            required
-          />
+            className="w-full border border-gray-300 rounded-2xl p-2 mt-1" required />
         </label>
 
         <fieldset>
@@ -194,13 +250,8 @@ export default function Reviews() {
           <div className="flex gap-6 mt-1">
             {['Single', 'Couple', 'Group'].map((opt) => (
               <label key={opt} className="flex items-center gap-2">
-                <input
-                  type="radio"
-                  name="group"
-                  value={opt}
-                  checked={formData.group === opt}
-                  onChange={handleInputChange}
-                />
+                <input type="radio" name="group" value={opt}
+                  checked={formData.group === opt} onChange={handleInputChange} />
                 <span>{t(`reviews.${opt.toLowerCase()}`)}</span>
               </label>
             ))}
@@ -209,21 +260,21 @@ export default function Reviews() {
 
         <label className="block">
           <span className="text-gray-700">{t('reviews.comment_label')}</span>
-          <textarea
-            name="comment"
-            rows="3"
+          <textarea name="comment" rows="3" value={formData.comment} onChange={handleInputChange}
             placeholder={t('reviews.comment_placeholder')}
-            value={formData.comment}
-            onChange={handleInputChange}
-            className="w-full border border-gray-300 rounded-2xl p-2"
-            required
-          />
+            className="w-full border border-gray-300 rounded-2xl p-2 mt-1" required />
         </label>
+
+        {sent && (
+          <div className="bg-green-50 border border-green-300 rounded-xl p-3 text-green-700 text-sm font-medium">
+            ✅ {t('reviews.sent_success')}
+          </div>
+        )}
 
         <button
           type="submit"
           disabled={!formData.comment.trim() || !formData.country.trim() || !formData.name.trim() || sending}
-          className="w-full bg-blue-700 text-white py-2 rounded-2xl transition disabled:opacity-50"
+          className="w-full bg-red-700 hover:bg-red-600 text-white py-2.5 rounded-2xl transition disabled:opacity-50 font-semibold"
         >
           {sending ? t('reviews.sending') : t('reviews.send_button')}
         </button>

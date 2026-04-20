@@ -14,7 +14,7 @@ const languages = [
   { code: 'other', label: 'Otro (aclarar en notas)' },
 ];
 
-const timeSlots = ['10:00', '13:00', '15:00'];
+const timeSlots = ['10:00', '14:00'];
 
 function getTodayPlusDays(days) {
   const date = new Date();

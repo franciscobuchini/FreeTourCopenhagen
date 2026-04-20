@@ -133,7 +133,7 @@ export default function CalculatorForm({ formData, setFormData, pricingConfig })
 
             <div className="flex flex-col gap-2">
                 <label className="text-sm font-semibold uppercase tracking-wider text-gray-400">{t('calculator.date_label', 'Date')}</label>
-                <input type="date" value={formData.date} onChange={(e)=>updateField('date', e.target.value)} className="px-4 py-3 bg-black/30 border border-white/10 rounded-xl focus:border-orange-500 outline-none transition font-semibold [color-scheme:dark]" />
+                <input type="date" min={new Date().toISOString().split('T')[0]} value={formData.date} onChange={(e)=>updateField('date', e.target.value)} className="px-4 py-3 bg-black/30 border border-white/10 rounded-xl focus:border-orange-500 outline-none transition font-semibold [color-scheme:dark]" />
             </div>
 
             <div className="flex flex-col gap-2">

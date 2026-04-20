@@ -20,7 +20,10 @@ export default function CalculatorForm({ formData, setFormData, pricingConfig })
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
-  const combinedTours = { ...TOUR_DEFAULTS, ...(pricingConfig?.custom_tours || {}) };
+  const combinedToursRaw = { ...TOUR_DEFAULTS, ...(pricingConfig?.custom_tours || {}) };
+  const combinedTours = Object.fromEntries(
+    Object.entries(combinedToursRaw).filter(([_, info]) => !info.deleted)
+  );
   const tourOptions = [...Object.keys(combinedTours), 'OTHER'];
 
   const selectedTourInfo = combinedTours[formData.tour];

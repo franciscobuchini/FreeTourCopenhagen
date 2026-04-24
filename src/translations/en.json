@@ -82,7 +82,7 @@
     "phone": "Phone"
   },
   "home": {
-    "title": "Free Tours Copenhagen - Free Walking Tours and Guided Visits",
+    "title": "Free Tour Copenhagen in English | The Best Walking Tour",
     "subtitle": "Explore Copenhagen like a local. Walking tours and boat rides in Spanish and English. Small groups, real stories, passionate guides. Book now and discover the city with soul!",
     "slides": [
       {
@@ -97,7 +97,7 @@
       }
     ],
     "about": {
-      "title": "Who are we?",
+      "title": "Free Tour Agency in Copenhagen: Who are we?",
       "paragraph1": "Welcome to FREE TOUR CPH! We are a young and passionate agency, specialized in offering free walking tours in Copenhagen in Spanish and English. Our goal is to show you the best of the most charming city in Northern Europe through a close, authentic, and fun experience.",
       "paragraph2": "Our team is made up of guides who love what they do: walking, sharing stories, and connecting with people from around the world. We love walking through the historic center, sailing the canals like the old merchants, and revealing fun facts you won't find in typical guidebooks.",
       "paragraph3": "If you're looking for a Spanish or English tour in Copenhagen with anecdotes, must-see spots, and hidden corners — you're in the right place. Join us and discover the best of the Danish capital!"
@@ -105,14 +105,14 @@
     "seo_guide": {
       "title": "What to do in Copenhagen? Your local guide to discovering the Danish capital",
       "intro": "If you are planning your visit to the coziest city in Northern Europe, you are probably wondering where to start. Copenhagen is a perfect mix of Viking history, cutting-edge architecture, and the famous Hygge philosophy. Here we tell you the essentials that cannot be missing from your itinerary:",
-      "must_see_title": "What you cannot miss in Copenhagen",
+      "must_see_title": "Tourist Attractions: What You Cannot Miss in Copenhagen",
       "must_see_items": [
         "<strong>Nyhavn:</strong> The iconic 17th-century canal of colorful houses. It is the perfect place to understand why the city lives facing the sea.",
         "<strong>The Little Mermaid (Den Lille Havfrue):</strong> The symbol of the city based on Hans Christian Andersen's fairy tale. We'll show you the most picturesque way to get there!",
         "<strong>Amalienborg Palace:</strong> The residence of the Danish royal family, where you can witness the changing of the guard.",
         "<strong>Christiania:</strong> Copenhagen's \"freetown\", a unique social and artistic experiment in the world."
       ],
-      "days_title": "How to explore the city in 1, 2, or 3 days?",
+      "days_title": "Travel Itineraries: How to Explore Copenhagen in 1, 2, or 3 Days",
       "days_intro": "To make the most of your time, our recommendation as locals is to divide the city by zones:",
       "days_items": [
         "<strong>Day 1: The Historic Center.</strong> The best way to get your bearings is with a Free Tour in English. You will explore the City Hall Square, the Gefion Fountain, and the key points of the old town.",
@@ -130,7 +130,7 @@
     "backHome": "Back to home"
   },
   "tour01": {
-    "title": "Grand Tour of Copenhagen",
+    "title": "Grand Free Tour of Copenhagen in English",
     "description": [
       "Join our Free Walking Tour and explore the best of Copenhagen with an experienced and passionate guide!",
       "We’ll discover monuments, palaces, and hidden corners full of history, walking its streets like locals.",
@@ -146,7 +146,7 @@
     }
   },
   "tour02": {
-    "title": "Boat Ride + Walking Tour",
+    "title": "Canal Boat Tour + Walking Tour in Copenhagen",
     "description": [
       "This tour offers an intimate and exclusive experience, limited to only 7 people so you can enjoy every detail to the fullest.",
       "We'll start by exploring the city's most iconic spots, discovering its everyday life and rich history.",
@@ -162,13 +162,13 @@
     }
   },
   "special": {
-    "title": "Special and Winter Tours",
+    "title": "Private and Special Tours in Copenhagen",
     "description": "We organize private, themed or off-season tours.",
     "contact_prompt": "For more info or availability, contact us at:"
   },
 
   "pubcrawl": {
-    "title": "Pub Crawl Copenhagen",
+    "title": "Pub Crawl Copenhagen: The Best Party and Nightlife",
     "description": "Experience the vibrant nightlife of Copenhagen with our Pub Crawl! Join us for an unforgettable evening as we explore some of the city's best bars and pubs, meet new people, and enjoy great drinks in a fun and lively atmosphere. Whether you're a local or a visitor, our Pub Crawl is the perfect way to discover Copenhagen's nightlife scene. Book your spot now and get ready for an epic night out!"
   },
   "b2b": {

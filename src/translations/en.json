@@ -101,6 +101,27 @@
       "paragraph1": "Welcome to FREE TOUR CPH! We are a young and passionate agency, specialized in offering free walking tours in Copenhagen in Spanish and English. Our goal is to show you the best of the most charming city in Northern Europe through a close, authentic, and fun experience.",
       "paragraph2": "Our team is made up of guides who love what they do: walking, sharing stories, and connecting with people from around the world. We love walking through the historic center, sailing the canals like the old merchants, and revealing fun facts you won't find in typical guidebooks.",
       "paragraph3": "If you're looking for a Spanish or English tour in Copenhagen with anecdotes, must-see spots, and hidden corners — you're in the right place. Join us and discover the best of the Danish capital!"
+    },
+    "seo_guide": {
+      "title": "What to do in Copenhagen? Your local guide to discovering the Danish capital",
+      "intro": "If you are planning your visit to the coziest city in Northern Europe, you are probably wondering where to start. Copenhagen is a perfect mix of Viking history, cutting-edge architecture, and the famous Hygge philosophy. Here we tell you the essentials that cannot be missing from your itinerary:",
+      "must_see_title": "What you cannot miss in Copenhagen",
+      "must_see_items": [
+        "<strong>Nyhavn:</strong> The iconic 17th-century canal of colorful houses. It is the perfect place to understand why the city lives facing the sea.",
+        "<strong>The Little Mermaid (Den Lille Havfrue):</strong> The symbol of the city based on Hans Christian Andersen's fairy tale. We'll show you the most picturesque way to get there!",
+        "<strong>Amalienborg Palace:</strong> The residence of the Danish royal family, where you can witness the changing of the guard.",
+        "<strong>Christiania:</strong> Copenhagen's \"freetown\", a unique social and artistic experiment in the world."
+      ],
+      "days_title": "How to explore the city in 1, 2, or 3 days?",
+      "days_intro": "To make the most of your time, our recommendation as locals is to divide the city by zones:",
+      "days_items": [
+        "<strong>Day 1: The Historic Center.</strong> The best way to get your bearings is with a Free Tour in English. You will explore the City Hall Square, the Gefion Fountain, and the key points of the old town.",
+        "<strong>Day 2: Copenhagen from the water.</strong> A boat tour through the canals will give you a completely different perspective of the Opera House and the Royal Library (the Black Diamond).",
+        "<strong>Day 3: Castles and Modern Neighborhoods.</strong> Explore Rosenborg Castle and get lost in the streets of Vesterbro or Nørrebro to experience the local atmosphere."
+      ],
+      "tip": "<strong>Guide Tip:</strong> Copenhagen is one of the safest and flattest cities in the world, making it ideal for walking. Don't forget to bring comfortable shoes and be prepared for changing weather; here we say there is no bad weather, only unsuitable clothing!",
+      "why_us_title": "Why choose Free Tour CPH for your visit?",
+      "why_us_text": "At Free Tour CPH, we don't just recite dates and names. We want you to understand why Denmark is one of the happiest countries in the world. Our walking tours in English are designed for small groups, allowing for a close experience where you can ask about everything from restaurant recommendations to trivia about the Danish monarchy."
     }
   },
   "notFound": {

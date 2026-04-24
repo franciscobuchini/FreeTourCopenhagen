@@ -101,6 +101,27 @@
       "paragraph1": "¡Bienvenido a FREE TOUR CPH! Somos una agencia joven y apasionada, especializada en ofrecer free walking tours en Copenhague en español e inglés. Nuestro objetivo es mostrarte lo mejor de la ciudad más encantadora del norte de Europa a través de una experiencia cercana, auténtica y divertida.",
       "paragraph2": "Nuestro equipo está formado por guías que aman lo que hacen: caminar, compartir historias y conectar con personas de todo el mundo. Nos encanta recorrer a pie el centro histórico, navegar los canales como los antiguos comerciantes y revelar datos curiosos que no vas a encontrar en las guías tradicionales.",
       "paragraph3": "Si estás buscando un tour en español o inglés por Copenhague con anécdotas, lugares imperdibles y rincones ocultos, estás en el lugar correcto. ¡Te esperamos para descubrir juntos lo mejor de la capital danesa!"
+    },
+    "seo_guide": {
+      "title": "¿Qué hacer en Copenhague? Tu guía local para descubrir la capital danesa",
+      "intro": "Si estás planeando tu visita a la ciudad más acogedora del norte de Europa, seguramente te estarás preguntando por dónde empezar. Copenhague es una mezcla perfecta de historia vikinga, arquitectura de vanguardia y la famosa filosofía Hygge. Aquí te contamos los imprescindibles que no pueden faltar en tu itinerario:",
+      "must_see_title": "Lo que no te puedes perder en Copenhague",
+      "must_see_items": [
+        "<strong>Nyhavn:</strong> El icónico canal de casas de colores del siglo XVII. Es el lugar perfecto para entender por qué la ciudad vive de cara al mar.",
+        "<strong>La Sirenita (Den Lille Havfrue):</strong> El símbolo de la ciudad basado en el cuento de Hans Christian Andersen. ¡Te enseñamos el camino más pintoresco para llegar!",
+        "<strong>Palacio de Amalienborg:</strong> La residencia de la familia real danesa, donde podrás ser testigo del cambio de guardia.",
+        "<strong>Christiania:</strong> La \"ciudad libre\" de Copenhague, un experimento social y artístico único en el mundo."
+      ],
+      "days_title": "¿Cómo recorrer la ciudad en 1, 2 o 3 días?",
+      "days_intro": "Para aprovechar el tiempo al máximo, nuestra recomendación como locales es dividir la ciudad por zonas:",
+      "days_items": [
+        "<strong>Día 1: El Centro Histórico.</strong> La mejor forma de orientarte es con un Free Tour en español. Recorrerás la Plaza del Ayuntamiento, la fuente de Gefion y los puntos clave del casco antiguo.",
+        "<strong>Día 2: Copenhague desde el agua.</strong> Un tour en bote por los canales te dará una perspectiva totalmente distinta de la Casa de la Ópera y la Biblioteca Real (el Diamante Negro).",
+        "<strong>Día 3: Castillos y Barrios Modernos.</strong> Explora el Castillo de Rosenborg y piérdete por las calles de Vesterbro o Nørrebro para vivir el ambiente local."
+      ],
+      "tip": "<strong>Tip de Guía:</strong> Copenhague es una de las ciudades más seguras y llanas del mundo, lo que la hace ideal para caminar. No olvides traer calzado cómodo y estar preparado para el clima cambiante; ¡aquí decimos que no hay mal tiempo, sino ropa inadecuada!",
+      "why_us_title": "¿Por qué elegir Free Tour CPH para tu visita?",
+      "why_us_text": "En Free Tour CPH, no solo recitamos fechas y nombres. Queremos que entiendas por qué Dinamarca es uno de los países más felices del mundo. Nuestros tours a pie en español están diseñados para grupos pequeños, permitiendo una experiencia cercana donde puedes preguntar desde recomendaciones de restaurantes hasta curiosidades sobre la monarquía danesa."
     }
   },
   "notFound": {

@@ -47,6 +47,48 @@ export default function Home() {
           {t('home.about.paragraph3')}
         </p>
       </section>
+
+      {/* SEO Guide Section */}
+      <section className="mt-10 p-6 bg-gray-50 rounded-lg shadow-sm border border-gray-100">
+        <h2 className="text-xl sm:text-2xl font-semibold text-red-800 mb-4">
+          {t('home.seo_guide.title')}
+        </h2>
+        <p className="text-gray-700 leading-relaxed mb-6">
+          {t('home.seo_guide.intro')}
+        </p>
+
+        <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-3">
+          {t('home.seo_guide.must_see_title')}
+        </h3>
+        <ul className="list-disc pl-5 mb-6 text-gray-700 space-y-2">
+          {(t('home.seo_guide.must_see_items', { returnObjects: true }) || []).map((item, idx) => (
+            <li key={idx} dangerouslySetInnerHTML={{ __html: item }}></li>
+          ))}
+        </ul>
+
+        <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-3">
+          {t('home.seo_guide.days_title')}
+        </h3>
+        <p className="text-gray-700 leading-relaxed mb-3">
+          {t('home.seo_guide.days_intro')}
+        </p>
+        <ul className="list-disc pl-5 mb-6 text-gray-700 space-y-2">
+          {(t('home.seo_guide.days_items', { returnObjects: true }) || []).map((item, idx) => (
+            <li key={idx} dangerouslySetInnerHTML={{ __html: item }}></li>
+          ))}
+        </ul>
+
+        <div className="bg-white p-4 border-l-4 border-red-800 text-gray-700 italic mb-6 shadow-sm rounded-r-lg" 
+             dangerouslySetInnerHTML={{ __html: t('home.seo_guide.tip') }}>
+        </div>
+
+        <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-3">
+          {t('home.seo_guide.why_us_title')}
+        </h3>
+        <p className="text-gray-700 leading-relaxed">
+          {t('home.seo_guide.why_us_text')}
+        </p>
+      </section>
     </div>
   );
 }

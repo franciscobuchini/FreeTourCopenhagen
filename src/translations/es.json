@@ -158,7 +158,8 @@
     "feat_multilang": "Multiidioma",
     "feat_secure": "Acceso seguro",
     "loading": "Cargando calculadora...",
-    "password_required": "Acceso Restringido B2B",
+    "password_required": "Bienvenido a B2B Free Tour CPH",
+    "password_description": "Si fuiste invitado por email, por favor ingresá el código. Si no, pedilo a info@freetourcph.com",
     "password_placeholder": "Ingresar clave",
     "wrong_password": "Clave incorrecta. Intenta nuevamente.",
     "submit_password": "Entrar"

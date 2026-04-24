@@ -60,9 +60,12 @@ export default function B2B() {
             <Icon icon="ph:lock-key-bold" width={16} />
             {t('b2b.badge')}
           </div>
-          <h2 style={{ color: 'white', marginBottom: '1.5rem', fontSize: '1.8rem', fontWeight: 800 }}>
-            {t('b2b.password_required', 'Acceso Restringido B2B')}
+          <h2 style={{ color: 'white', marginBottom: '0.5rem', fontSize: '1.8rem', fontWeight: 800 }}>
+            {t('b2b.password_required', 'Bienvenido a B2B Free Tour CPH')}
           </h2>
+          <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.95rem', marginBottom: '1.5rem', lineHeight: 1.5 }}>
+            {t('b2b.password_description', 'Si fuiste invitado por email, por favor ingresá el código. Si no, pedilo a info@freetourcph.com')}
+          </p>
           <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             <input 
               type="password" 

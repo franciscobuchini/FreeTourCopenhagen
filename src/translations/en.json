@@ -25,6 +25,7 @@
     "tour02": "Boat Tour",
     "tour03": "Special Tours",
     "tour04": "Pub Crawl",
+    "blog": "Blog",
     "b2b": "B2B"
   },
   "footer": {
@@ -128,6 +129,13 @@
     "title": "Page not found",
     "message": "Sorry, the page you are looking for does not exist or has been moved.",
     "backHome": "Back to home"
+  },
+  "blog": {
+    "title": "Travel Blog",
+    "subtitle": "Discover the best tips, guides, and stories about Copenhagen and Denmark.",
+    "read_more": "Read full article",
+    "back_to_blog": "Back to Blog",
+    "not_found": "Article not found."
   },
   "tour01": {
     "title": "Grand Free Tour of Copenhagen in English",

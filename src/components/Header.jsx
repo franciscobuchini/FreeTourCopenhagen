@@ -48,6 +48,7 @@ export default function Header() {
         <Link to="/Tour02" className="text-blue-950 hover:bg-gray-100 py-2 px-4 rounded-full">{t('header.tour02')}</Link>
         <Link to="/Tour03" className="text-blue-950 hover:bg-gray-100 py-2 px-4 rounded-full">{t('header.tour03')}</Link>
         <Link to="/Tour04" className="text-blue-950 hover:bg-gray-100 py-2 px-4 rounded-full">{t('header.tour04')}</Link>
+        <Link to="/blog" className="text-blue-950 hover:bg-gray-100 py-2 px-4 rounded-full">{t('header.blog')}</Link>
         <Link
           to="/b2b"
           className="flex items-center gap-1.5 py-2 px-4 rounded-full font-semibold text-white"
@@ -109,6 +110,7 @@ export default function Header() {
                 { to: '/Tour02', label: t('header.tour02') },
                 { to: '/Tour03', label: t('header.tour03') },
                 { to: '/Tour04', label: t('header.tour04') },
+                { to: '/blog', label: t('header.blog') },
               ].map(({ to, label }) => (
                 <li key={to}>
                   <Link to={to} onClick={() => setIsMenuOpen(false)} className="block px-4 py-2 hover:text-red-800 rounded-2xl">

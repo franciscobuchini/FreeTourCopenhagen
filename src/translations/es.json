@@ -25,6 +25,7 @@
     "tour02": "Paseo en Bote",
     "tour03": "Tours Especiales",
     "tour04": "Pub Crawl",
+    "blog": "Blog",
     "b2b": "B2B"
   },
   "footer": {
@@ -128,6 +129,13 @@
     "title": "Página no encontrada",
     "message": "Lo sentimos, la página que buscas no existe o ha sido movida.",
     "backHome": "Volver al inicio"
+  },
+  "blog": {
+    "title": "Blog de Viajes",
+    "subtitle": "Descubre los mejores consejos, guías e historias sobre Copenhague y Dinamarca.",
+    "read_more": "Leer artículo completo",
+    "back_to_blog": "Volver al Blog",
+    "not_found": "Artículo no encontrado."
   },
   "tour01": {
     "title": "Gran Free Tour de Copenhague en Español",

@@ -15,6 +15,8 @@ import Tour04 from './pages/Tour04';
 import NotFound from './pages/NotFound';
 import B2B from './pages/B2B';
 import AdminPanel from './pages/AdminPanel';
+import BlogList from './pages/BlogList';
+import BlogPost from './pages/BlogPost';
 
 // Importar y ejecutar la configuración de i18n
 import './i18n';
@@ -45,6 +47,8 @@ export default function App() {
                   <Route path="/Tour03" element={<Tour03 />} />
                   <Route path="/Tour04" element={<Tour04 />} />
                   <Route path="/b2b" element={<B2B />} />
+                  <Route path="/blog" element={<BlogList />} />
+                  <Route path="/blog/:slug" element={<BlogPost />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </main>

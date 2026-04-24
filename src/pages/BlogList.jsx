@@ -2,10 +2,16 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { blogPosts } from '../data/blogData';
+import useSEO from '../hooks/useSEO';
 
 export default function BlogList() {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language || 'es';
+
+  useSEO({
+    title: t('seo.blog.title'),
+    description: t('seo.blog.description')
+  });
 
   return (
     <div className="flex-1 my-10 px-4 max-w-7xl mx-auto">

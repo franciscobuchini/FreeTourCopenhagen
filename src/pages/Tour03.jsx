@@ -2,9 +2,16 @@
 import { useState } from "react"
 import { Icon } from "@iconify/react"
 import { useTranslation } from "react-i18next"
+import useSEO from '../hooks/useSEO';
 
 const Tour03 = () => {
   const { t } = useTranslation()
+
+  useSEO({
+    title: t('seo.tour03.title'),
+    description: t('seo.tour03.description')
+  });
+
   const [copied, setCopied] = useState(false)
 
   const email = "info@freetourcph.com"

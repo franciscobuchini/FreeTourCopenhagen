@@ -130,6 +130,32 @@
     "message": "Sorry, the page you are looking for does not exist or has been moved.",
     "backHome": "Back to home"
   },
+  "seo": {
+    "home": {
+      "title": "Free Tours in Copenhagen in English | Book for Free | Free Tour CPH",
+      "description": "Explore Copenhagen with the best local guides in English. Free walking tours, canal boat tours, and private excursions. Book your spot for free."
+    },
+    "tour01": {
+      "title": "Free Walking Tour Copenhagen English | Top Things to Do for Free",
+      "description": "The best Free Walking Tour in Copenhagen. Discover Nyhavn, The Little Mermaid, Amalienborg Palace, and Viking history with passionate English-speaking guides."
+    },
+    "tour02": {
+      "title": "Best Canal Boat Tours Copenhagen | Sightseeing Cruises",
+      "description": "Book the best canal boat tour in Copenhagen combined with a walking tour. Small groups and an exclusive experience guaranteed."
+    },
+    "tour03": {
+      "title": "Private Tours in Copenhagen | Exclusive English Guided Tours",
+      "description": "Customized and private tours in Copenhagen for groups and agencies. Tailor-made itineraries to discover Denmark at your own pace."
+    },
+    "tour04": {
+      "title": "Pub Crawl Copenhagen | Best Party and Nightlife Tour",
+      "description": "Join our Pub Crawl and experience the best party in Copenhagen. Meet new people, visit the best bars, and enjoy the Danish nightlife."
+    },
+    "blog": {
+      "title": "Copenhagen Travel Blog | Tips, Guides, and What to See",
+      "description": "Discover the best tips for traveling to Denmark: how to get around, where to eat, budgets, and the must-see attractions in Copenhagen."
+    }
+  },
   "blog": {
     "title": "Travel Blog",
     "subtitle": "Discover the best tips, guides, and stories about Copenhagen and Denmark.",

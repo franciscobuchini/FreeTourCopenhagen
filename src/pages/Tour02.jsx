@@ -2,9 +2,15 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Tour from '../components/Tour';
+import useSEO from '../hooks/useSEO';
 
 export default function Tour02() {
   const { t } = useTranslation();
+
+  useSEO({
+    title: t('seo.tour02.title'),
+    description: t('seo.tour02.description')
+  });
 
   const detailsData = {
     duration: t('tour02.details.duration'),

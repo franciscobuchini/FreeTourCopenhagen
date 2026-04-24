@@ -130,6 +130,32 @@
     "message": "Lo sentimos, la página que buscas no existe o ha sido movida.",
     "backHome": "Volver al inicio"
   },
+  "seo": {
+    "home": {
+      "title": "Free Tours en Copenhague en Español | Reserva Gratis | Free Tour CPH",
+      "description": "Explora Copenhague con los mejores guías locales en español. Tours a pie gratuitos, paseos en barco por los canales y excursiones privadas. Reserva tu plaza gratis."
+    },
+    "tour01": {
+      "title": "Free Tour Copenhague Español | Qué Hacer en Copenhague Gratis",
+      "description": "El mejor Free Walking Tour de Copenhague. Descubre Nyhavn, La Sirenita, el Palacio de Amalienborg y la historia vikinga con guías apasionados en español."
+    },
+    "tour02": {
+      "title": "Mejores Tours en Barco Copenhague | Paseos por los Canales",
+      "description": "Reserva el mejor tour en barco por los canales de Copenhague combinado con un recorrido a pie. Grupos reducidos y experiencia exclusiva garantizada."
+    },
+    "tour03": {
+      "title": "Tours Privados en Copenhague en Español | Excursiones Exclusivas",
+      "description": "Tours personalizados y privados en Copenhague para grupos y agencias. Itinerarios a medida para conocer Dinamarca a tu ritmo."
+    },
+    "tour04": {
+      "title": "Pub Crawl Copenhague | Mejor Tour de Fiesta y Vida Nocturna",
+      "description": "Únete a nuestro Pub Crawl y vive la mejor fiesta en Copenhague. Conoce gente nueva, visita los mejores bares y disfruta la noche danesa."
+    },
+    "blog": {
+      "title": "Blog de Viajes a Copenhague | Consejos, Guías y Qué Ver",
+      "description": "Descubre los mejores consejos para viajar a Dinamarca: cómo moverte, dónde comer, presupuestos y las atracciones imprescindibles de Copenhague."
+    }
+  },
   "blog": {
     "title": "Blog de Viajes",
     "subtitle": "Descubre los mejores consejos, guías e historias sobre Copenhague y Dinamarca.",

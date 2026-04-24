@@ -4,7 +4,7 @@ export const blogPosts = [
   {
     id: 1,
     slug: '10-consejos-viajar-copenhague-poco-presupuesto',
-    image: '/images/blog/nyhavn.png',
+    image: '/images/blog/mochilero-nyhavn-free-tour-copenhague.png',
     date: '2026-04-20',
     translations: {
       es: {
@@ -86,7 +86,7 @@ export const blogPosts = [
   {
     id: 2,
     slug: 'como-llegar-del-aeropuerto-de-copenhague-al-centro',
-    image: '/images/blog/metro.png',
+    image: '/images/blog/como-llegar-aeropuerto-copenhague-centro.png',
     date: '2026-04-18',
     translations: {
       es: {
@@ -132,7 +132,7 @@ export const blogPosts = [
   {
     id: 3,
     slug: 'los-5-castillos-que-no-te-puedes-perder-en-dinamarca',
-    image: '/images/blog/castle.png',
+    image: '/images/blog/castillo-frederiksborg-dinamarca.png',
     date: '2026-04-15',
     translations: {
       es: {

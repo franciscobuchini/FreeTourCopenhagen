@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { blogPosts } from '../data/blogData';
+import useSEO from '../hooks/useSEO';
 
 export default function BlogPost() {
   const { slug } = useParams();
@@ -10,6 +11,12 @@ export default function BlogPost() {
   const currentLang = i18n.language || 'es';
 
   const post = blogPosts.find((p) => p.slug === slug);
+  const postData = post ? (post.translations[currentLang] || post.translations['es']) : null;
+
+  useSEO({
+    title: postData ? `${postData.title} | Free Tour CPH` : t('seo.blog.title'),
+    description: postData ? postData.excerpt : t('seo.blog.description')
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -25,8 +32,6 @@ export default function BlogPost() {
       </div>
     );
   }
-
-  const postData = post.translations[currentLang] || post.translations['es'];
 
   // Article Schema Markup for SEO
   const schemaMarkup = {

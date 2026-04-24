@@ -2,9 +2,15 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Carousel from '../components/Carousel';
+import useSEO from '../hooks/useSEO';
 
 export default function Home() {
   const { t } = useTranslation();
+
+  useSEO({
+    title: t('seo.home.title'),
+    description: t('seo.home.description')
+  });
 
   const slides = [
     {

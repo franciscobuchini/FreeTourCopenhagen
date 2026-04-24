@@ -21,6 +21,11 @@ export default function Carousel({ slides = [], interval = 5000 }) {
 
   return (
     <div className="relative w-full overflow-hidden mt-8 h-96 lg:h-140 rounded-2xl">
+      {/* Preload first slide image for speed optimization (LCP) */}
+      {slides.length > 0 && (
+        <link rel="preload" as="image" href={slides[0].image} fetchpriority="high" />
+      )}
+      
       {/* Slides Container */}
 <div
   className="flex transition-transform duration-600 h-full"

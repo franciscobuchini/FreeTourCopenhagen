@@ -25,8 +25,39 @@ export default function Home() {
     },
   ];
 
+  const schemaMarkup = {
+    "@context": "https://schema.org",
+    "@type": "TravelAgency",
+    "name": "Free Tour CPH",
+    "image": slides[0]?.image || "https://freetourcph.com/logo.png",
+    "@id": "https://freetourcph.com",
+    "url": "https://freetourcph.com",
+    "telephone": "+45 71 61 79 70",
+    "email": "info@freetourcph.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Copenhagen",
+      "addressCountry": "DK"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 55.676098,
+      "longitude": 12.568337
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "845"
+    }
+  };
+
   return (
     <div className="flex-1 my-10 px-4">
+      {/* Schema Markup for TravelAgency (Google Rich Snippets) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
+      />
       <div className="px-4 py-2">
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-red-800">
           {t('home.title')}

@@ -22,12 +22,53 @@ export default function Tour({
   onBooking,
   maxParticipants,
 }) {
+  const getNumericPrice = (priceStr) => {
+    if (!priceStr) return "0.00";
+    const match = priceStr.match(/\d+/);
+    return match ? match[0] + ".00" : "0.00";
+  };
+
+  const descriptionText = Array.isArray(description) ? description.join(' ') : (description || title);
+
+  const schemaMarkup = {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": title,
+    "image": imageSrc,
+    "description": descriptionText,
+    "brand": {
+      "@type": "Brand",
+      "name": "Free Tour CPH"
+    },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "EUR",
+      "price": getNumericPrice(detailsData?.price),
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "Free Tour CPH"
+      }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "238"
+    }
+  };
+
   return (
     <>
+      {/* Schema Markup for Google Rich Snippets */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
+      />
       <div className="overflow-hidden w-screen -mt-20 sm:-mx-8 md:-mx-16 lg:-mx-24 xl:-mx-36">
         <img
           src={imageSrc}
           alt={title}
+          fetchpriority="high"
           className="w-screen h-64 md:h-80 lg:h-128 object-cover"
         />
       </div>

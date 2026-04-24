@@ -2,6 +2,8 @@
   "booking": {
     "title": "Reserva tu Tour",
     "select_date": "Selecciona fecha:",
+    "name": "Nombre completo:",
+    "name_placeholder": "Tu nombre",
     "sunday": "Domingos no disponibles.",
     "sunday_not_available": "Los domingos no están disponibles para reserva.",
     "start_time": "Hora de Inicio:",
@@ -155,7 +157,11 @@
     "feat_invoice": "Factura PDF",
     "feat_multilang": "Multiidioma",
     "feat_secure": "Acceso seguro",
-    "loading": "Cargando calculadora..."
+    "loading": "Cargando calculadora...",
+    "password_required": "Acceso Restringido B2B",
+    "password_placeholder": "Ingresar clave",
+    "wrong_password": "Clave incorrecta. Intenta nuevamente.",
+    "submit_password": "Entrar"
   },
   "calculator": {
     "admin_panel": "Panel Administrador",

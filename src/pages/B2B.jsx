@@ -1,10 +1,111 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Icon } from '@iconify/react';
 import TourCalculator from '../components/calculator/TourCalculator';
 
 export default function B2B() {
   const { t } = useTranslation();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+
+  useEffect(() => {
+    // Check if they already authenticated in this session
+    const auth = sessionStorage.getItem('b2b_auth');
+    if (auth === 'true') {
+      setIsAuthenticated(true);
+    }
+  }, []);
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    if (password === '1764') {
+      setIsAuthenticated(true);
+      sessionStorage.setItem('b2b_auth', 'true');
+      setError('');
+    } else {
+      setError(t('b2b.wrong_password', 'Clave incorrecta. Intenta nuevamente.'));
+    }
+  };
+
+  if (!isAuthenticated) {
+    return (
+      <div style={{
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        background: 'linear-gradient(135deg, #0f1729 0%, #1a2a4a 50%, #0f1729 100%)',
+        padding: '2rem'
+      }}>
+        <div style={{
+          background: 'rgba(255,255,255,0.05)',
+          backdropFilter: 'blur(10px)',
+          padding: '3rem 2rem',
+          borderRadius: '1.5rem',
+          border: '1px solid rgba(255,255,255,0.1)',
+          textAlign: 'center',
+          maxWidth: '400px',
+          width: '100%',
+          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)'
+        }}>
+          <div style={{
+            display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
+            background: 'rgba(220,38,38,0.15)', border: '1px solid rgba(220,38,38,0.4)',
+            borderRadius: '2rem', padding: '0.35rem 1rem',
+            fontSize: '0.8rem', fontWeight: 700, color: '#f87171',
+            letterSpacing: '1px', textTransform: 'uppercase',
+            marginBottom: '1.5rem',
+          }}>
+            <Icon icon="ph:lock-key-bold" width={16} />
+            {t('b2b.badge')}
+          </div>
+          <h2 style={{ color: 'white', marginBottom: '1.5rem', fontSize: '1.8rem', fontWeight: 800 }}>
+            {t('b2b.password_required', 'Acceso Restringido B2B')}
+          </h2>
+          <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            <input 
+              type="password" 
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder={t('b2b.password_placeholder', 'Ingresar clave')}
+              style={{
+                padding: '1rem',
+                borderRadius: '0.75rem',
+                border: '1px solid rgba(255,255,255,0.2)',
+                background: 'rgba(255,255,255,0.1)',
+                color: 'white',
+                outline: 'none',
+                width: '100%',
+                fontSize: '1rem'
+              }}
+              autoFocus
+            />
+            {error && <div style={{ color: '#f87171', fontSize: '0.9rem', textAlign: 'left', marginTop: '-0.5rem', marginBottom: '0.5rem' }}>{error}</div>}
+            <button 
+              type="submit"
+              style={{
+                background: 'linear-gradient(135deg, #dc2626, #b91c1c)',
+                color: 'white',
+                padding: '1rem',
+                borderRadius: '0.75rem',
+                fontWeight: 'bold',
+                cursor: 'pointer',
+                border: 'none',
+                boxShadow: '0 4px 14px rgba(220,38,38,0.3)',
+                fontSize: '1rem',
+                transition: 'transform 0.2s'
+              }}
+              onMouseOver={(e) => e.currentTarget.style.transform = 'translateY(-2px)'}
+              onMouseOut={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+            >
+              {t('b2b.submit_password', 'Entrar')}
+            </button>
+          </form>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div style={{ minHeight: '100vh' }}>

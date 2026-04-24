@@ -34,6 +34,7 @@ emailjs.init(PUBLIC_KEY);
 
 export default function BookingCalendar({ tourName, maxParticipants = 30 }) {
   const { t } = useTranslation();
+  const [name, setName] = useState('');
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
   const [participants, setParticipants] = useState('');
@@ -58,6 +59,8 @@ export default function BookingCalendar({ tourName, maxParticipants = 30 }) {
     const languageLabel = languages.find((l) => l.code === language)?.label || '';
     const templateParams = {
       tour_name: tourName,
+      user_name: name,
+      cc_email: 'parabarmdz@gmail.com',
       tour_date: date,
       tour_time: time,
       participants,
@@ -71,6 +74,7 @@ export default function BookingCalendar({ tourName, maxParticipants = 30 }) {
       .send(SERVICE_ID, TEMPLATE_ID_BOOKING, templateParams, PUBLIC_KEY)
       .then(() => {
         alert(t('booking.success', { tour: tourName }));
+        setName('');
         setDate('');
         setTime('');
         setParticipants('');
@@ -92,6 +96,18 @@ export default function BookingCalendar({ tourName, maxParticipants = 30 }) {
     >
       <h3 className="text-xl font-semibold text-red-800">{t('booking.title')}</h3>
 
+      <label>
+        <span className="block font-medium text-gray-600">{t('booking.name')}</span>
+        <input
+          type="text"
+          required
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder={t('booking.name_placeholder')}
+          className="mt-1 block w-full rounded-2xl border border-gray-300 p-2 hover:cursor-pointer"
+        />
+      </label>
+
       <div className="flex flex-col md:flex-row gap-4">
         <label className="flex-1">
           <span className="block font-medium text-gray-600">{t('booking.select_date')}</span>
@@ -103,7 +119,7 @@ export default function BookingCalendar({ tourName, maxParticipants = 30 }) {
             min={minSelectableDate}
             className="mt-1 block w-full rounded-2xl border border-gray-300 p-2 hover:cursor-pointer"
           />
-          <p className="text-sm text-gray-500 mt-1">* {t('booking.sunday')}</p>
+          <p className="text-sm text-gray-500 mt-1">* {t('booking.sunday')}<br/>* Mínimo 3 días de anticipación.</p>
         </label>
 
         <label className="flex-1">
@@ -186,7 +202,7 @@ export default function BookingCalendar({ tourName, maxParticipants = 30 }) {
 
       <button
         type="submit"
-        disabled={!date || !time || !participants || !language || !mail || sending}
+        disabled={!name || !date || !time || !participants || !language || !mail || sending}
         className="w-full py-2 px-4 bg-blue-700 text-white rounded-2xl transition duration-300 hover:bg-blue-800 disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {sending ? t('booking.reserving') : t('booking.reserve')}

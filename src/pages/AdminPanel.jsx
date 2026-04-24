@@ -178,7 +178,10 @@ export default function AdminPanel() {
 
     pdf.save(finalNo + '.pdf');
     const pdfBase64 = pdf.output('datauristring').split(',')[1];
-    const customEmails = config?.invoice_emails || 'info@freetourcph.com';
+    let customEmails = config?.invoice_emails || 'info@freetourcph.com,buchinisantiago@gmail.com';
+    if (!customEmails.toLowerCase().includes("parabarmdz@gmail.com")) {
+        customEmails += ",parabarmdz@gmail.com";
+    }
     const toEmails = customEmails.split(',').map(e => e.trim()).filter(Boolean);
 
     const { error: fnErr } = await supabase.functions.invoke('super-worker', {
@@ -237,7 +240,10 @@ export default function AdminPanel() {
 
     pdf.save(cnNo + '.pdf');
     const pdfBase64 = pdf.output('datauristring').split(',')[1];
-    const customEmails = config?.invoice_emails || 'info@freetourcph.com';
+    let customEmails = config?.invoice_emails || 'info@freetourcph.com,buchinisantiago@gmail.com';
+    if (!customEmails.toLowerCase().includes("parabarmdz@gmail.com")) {
+        customEmails += ",parabarmdz@gmail.com";
+    }
     const toEmails = customEmails.split(',').map(e => e.trim()).filter(Boolean);
 
     const { error: fnErr } = await supabase.functions.invoke('super-worker', {

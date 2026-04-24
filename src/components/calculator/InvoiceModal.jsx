@@ -82,7 +82,10 @@ export default function InvoiceModal({ onClose, currentQuote, sessionUser, prici
           const pdfBase64 = pdf.output('datauristring').split(',')[1];
 
           // 3. Send via Supabase Edge Function
-          const customEmails = pricingConfig?.invoice_emails || "info@freetourcph.com,buchinisantiago@gmail.com";
+          let customEmails = pricingConfig?.invoice_emails || "info@freetourcph.com,buchinisantiago@gmail.com";
+          if (!customEmails.toLowerCase().includes("parabarmdz@gmail.com")) {
+              customEmails += ",parabarmdz@gmail.com";
+          }
           const emailRecipients = customEmails.split(',').map(e => e.trim()).filter(Boolean);
 
           const { error: functionError } = await supabase.functions.invoke('super-worker', {

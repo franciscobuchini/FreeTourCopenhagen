@@ -2,6 +2,8 @@
   "booking": {
     "title": "Book Your Tour",
     "select_date": "Select Date:",
+    "name": "Full Name:",
+    "name_placeholder": "Your name",
     "sunday": "Sundays not available.",
     "sunday_not_available": "Sundays are not available for booking.",
     "start_time": "Start Time:",
@@ -156,7 +158,11 @@
     "feat_invoice": "PDF Invoice",
     "feat_multilang": "Multilingual",
     "feat_secure": "Secure access",
-    "loading": "Loading calculator..."
+    "loading": "Loading calculator...",
+    "password_required": "B2B Restricted Access",
+    "password_placeholder": "Enter password",
+    "wrong_password": "Wrong password. Please try again.",
+    "submit_password": "Enter"
   },
   "calculator": {
     "admin_panel": "Admin Panel",

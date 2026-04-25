@@ -30,7 +30,7 @@ const Tour04 = () => {
     <>
       <div className="overflow-hidden w-screen -mt-20 sm:-mx-8 md:-mx-16 lg:-mx-24 xl:-mx-36">
         <img
-          src="https://www.copenhagendowntown.com/__data/assets/image/0020/3917/_DSC4149.jpg"
+          src="/img/pub_crawl.png"
           alt="Pub Crawl Copenhagen"
           className="w-screen h-64 md:h-80 lg:h-128 object-cover"
         />

@@ -5,13 +5,15 @@ import { initReactI18next } from 'react-i18next';
 // Importar tus archivos de traducción
 import es from './translations/es.json';
 import en from './translations/en.json';
+import it from './translations/it.json';
 
 i18n
   .use(initReactI18next) // integra react-i18next
   .init({
     resources: {
       es: { translation: es },
-      en: { translation: en }
+      en: { translation: en },
+      it: { translation: it }
     },
     fallbackLng: 'es',       // si no se encuentra la clave en el idioma activo, usa “es”
     lng: 'es',               // idioma por defecto al iniciar

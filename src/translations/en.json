@@ -274,6 +274,9 @@
     "slideshow_caption": "Explore Copenhagen with us",
     "discount_label": "OFF YOUR FIRST BOOKING",
     "claim_discount": "Claim My Discount Now",
-    "no_thanks": "No thanks, I'll pay full price"
+    "no_thanks": "No thanks, I'll pay full price",
+    "custom_lang_label": "Specify Language",
+    "custom_lang_placeholder": "e.g. German, French, etc.",
+    "to_be_confirmed": "To be confirmed"
   }
 }

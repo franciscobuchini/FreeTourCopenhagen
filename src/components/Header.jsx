@@ -12,6 +12,7 @@ export default function Header() {
   const languageIcons = {
     en: 'twemoji:flag-united-kingdom',
     es: 'twemoji:flag-spain',
+    it: 'twemoji:flag-italy',
   };
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -78,7 +79,7 @@ export default function Header() {
           </button>
           {isLanguageOpen && (
             <ul className="absolute right-0 mt-2 bg-white border border-gray-300 rounded-2xl p-2 z-50">
-              {['en', 'es'].map((lang) => (
+              {['en', 'es', 'it'].map((lang) => (
                 <li key={lang}>
                   <button
                     onClick={() => changeLanguage(lang)}

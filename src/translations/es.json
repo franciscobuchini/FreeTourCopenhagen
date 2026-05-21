@@ -273,6 +273,9 @@
     "markup": "Margen",
     "discount_label": "OFF en tu primera reserva",
     "claim_discount": "Reclamar mi Descuento",
-    "no_thanks": "No gracias, pago precio completo"
+    "no_thanks": "No gracias, pago precio completo",
+    "custom_lang_label": "Especificar Idioma",
+    "custom_lang_placeholder": "Ej: Alemán, Francés, etc.",
+    "to_be_confirmed": "A confirmar"
   }
 }

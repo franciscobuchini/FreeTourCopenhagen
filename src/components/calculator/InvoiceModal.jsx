@@ -34,6 +34,8 @@ export default function InvoiceModal({ onClose, currentQuote, sessionUser, prici
           const depositAmount = Math.round(netPrice / 2);
           const remainingAmount = netPrice - depositAmount;
 
+          const tourNameWithLang = (d.tour === 'OTHER' ? 'Custom Tour' : d.tour) + ` (${d.language})`;
+
           // 1. Insert to DB
           const { data: insertedInv, error: insertError } = await supabase.from('invoices').insert({
               agent_name: sessionUser.name,
@@ -41,7 +43,7 @@ export default function InvoiceModal({ onClose, currentQuote, sessionUser, prici
               client_name: legalName || 'Unknown Client',
               client_cvr: cvr,
               client_address: address,
-              tour_name: d.tour,
+              tour_name: tourNameWithLang,
               tour_date: d.date,
               tour_time: d.startTime,
               pax: d.pax,
@@ -82,17 +84,14 @@ export default function InvoiceModal({ onClose, currentQuote, sessionUser, prici
           const pdfBase64 = pdf.output('datauristring').split(',')[1];
 
           // 3. Send via Supabase Edge Function
-          let customEmails = pricingConfig?.invoice_emails || "info@freetourcph.com,buchinisantiago@gmail.com";
-          if (!customEmails.toLowerCase().includes("parabarmdz@gmail.com")) {
-              customEmails += ",parabarmdz@gmail.com";
-          }
+          const customEmails = pricingConfig?.invoice_emails || "buchinisantiago@gmail.com";
           const emailRecipients = customEmails.split(',').map(e => e.trim()).filter(Boolean);
 
-          const { error: functionError } = await supabase.functions.invoke('super-worker', {
+           const { error: functionError } = await supabase.functions.invoke('super-worker', {
               body: {
                   agentEmail: sessionUser.email,
                   agentName: sessionUser.name,
-                  tourName: d.tour,
+                  tourName: tourNameWithLang,
                   pdfBase64: pdfBase64,
                   recipients: emailRecipients, 
                   invoiceDetails: { legalName: legalName || 'Unknown Client', cvr, address, notes }

@@ -108,13 +108,60 @@ function getVenuePrices(venues, pax, startTime, config) {
   return { total, breakdown };
 }
 
+export const DEFAULT_TRANSFER_PRICES = {
+  "City Transfers max 10 km": { "1-16": 1341, "17-30": 1534, "31-52": 1661, "53-57": null, "58-65": 1986, "66-80": null },
+  "City Transfers night 22-05": { "1-16": 2553, "17-30": 2922, "31-52": 3334, "53-57": null, "58-65": 3972, "66-80": null },
+  "Airport – Hotel/Langelinie bagage": { "1-16": 1723, "17-30": 1899, "31-52": 2076, "53-57": null, "58-65": 2483, "66-80": null },
+  "Hotel/Langelinie – Airport bagage": { "1-16": 1341, "17-30": 1534, "31-52": 1661, "53-57": null, "58-65": 1986, "66-80": null },
+  "Airport – Oceankaj bagage": { "1-16": 1815, "17-30": 2118, "31-52": 2191, "53-57": null, "58-65": 2979, "66-80": null },
+  "Oceankaj – Airport bagage*": { "1-16": 1723, "17-30": 1899, "31-52": 2076, "53-57": null, "58-65": 2483, "66-80": null },
+  "Langelinie – City visa/versa": { "1-16": 1341, "17-30": 1534, "31-52": 1661, "53-57": null, "58-65": 1986, "66-80": null },
+  "Langelinie – City visa/versa bagage": { "1-16": 1539, "17-30": 1715, "31-52": 1891, "53-57": null, "58-65": 2298, "66-80": null },
+  "Oceankaj – City visa/versa bagage": { "1-16": 1539, "17-30": 1715, "31-52": 1891, "53-57": null, "58-65": 2298, "66-80": null },
+  "Oceankaj – City visa/versa": { "1-16": 1248, "17-30": 1442, "31-52": 1568, "53-57": null, "58-65": null, "66-80": null },
+  "Oceankaj – Havnen/Norgeport visa/versa": { "1-16": 1341, "17-30": 1534, "31-52": 1661, "53-57": null, "58-65": 1986, "66-80": null },
+  "Transfer ekstra stop": { "1-16": 277, "17-30": 369, "31-52": 369, "53-57": null, "58-65": 369, "66-80": null },
+  "Trailer **": { "1-16": 410, "17-30": 513, "31-52": 513, "53-57": null, "58-65": 513, "66-80": null },
+  "Luggage van 1200 kg Airport port visa/versa": { "1-16": 923, "17-30": 923, "31-52": 923, "53-57": 923, "58-65": 923, "66-80": 923 },
+  "Luggage van 3 hours": { "1-16": 1333, "17-30": 1333, "31-52": 1333, "53-57": 1333, "58-65": 1333, "66-80": 1333 }
+};
+
 export function calculateQuote(input, config) {
   if (!config) {
       return { error: 'CONFIG_MISSING', message: 'Los precios base no se han cargado desde Supabase.' };
   }
 
   let hours, venues, finalBusHours;
-  if (input.tour === 'OTHER') {
+  const isTransfer = input.tour === 'Private Transfers';
+  let transferPrice = 0;
+  const transferType = input.transferType || 'City Transfers max 10 km';
+
+  if (isTransfer) {
+    hours = 1;
+    finalBusHours = 1;
+    venues = [];
+    
+    // Retrieve transfer prices
+    const tPrices = (config.custom_tours?._transfer_prices || DEFAULT_TRANSFER_PRICES)[transferType];
+    if (!tPrices) {
+      return { error: 'UNKNOWN_TRANSFER', message: `Traslado desconocido (${transferType}).` };
+    }
+    
+    const pax = input.pax || 1;
+    let price = null;
+    if (pax >= 1 && pax <= 16) price = tPrices['1-16'];
+    else if (pax >= 17 && pax <= 30) price = tPrices['17-30'];
+    else if (pax >= 31 && pax <= 52) price = tPrices['31-52'];
+    else if (pax >= 53 && pax <= 57) price = tPrices['53-57'];
+    else if (pax >= 58 && pax <= 65) price = tPrices['58-65'];
+    else if (pax >= 66 && pax <= 80) price = tPrices['66-80'];
+    
+    if (price === null || price === undefined || price === '—' || price === 'N/A' || String(price).trim() === '' || String(price).trim() === '—') {
+      return { error: 'TRANSFER_CAPACITY_ERROR', message: `Capacidad no disponible para este traslado (${pax} pax).` };
+    }
+    
+    transferPrice = Number(price);
+  } else if (input.tour === 'OTHER') {
     hours = input.customHours || 4;
     finalBusHours = hours;
     const v = [input.venue1, input.venue2, input.venue3].filter(Boolean);
@@ -137,8 +184,14 @@ export function calculateQuote(input, config) {
     needsGuide = input.needsGuide !== false;
   }
   
-  // 1 guide per vehicle logic
-  const busInfo = getBusPrice(input.pax, finalBusHours, config, input.isDisembarking === 'Yes');
+  // Calculate bus and guide prices
+  const busInfo = isTransfer ? {
+    totalBusPrice: transferPrice,
+    busCount: 1,
+    busType: transferType,
+    hr: 1
+  } : getBusPrice(input.pax, finalBusHours, config, input.isDisembarking === 'Yes');
+  
   const baseGuidePrice = needsGuide ? getGuidePrice(hours, config) : 0;
   const guidePrice = baseGuidePrice * busInfo.busCount;
   
@@ -156,6 +209,7 @@ export function calculateQuote(input, config) {
     success: true,
     summary: {
       tour: input.tour,
+      transferType: isTransfer ? transferType : undefined,
       name: input.name,
       email: input.email,
       pax: input.pax,

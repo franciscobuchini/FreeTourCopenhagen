@@ -22,7 +22,8 @@ export default function TourCalculator() {
   const [formData, setFormData] = useState({
     isDisembarking: 'No',
     pax: 1,
-    language: 'ENG',
+    language: 'Español',
+    customLanguage: '',
     date: '1988-11-08',
     startTime: '10:00',
     tour: '',
@@ -75,7 +76,16 @@ export default function TourCalculator() {
         return;
     }
     
-    const inputForCalc = { ...formData, email: sessionUser?.email, name: sessionUser?.name };
+    const resolvedLanguage = formData.language === 'Otro'
+        ? (formData.customLanguage ? `${formData.customLanguage} (A confirmar)` : 'Otro (A confirmar)')
+        : formData.language;
+
+    const inputForCalc = { 
+        ...formData, 
+        language: resolvedLanguage,
+        email: sessionUser?.email, 
+        name: sessionUser?.name 
+    };
     const result = calculateQuote(inputForCalc, pricingConfig);
     
     if (result && !result.error) {

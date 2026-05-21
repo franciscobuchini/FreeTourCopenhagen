@@ -57,6 +57,26 @@ export default function CalculatorForm({ formData, setFormData, pricingConfig })
           for (const [es, trans] of Object.entries(dict)) {
               translated = translated.replace(new RegExp(es, 'gi'), trans);
           }
+      } else if (i18n.language === 'it') {
+          const itDict = {
+              "Caminata": "Passeggiata",
+              "Paseo a pie": "Passeggiata a piedi",
+              "Bote por canales": "Giro in barca nei canali",
+              "Bote": "Barca",
+              "Traslado directo": "Trasferimento diretto",
+              "La Sirenita": "La Sirenetta",
+              "Regreso al puerto": "Ritorno al porto",
+              "Vistas panorámicas principales": "Principali viste panoramiche",
+              "Aeropuerto": "Aeroporto",
+              "Puerto": "Porto",
+              "u Hotel": "o Hotel",
+              "Canales": "Canali",
+              "highlights ciudad": "attrazioni principali",
+              "Vistas desde el agua": "Vista dall'acqua"
+          };
+          for (const [es, trans] of Object.entries(itDict)) {
+              translated = translated.replace(new RegExp(es, 'gi'), trans);
+          }
       }
       return translated;
   };
@@ -121,15 +141,49 @@ export default function CalculatorForm({ formData, setFormData, pricingConfig })
 
             <div className="flex flex-col gap-2">
                 <label className="text-sm font-semibold uppercase tracking-wider text-gray-400">{t('calculator.lang_label', 'Language')}</label>
-                <select value={formData.language} onChange={(e)=>updateField('language', e.target.value)} className="px-4 py-3 bg-black/30 border border-white/10 rounded-xl focus:border-orange-500 outline-none transition font-semibold appearance-none">
-                    <option value="ENG">🇬🇧 ENG</option>
-                    <option value="ESP">🇪🇸 ESP</option>
-                    <option value="ITA">🇮🇹 ITA</option>
-                    <option value="POR">🇵🇹 POR</option>
-                    <option value="FRE">🇫🇷 FRE</option>
-                    <option value="GER">🇩🇪 GER</option>
-                </select>
+                <div className="relative">
+                    <select 
+                        value={formData.language} 
+                        onChange={(e)=> {
+                            updateField('language', e.target.value);
+                            if (e.target.value !== 'Otro') {
+                                updateField('customLanguage', '');
+                            }
+                        }} 
+                        className="w-full px-4 py-3 bg-black/30 border border-white/10 rounded-xl focus:border-orange-500 outline-none transition font-semibold appearance-none cursor-pointer"
+                    >
+                        <option value="Español" className="bg-slate-900 text-white">🇪🇸 Español</option>
+                        <option value="Inglés" className="bg-slate-900 text-white">🇬🇧 Inglés</option>
+                        <option value="Italiano" className="bg-slate-900 text-white">🇮🇹 Italiano</option>
+                        <option value="Otro" className="bg-slate-900 text-white">🌐 Otro</option>
+                    </select>
+                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-400">
+                        <Icon icon="ph:caret-down-bold" />
+                    </div>
+                </div>
             </div>
+
+            {formData.language === 'Otro' && (
+                <div className="flex flex-col gap-2 md:col-span-2 lg:col-span-3 mt-2 p-5 bg-black/20 rounded-xl border border-white/5 shadow-inner animate-fade-in relative overflow-hidden">
+                    <div className="absolute -left-5 top-6 w-1 h-12 bg-orange-500 rounded-r-lg"></div>
+                    <label className="text-xs font-bold uppercase tracking-wider text-orange-400 flex items-center gap-1.5">
+                        <Icon icon="ph:translate-bold" className="text-base" /> {t('calculator.custom_lang_label', 'Especificar Idioma / Specify Language')}
+                    </label>
+                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mt-1">
+                        <input
+                            type="text"
+                            required
+                            placeholder={t('calculator.custom_lang_placeholder', 'Ej: Alemán, Francés...')}
+                            value={formData.customLanguage || ''}
+                            onChange={(e) => updateField('customLanguage', e.target.value)}
+                            className="flex-1 px-4 py-3 bg-black/40 border border-white/10 rounded-xl focus:border-orange-500 outline-none transition font-semibold text-white text-sm"
+                        />
+                        <div className="px-4 py-2.5 bg-orange-500/20 border border-orange-500/30 text-orange-400 rounded-xl text-xs font-black uppercase tracking-wider animate-pulse flex items-center justify-center gap-1.5 shrink-0 select-none shadow-[0_0_15px_rgba(249,115,22,0.15)]">
+                            <Icon icon="ph:clock-countdown-bold" className="text-sm" /> {t('calculator.to_be_confirmed', 'A confirmar')}
+                        </div>
+                    </div>
+                </div>
+            )}
 
             <div className="flex flex-col gap-2">
                 <label className="text-sm font-semibold uppercase tracking-wider text-gray-400">{t('calculator.date_label', 'Date')}</label>
@@ -174,6 +228,45 @@ export default function CalculatorForm({ formData, setFormData, pricingConfig })
                             <span className="text-green-400 font-semibold flex items-center gap-2">
                                 <Icon icon="ph:ticket-bold" /> {selectedTourInfo.venues?.length > 0 ? selectedTourInfo.venues.join(', ') : t('calculator.info_no_venues', 'No venues')}
                             </span>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {formData.tour === 'Private Transfers' && (
+                <div className="md:col-span-2 lg:col-span-3 mt-4 p-5 bg-black/20 rounded-xl border border-white/5 shadow-inner flex flex-col gap-2 relative">
+                    <div className="absolute -left-5 top-6 w-1 h-12 bg-orange-500 rounded-r-lg"></div>
+                    <label className="text-xs font-bold uppercase tracking-wider text-orange-400 flex items-center gap-1.5">
+                        <Icon icon="ph:bus-bold" className="text-base" /> {t('calculator.transfer_type_label', 'Tipo de Traslado / Transfer Type')}
+                    </label>
+                    <div className="relative">
+                        <select 
+                            value={formData.transferType || 'City Transfers max 10 km'} 
+                            onChange={(e) => updateField('transferType', e.target.value)} 
+                            className="w-full px-4 py-3 bg-black/40 border border-white/10 rounded-xl focus:border-orange-500 outline-none transition font-semibold text-gray-200 cursor-pointer appearance-none"
+                        >
+                            {(pricingConfig?.custom_tours?._transfer_prices ? Object.keys(pricingConfig.custom_tours._transfer_prices) : [
+                                "City Transfers max 10 km",
+                                "City Transfers night 22-05",
+                                "Airport – Hotel/Langelinie bagage",
+                                "Hotel/Langelinie – Airport bagage",
+                                "Airport – Oceankaj bagage",
+                                "Oceankaj – Airport bagage*",
+                                "Langelinie – City visa/versa",
+                                "Langelinie – City visa/versa bagage",
+                                "Oceankaj – City visa/versa bagage",
+                                "Oceankaj – City visa/versa",
+                                "Oceankaj – Havnen/Norgeport visa/versa",
+                                "Transfer ekstra stop",
+                                "Trailer **",
+                                "Luggage van 1200 kg Airport port visa/versa",
+                                "Luggage van 3 hours"
+                            ]).map(opt => (
+                                <option key={opt} value={opt} className="bg-slate-900 text-white">{opt}</option>
+                            ))}
+                        </select>
+                        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-400">
+                            <Icon icon="ph:caret-down-bold" />
                         </div>
                     </div>
                 </div>

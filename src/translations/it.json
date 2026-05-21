@@ -1,0 +1,281 @@
+{
+  "booking": {
+    "title": "Prenota il tuo Tour",
+    "select_date": "Seleziona la data:",
+    "name": "Nome completo:",
+    "name_placeholder": "Il tuo nome",
+    "sunday": "Domenica non disponibile.",
+    "sunday_not_available": "La domenica non è disponibile per le prenotazioni.",
+    "start_time": "Ora di inizio:",
+    "select_time": "Seleziona l'ora",
+    "people": "Persone:",
+    "max_allowed": "Massimo consentito: {{max}}",
+    "language": "Lingua:",
+    "select_language": "Seleziona la lingua",
+    "notes": "Note o richieste speciali:",
+    "contact_email": "Email di contatto:",
+    "reserving": "Prenotando...",
+    "reserve": "Prenota il Tour",
+    "success": "Prenotazione per \"{{tour}}\" inviata con successo. Grazie!",
+    "error": "Errore durante l'invio della prenotazione. Riprova."
+  },
+  "header": {
+    "home": "Home",
+    "tour01": "Walking Tour",
+    "tour02": "Giro in Barca",
+    "tour03": "Tour Speciali",
+    "tour04": "Pub Crawl",
+    "blog": "Blog",
+    "b2b": "B2B"
+  },
+  "footer": {
+    "about_title": "Info su Free Tour Cph",
+    "about_text": "Scopri Copenaghen con le migliori guide della città. Tour personalizzati, percorsi esclusivi ed esperienze uniche per ogni viaggiatore.",
+    "quick_links_title": "Link Rapidi",
+    "link_home": "Home",
+    "link_walking_tour": "Free walking tour",
+    "link_boat_tour": "Giro in barca",
+    "link_special_tour": "Tour speciali",
+    "link_pub_crawl": "Pub Crawl",
+    "contact_title": "Contatti",
+    "contact_email_address": "info@freetourcph.com",
+    "contact_phone": "+45 71 61 79 70",
+    "copied": "Copiato",
+    "image_alt": "Immagine del footer"
+  },
+  "reviews": {
+    "title": "Recensioni",
+    "loading": "Caricamento recensioni...",
+    "loading_error": "Errore durante il caricamento delle recensioni.",
+    "no_reviews": "Non ci sono ancora recensioni.",
+    "prev": "Precedente",
+    "next": "Successiva",
+    "sent_success": "Recensione inviata con successo. Grazie!",
+    "sent_error": "Errore durante l'invio della recensione. Riprova.",
+    "form_title": "Lascia una Recensione",
+    "rating": "Valutazione",
+    "set_rating": "Imposta la valutazione a {{count}} stelle",
+    "name_label": "Nome",
+    "name_placeholder": "Il tuo nome",
+    "country_label": "Paese",
+    "country_placeholder": "Il tuo paese",
+    "tour_group": "Tipo di gruppo",
+    "comment_label": "Commento",
+    "comment_placeholder": "Scrivi il tuo commento",
+    "send_button": "Invia recensione",
+    "sending": "Invio in corso...",
+    "single": "Da solo",
+    "couple": "In coppia",
+    "group": "In gruppo"
+  },
+  "tourDetails": {
+    "details": "Dettagli",
+    "duration": "Durata",
+    "includes": "Cosa è incluso",
+    "tips": "Consigli",
+    "accessibility": "Accessibilità",
+    "warnings": "Avvertenze",
+    "price": "Prezzo",
+    "meeting_point": "Punto d'incontro",
+    "view_on_map": "Visualizza su Google Maps",
+    "contact_us": "Contattaci",
+    "email": "Email",
+    "phone": "Telefono"
+  },
+  "home": {
+    "title": "Free Tour Copenaghen in Italiano | Le Migliori Visite Guidate a Piedi",
+    "subtitle": "Esplora Copenaghen come un locale. Walking tour e giri in barca in italiano, spagnolo e inglese. Piccoli gruppi, storie vere, guide appassionate. Prenota ora e scopri la città con il cuore!",
+    "slides": [
+      {
+        "title": "Gran Tour di Copenaghen",
+        "description": "Scopri le gemme nascoste di Copenaghen nel nostro tour guidato.",
+        "buttonText": "Scopri di più"
+      },
+      {
+        "title": "Giro in Barca + Walking Tour",
+        "description": "Naviga tra i canali della città in un tour esclusivo.",
+        "buttonText": "Scopri di più"
+      }
+    ],
+    "about": {
+      "title": "Agenzia di Free Tour a Copenaghen: Chi siamo?",
+      "paragraph1": "Benvenuti su FREE TOUR CPH! Siamo un'agenzia giovane e appassionata, specializzata nell'offrire free walking tour a Copenaghen in italiano, spagnolo e inglese. Il nostro obiettivo è mostrarti il meglio della città più affascinante del Nord Europa attraverso un'esperienza vicina, autentica e divertente.",
+      "paragraph2": "Il nostro team è composto da guide che amano ciò che fanno: camminare, condividere storie e connettersi con persone provenienti da tutto il mondo. Amiamo passeggiare nel centro storico, navigare nei canali come gli antichi mercanti e svelare fatti curiosi che non troverai nelle tradizionali guide turistiche.",
+      "paragraph3": "Se stai cercando un tour a Copenaghen in italiano, spagnolo o inglese con aneddoti, luoghi imperdibili e angoli nascosti, sei nel posto giusto. Ti aspettiamo per scoprire insieme il meglio della capitale danese!"
+    },
+    "seo_guide": {
+      "title": "Cosa fare a Copenaghen? La tua guida locale per scoprire la capitale danese",
+      "intro": "Se stai pianificando la tua visita nella città più accogliente del Nord Europa, probabilmente ti starai chiedendo da dove iniziare. Copenaghen è un mix perfetto di storia vichinga, architettura all'avanguardia e la famosa filosofia Hygge. Ecco le attrazioni essenziali da non perdere nel tuo itinerario:",
+      "must_see_title": "Attrazioni Turistiche: Cosa non perdere a Copenaghen",
+      "must_see_items": [
+        "<strong>Nyhavn:</strong> L'iconico canale con le case colorate del XVII secolo. È il luogo perfetto per capire perché la città vive affacciata sul mare.",
+        "<strong>La Sirenetta (Den Lille Havfrue):</strong> Il simbolo della città basato sulla celebre fiaba di Hans Christian Andersen. Ti mostreremo il percorso più pittoresco per arrivarci!",
+        "<strong>Palazzo di Amalienborg:</strong> La residenza della famiglia reale danese, dove potrai assistere al cambio della guardia.",
+        "<strong>Christiania:</strong> La \"città libera\" di Copenaghen, un esperimento sociale e artistico unico al mondo."
+      ],
+      "days_title": "Itinerari di Viaggio: Come esplorare Copenaghen in 1, 2 o 3 giorni?",
+      "days_intro": "Per sfruttare al meglio il tuo tempo, il nostro consiglio da locali è di dividere la città per zone:",
+      "days_items": [
+        "<strong>Giorno 1: Il Centro Storico.</strong> Il modo migliore per orientarsi è con un Free Tour in italiano. Esplorerai la Piazza del Municipio, la Fontana di Gefion e i punti chiave della città vecchia.",
+        "<strong>Giorno 2: Copenaghen dall'acqua.</strong> Un tour in barca attraverso i canali ti darà una prospettiva completamente diversa dell'Opera House e della Biblioteca Reale (il Diamante Nero).",
+        "<strong>Giorno 3: Castelli e Quartieri Moderni.</strong> Esplora il Castello di Rosenborg e perditi tra le vie di Vesterbro o Nørrebro per vivere l'atmosfera locale."
+      ],
+      "tip": "<strong>Consiglio della Guida:</strong> Copenaghen è una delle città più sicure e pianeggianti al mondo, il che la rende ideale per camminare. Non dimenticare di portare scarpe comode e di prepararti al clima variabile; qui diciamo che non c'è cattivo tempo, ma solo abbigliamento inadeguato!",
+      "why_us_title": "Perché scegliere Free Tour CPH per la tua visita?",
+      "why_us_text": "Con Free Tour CPH non ci limitiamo a recitare date e nomi. Vogliamo farti capire perché la Danimarca è uno dei paesi più felici al mondo. I nostri walking tour in italiano sono pensati per piccoli gruppi, consentendo un'esperienza ravvicinata dove potrai chiedere di tutto, dai consigli sui ristoranti alle curiosità sulla monarchia danese."
+    }
+  },
+  "notFound": {
+    "title": "Pagina non trovata",
+    "message": "Spiacenti, la pagina che stai cercando non esiste o è stata spostata.",
+    "backHome": "Torna alla Home"
+  },
+  "seo": {
+    "home": {
+      "title": "Free Tour a Copenaghen in Italiano | Prenota Gratis | Free Tour CPH",
+      "description": "Esplora Copenaghen con le migliori guide locali in italiano. Tour a piedi gratuiti, giri in barca nei canali ed escursioni private. Prenota subito il tuo posto gratis."
+    },
+    "tour01": {
+      "title": "Free Walking Tour Copenaghen Italiano | Cosa Fare Gratis",
+      "description": "Il miglior Free Walking Tour di Copenaghen. Scopri Nyhavn, La Sirenetta, il Palazzo di Amalienborg e la storia vichinga con guide appassionate in italiano."
+    },
+    "tour02": {
+      "title": "I Migliori Tour in Barca a Copenaghen | Giri tra i Canali",
+      "description": "Prenota il miglior tour in barca tra i canali di Copenaghen combinato con un percorso a piedi. Piccoli gruppi ed esperienza esclusiva garantita."
+    },
+    "tour03": {
+      "title": "Tour Privati a Copenaghen in Italiano | Escursioni Esclusive",
+      "description": "Tour personalizzati e privati a Copenaghen per gruppi e agenzie. Itinerari su misura per scoprire la Danimarca al tuo ritmo."
+    },
+    "tour04": {
+      "title": "Pub Crawl Copenaghen | Miglior Tour di Festa e Vita Notturna",
+      "description": "Unisciti al nostro Pub Crawl e vivi la miglior festa a Copenaghen. Incontra nuove persone, visita i migliori locali e goditi la notte danese."
+    },
+    "blog": {
+      "title": "Blog di Viaggi su Copenaghen | Consigli, Guide e Cosa Vedere",
+      "description": "Scopri i migliori consigli per viaggiare in Danimarca: come spostarsi, dove mangiare, budget e le attrazioni imperdibili di Copenaghen."
+    }
+  },
+  "blog": {
+    "title": "Blog di Viaggi",
+    "subtitle": "Scopri i migliori consigli, guide e storie su Copenaghen e la Danimarca.",
+    "read_more": "Leggi l'articolo completo",
+    "back_to_blog": "Torna al Blog",
+    "not_found": "Articolo non trovato."
+  },
+  "tour01": {
+    "title": "Gran Free Tour di Copenaghen in Italiano",
+    "description": [
+      "Partecipa al nostro Free Walking Tour ed esplora il meglio di Copenaghen con una guida esperta e appassionata!",
+      "Scopriremo monumenti, palazzi e angoli nascosti ricchi di storia, passeggiando per le sue strade come se fossimo dei locali.",
+      "Dall'incantevole porto di Nyhavn e la celebre Sirenetta, fino al Palazzo di Amalienborg e la vivace via Strøget, ti mostreremo la città da una prospettiva autentica.",
+      "Scopri i segreti dei vichinghi, la monarchia danese, lo stile di vita scandinavo e ciò che rende Copenaghen una delle capitali più felici del mondo."
+    ],
+    "details": {
+      "duration": "2 ore / 2.5 ore",
+      "tips": ["Portare acqua", "Portare un impermeabile o ombrello"],
+      "warnings": ["I tour si svolgono anche in caso di pioggia. Cancelliamo solo in caso di forti tempeste."],
+      "price": "Basato sulle mance.",
+      "meetingPoint": "Municipio (Rådhuspladsen)"
+    }
+  },
+  "tour02": {
+    "title": "Giro in Barca tra i Canali + Walking Tour a Copenaghen",
+    "description": [
+      "In questo percorso vivrai un'esperienza intima ed esclusiva, limitata a sole 7 persone per goderti al massimo ogni dettaglio.",
+      "Inizieremo esplorando i punti più rappresentativi della città, scoprendo la sua vita quotidiana e la sua ricca storia.",
+      "Successivamente, saliremo a bordo di una barca per navigare tra gli incantevoli canali e i quartieri moderni circondati dall'acqua, regalandoti una prospettiva magica e rilassante."
+    ],
+    "details": {
+      "duration": "2 ore circa",
+      "includes": ["Guida locale professionale", "Giro in barca privato"],
+      "tips": ["Portare snack e/o bevande", "Portare un impermeabile"],
+      "warnings": ["I tour si svolgono anche in caso di pioggia. Cancelliamo solo in caso di forti tempeste."],
+      "price": "120 € / 1000 DKK per barca (max. 7 persone). Contanti (DKK/EUR) o bonifico bancario.",
+      "meetingPoint": "Municipio (Rådhuspladsen)"
+    }
+  },
+  "special": {
+    "title": "Tour Privati e Speciali a Copenaghen",
+    "description": "Organizziamo tour privati, tematici o fuori stagione.",
+    "contact_prompt": "Per maggiori informazioni o per verificare la disponibilità, scrivici a:"
+  },
+  "pubcrawl": {
+    "title": "Pub Crawl Copenaghen: La Miglior Festa e Vita Notturna",
+    "description": "Vivi la vivace vita notturna di Copenaghen con il nostro Pub Crawl! Unisciti a noi per una serata indimenticabile esplorando alcuni dei migliori bar e pub della città, incontrando nuove persone e gustando ottimi drink in un'atmosfera divertente e festosa. Che tu sia un locale o un visitatore, il nostro Pub Crawl è il modo perfetto per scoprire la movida di Copenaghen. Prenota ora il tuo posto e preparati a una notte epica!"
+  },
+  "b2b": {
+    "badge": "Per Agenzie di Viaggio",
+    "hero_title": "Calcolatore di Tour B2B",
+    "hero_subtitle": "Preventivi istantanei per tour di gruppo a Copenaghen. Calcola prezzi, seleziona tour e invia fatture professionali ai tuoi clienti in pochi secondi.",
+    "feat_instant": "Preventivi istantanei",
+    "feat_invoice": "Fattura PDF",
+    "feat_multilang": "Multilingue",
+    "feat_secure": "Accesso sicuro",
+    "loading": "Caricamento calcolatore...",
+    "password_required": "Benvenuto in B2B Free Tour CPH",
+    "password_description": "Se sei stato invitato via email, inserisci il codice di accesso. Altrimenti, richiedilo a info@freetourcph.com",
+    "password_placeholder": "Inserisci password",
+    "wrong_password": "Password errata. Riprova.",
+    "submit_password": "Entra"
+  },
+  "calculator": {
+    "admin_panel": "Pannello Amministratore",
+    "welcome_title": "Tour Calculator",
+    "welcome_subtitle": "Identificati per continuare",
+    "name_label": "Nome",
+    "email_label": "Email",
+    "enter_btn": "Accedi al Calcolatore",
+    "basic_info": "Informazioni di Base",
+    "is_cruise": "🚢 È un tour di sbarco? (Crociera)",
+    "pax_label": "Passeggeri (Pax)",
+    "lang_label": "Lingua del Tour",
+    "date_label": "Data",
+    "time_label": "Ora di Inizio",
+    "which_tour": "Quale tour desideri quotare?",
+    "custom_options": "Opzioni del Tour Personalizzato",
+    "hours_label": "Quante ore?",
+    "needs_guide": "Hanno bisogno di una guida?",
+    "venues_label": "Ingressi / Venues (Opzionale)",
+    "itinerary_label": "Itinerario / Note speciali",
+    "itinerary_placeholder": "Descrivi i luoghi da visitare o requisiti speciali...",
+    "guide_label": "Guida",
+    "guides_label": "Guide",
+    "bus_label": "Autobus",
+    "extra_note": "Include 30 minuti extra per arrivo anticipato e coordinamento con l'autista.",
+    "net_total": "Totale Netto",
+    "markup": "Margine",
+    "total_pax": "per persona",
+    "approx": "Appross.",
+    "copy_btn": "Copia Testo",
+    "email_btn": "Invia via Email",
+    "save_btn": "Salva e Registra",
+    "other": "ALTRO",
+    "yes": "Sì",
+    "no": "No",
+    "luggage_note": "🧳 <strong>Capacità Ridotta:</strong> Per i tour di sbarco con bagagli, viene calcolato un uso massimo del 70% dei posti a sedere dell'autobus.",
+    "auth_required": "Password richiesta",
+    "auth_subtitle": "Inserisci la password per visualizzare il dettaglio dei prezzi.",
+    "cancel": "Annulla",
+    "confirm": "Conferma",
+    "header_subtitle": "Generatore rapido di preventivi per agenti",
+    "info_transport": "Trasporto",
+    "info_duration": "Durata",
+    "info_sights": "Punti da visitare",
+    "info_includes": "Include",
+    "info_no_venues": "Senza ingressi inclusi",
+    "trust_title": "Perché sceglierci?",
+    "trust_subtitle": "Il tuo partner di fiducia a Copenaghen",
+    "trust_stat_groups": "Gruppi Aziendali",
+    "trust_stat_clients": "Clienti Felici",
+    "trust_stat_years": "Anni di Esperienza",
+    "trust_logos_title": "Aziende che si fidano di noi",
+    "slideshow_caption": "Esplora Copenaghen con noi",
+    "discount_label": "SCONTO SULLA PRIMA PRENOTAZIONE",
+    "claim_discount": "Riscatta il mio Sconto Ora",
+    "no_thanks": "No grazie, pago il prezzo intero",
+    "custom_lang_label": "Specificare Lingua",
+    "custom_lang_placeholder": "Es: Tedesco, Francese, ecc.",
+    "to_be_confirmed": "Da confermare"
+  }
+}

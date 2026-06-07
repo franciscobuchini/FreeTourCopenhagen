@@ -10,6 +10,7 @@ import {
   PUBLIC_KEY,
   TEMPLATE_ID_REVIEW,
 } from '../config/email';
+import { dripReviewsList } from '../data/dripReviews';
 
 const SHEET_CSV_URL =
   'https://docs.google.com/spreadsheets/d/e/2PACX-1vRN0BGSsWf09JTisfIPOGPniK2BSkR__17oZM_RuJa4mtbcWsHQeCMTS7vIjrfJjjpZG0TLroojotkg/pub?gid=0&single=true&output=csv';
@@ -40,8 +41,8 @@ export default function Reviews() {
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
 
-  const mergeAndSort = (sheet, db) => {
-    const all = [...sheet, ...db];
+  const mergeAndSort = (sheet, db, drip) => {
+    const all = [...sheet, ...db, ...drip];
     return all.sort((a, b) => {
       // Most recent first
       const da = new Date(a.date).getTime() || 0;
@@ -54,6 +55,7 @@ export default function Reviews() {
     setLoading(true);
     let sheetReviews = [];
     let dbReviews = [];
+    let dripReviews = [];
 
     // 1. Load legacy reviews from Google Sheet
     try {
@@ -108,7 +110,19 @@ export default function Reviews() {
       console.warn('Supabase reviews fetch failed:', e);
     }
 
-    setReviews(mergeAndSort(sheetReviews, dbReviews));
+    // 3. Load Automated Drip Reviews
+    const DRIP_START = new Date('2026-06-01').getTime();
+    const DRIP_INTERVAL = 4.5 * 24 * 60 * 60 * 1000; // 4.5 days
+    const now = Date.now();
+    const unlockedCount = Math.floor(Math.max(0, now - DRIP_START) / DRIP_INTERVAL) + 1;
+
+    dripReviews = dripReviewsList.slice(0, unlockedCount).map((r, idx) => ({
+      ...r,
+      date: new Date(DRIP_START + (idx * DRIP_INTERVAL)).toISOString().slice(0, 10),
+      tour: tourCode // Make them show up on the active tour dynamically
+    }));
+
+    setReviews(mergeAndSort(sheetReviews, dbReviews, dripReviews));
     setLoading(false);
   };
 

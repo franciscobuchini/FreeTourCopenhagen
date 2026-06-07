@@ -4,7 +4,7 @@ export const blogPosts = [
   {
     id: 1,
     slug: '10-consejos-viajar-copenhague-poco-presupuesto',
-    image: '/images/blog/mochilero-nyhavn-free-tour-copenhague.png',
+    image: '/images/blog/nyhavn.jpg',
     date: '2026-04-20',
     translations: {
       es: {

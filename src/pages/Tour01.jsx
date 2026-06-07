@@ -29,7 +29,7 @@ export default function Tour01() {
     <Tour
       title={t('tour01.title')}
       description={t('tour01.description', { returnObjects: true })}
-      imageSrc="/images/blog/mochilero-nyhavn-free-tour-copenhague.png"
+      imageSrc="/images/blog/nyhavn.jpg"
       detailsData={detailsData}
       onBooking={handleBooking}
     />

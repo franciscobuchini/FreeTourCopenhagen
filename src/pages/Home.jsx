@@ -20,7 +20,7 @@ export default function Home() {
       buttonText: t('home.slides.0.buttonText'),
       link: '/Tour01',
       internal: true,
-      image: '/images/blog/mochilero-nyhavn-free-tour-copenhague.png',
+      image: '/images/blog/nyhavn.jpg',
     },
     {
       title: t('home.slides.1.title'),

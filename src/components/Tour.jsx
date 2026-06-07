@@ -1,5 +1,6 @@
 // src/pages/Tour.jsx
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import BookingCalendar from '../components/BookingCalendar';
 import TourDetails from '../components/TourDetails';
 import Reviews from '../components/Reviews';
@@ -25,6 +26,8 @@ export default function Tour({
   onBooking,
   maxParticipants,
 }) {
+  const { t } = useTranslation();
+
   const getNumericPrice = (priceStr) => {
     if (!priceStr) return "0.00";
     const match = priceStr.match(/\d+/);

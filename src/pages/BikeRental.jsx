@@ -48,13 +48,17 @@ export default function BikeRental() {
 
     setIsGenerating(true);
 
+    const actualPickupAddress = selectedBike.id === 'ebike' 
+      ? 'Langelinie Allé 56 2100 København, Denmark' 
+      : t('bike_rental.pickup_address');
+
     const templateParams = {
       tour_name: `BIKE RENTAL - ${selectedBike.type}`,
       tour_date: formData.rentalDate,
       tour_time: 'Anytime',
       participants: '1',
       language: i18n.language,
-      notes: `⚠️ IMPORTANTE / IMPORTANT ⚠️: IGNORA LA DIRECCIÓN DE CITY HALL SQUARE ABAJO. EL PUNTO DE RECOGIDA DE LA BICI ES: ${t('bike_rental.pickup_address')}. | Voucher Request for ${selectedBike.type}.`,
+      notes: `⚠️ IMPORTANTE / IMPORTANT ⚠️: IGNORA LA DIRECCIÓN DE CITY HALL SQUARE ABAJO. EL PUNTO DE RECOGIDA DE LA BICI ES: ${actualPickupAddress}. | Voucher Request for ${selectedBike.type}.`,
       user_email: formData.email,
       name: `${formData.firstName} ${formData.lastName}`
     };
@@ -210,12 +214,22 @@ export default function BikeRental() {
                 <span className="font-bold text-gray-900">{formData.rentalDate}</span>
               </div>
               <div className="flex justify-between border-b border-gray-100 pb-2">
-                <span className="text-gray-500 font-medium">Email:</span>
-                <span className="font-medium text-gray-900">{formData.email}</span>
+                <span className="text-gray-500 font-medium">To be paid at shop:</span>
+                <span className="font-bold text-gray-900">{selectedBike.price}</span>
               </div>
               <div className="flex justify-between border-b border-gray-100 pb-2">
                 <span className="text-gray-500 font-medium">{t('bike_rental.pickup_title')}:</span>
-                <span className="font-bold text-gray-900">{t('bike_rental.pickup_address')}</span>
+                <span className="font-bold text-gray-900 text-right">
+                  {selectedBike.id === 'ebike' ? 'Langelinie Allé 56 2100 København, Denmark' : t('bike_rental.pickup_address')}
+                </span>
+              </div>
+              <div className="flex justify-between border-b border-gray-100 pb-2">
+                <span className="text-gray-500 font-medium">Opening Hours:</span>
+                <span className="font-medium text-gray-900">09:00 - 17:00</span>
+              </div>
+              <div className="flex justify-between border-b border-gray-100 pb-2">
+                <span className="text-gray-500 font-medium">Email:</span>
+                <span className="font-medium text-gray-900">{formData.email}</span>
               </div>
               <div className="flex justify-between pt-2">
                 <span className="text-gray-500 font-medium">Date Generated:</span>

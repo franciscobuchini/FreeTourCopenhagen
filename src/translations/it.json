@@ -310,6 +310,7 @@
     "first_name": "Nome",
     "last_name": "Cognome",
     "email": "Email",
+    "rental_date": "Data di Noleggio",
     "generate_btn": "Genera Voucher",
     "generating": "Generazione in corso...",
     "voucher_ready": "Il tuo voucher è pronto!",

@@ -302,6 +302,7 @@
     "first_name": "Nombre",
     "last_name": "Apellido",
     "email": "Email",
+    "rental_date": "Fecha de Alquiler",
     "generate_btn": "Generar Voucher",
     "generating": "Generando...",
     "voucher_ready": "¡Tu voucher está listo!",

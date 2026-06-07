@@ -11,7 +11,12 @@ export default function BikeRental() {
   useSEO('home'); // or we could create a bike rental SEO translation, but home is fine for now
 
   const [selectedBike, setSelectedBike] = useState(null);
-  const [formData, setFormData] = useState({ firstName: '', lastName: '', email: '' });
+  const [formData, setFormData] = useState({ 
+    firstName: '', 
+    lastName: '', 
+    email: '',
+    rentalDate: new Date().toISOString().split('T')[0]
+  });
   const [voucherGenerated, setVoucherGenerated] = useState(false);
   const [isGenerating, setIsGenerating] = useState(false);
   const [emailStatus, setEmailStatus] = useState(null); // 'success' or 'error'
@@ -39,13 +44,13 @@ export default function BikeRental() {
 
   const handleGenerate = async (e) => {
     e.preventDefault();
-    if (!formData.firstName || !formData.lastName || !formData.email) return;
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.rentalDate) return;
 
     setIsGenerating(true);
 
     const templateParams = {
       tour_name: `BIKE RENTAL - ${selectedBike.type}`,
-      tour_date: new Date().toLocaleDateString(),
+      tour_date: formData.rentalDate,
       tour_time: 'Anytime',
       participants: '1',
       language: i18n.language,
@@ -151,6 +156,17 @@ export default function BikeRental() {
                 onChange={e => setFormData({...formData, email: e.target.value})}
               />
             </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">{t('bike_rental.rental_date')}</label>
+              <input 
+                type="date" 
+                required 
+                className="w-full border border-gray-300 p-3 rounded-xl focus:ring-2 focus:ring-red-500 focus:outline-none"
+                value={formData.rentalDate}
+                min={new Date().toISOString().split('T')[0]}
+                onChange={e => setFormData({...formData, rentalDate: e.target.value})}
+              />
+            </div>
             <button 
               type="submit" 
               disabled={isGenerating}
@@ -188,6 +204,10 @@ export default function BikeRental() {
               <div className="flex justify-between border-b border-gray-100 pb-2">
                 <span className="text-gray-500 font-medium">{t('bike_rental.bike_type')}</span>
                 <span className="font-bold text-red-700">{selectedBike.type}</span>
+              </div>
+              <div className="flex justify-between border-b border-gray-100 pb-2">
+                <span className="text-gray-500 font-medium">{t('bike_rental.rental_date')}:</span>
+                <span className="font-bold text-gray-900">{formData.rentalDate}</span>
               </div>
               <div className="flex justify-between border-b border-gray-100 pb-2">
                 <span className="text-gray-500 font-medium">Email:</span>

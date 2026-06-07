@@ -311,6 +311,7 @@
     "first_name": "First Name",
     "last_name": "Last Name",
     "email": "Email",
+    "rental_date": "Rental Date",
     "generate_btn": "Generate Voucher",
     "generating": "Generating...",
     "voucher_ready": "Your voucher is ready!",

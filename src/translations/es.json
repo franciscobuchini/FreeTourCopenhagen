@@ -278,5 +278,13 @@
     "a2": "Sí, las reservas son obligatorias. Puedes asegurar tu lugar fácilmente a través de nuestra página web o enviándonos un mensaje por WhatsApp.",
     "q3": "¿En qué idiomas dan los tours?",
     "a3": "Ofrecemos nuestros tours en tres idiomas: Español, Inglés e Italiano. Al momento de reservar podrás elegir el idioma de tu preferencia."
+  },
+  "whatsapp": {
+    "default_message": "Hola, me gustaría recibir más información sobre los tours."
+  },
+  "hero": {
+    "cta_book": "Ver Tours y Reservar",
+    "badge_free": "¡Es Gratis! (Basado en propinas)",
+    "schedule": "📅 Lunes a Sábados | ⏰ 10:30 AM y 14:00 PM"
   }
 }

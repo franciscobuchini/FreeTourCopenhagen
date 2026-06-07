@@ -17,6 +17,7 @@ import B2B from './pages/B2B';
 import AdminPanel from './pages/AdminPanel';
 import BlogList from './pages/BlogList';
 import BlogPost from './pages/BlogPost';
+import WhatsAppButton from './components/WhatsAppButton';
 
 // Importar y ejecutar la configuración de i18n
 import './i18n';
@@ -39,7 +40,7 @@ export default function App() {
           <Route path="*" element={
             <div className="flex flex-col min-h-screen bg-gray-50">
               <Header />
-              <main className="flex-1 pt-20 xl:px-36 lg:px-24 md:px-16 sm:px-6 px-0">
+              <main className="flex-1 pt-20 xl:px-36 lg:px-24 md:px-16 sm:px-6 px-0 relative">
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/Tour01" element={<Tour01 />} />
@@ -51,6 +52,7 @@ export default function App() {
                   <Route path="/blog/:slug" element={<BlogPost />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
+                <WhatsAppButton />
               </main>
               <Footer />
             </div>

@@ -1,6 +1,7 @@
 /* pages/MainMenu.jsx */
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import Carousel from '../components/Carousel';
 import useSEO from '../hooks/useSEO';
 import cphImage from '../assets/cph.webp';
@@ -101,11 +102,31 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <div className="px-4 py-2">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-red-800">
+      <div className="px-4 py-6">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-red-800 leading-tight">
           {t('home.title')}
         </h1>
-        <p className="mt-4 text-gray-600">{t('home.subtitle')}</p>
+        <p className="mt-4 text-gray-700 text-lg sm:text-xl max-w-3xl leading-relaxed">
+          {t('home.subtitle')}
+        </p>
+
+        {/* Conversion Elements */}
+        <div className="mt-8 flex flex-col items-start gap-5">
+          <div className="inline-flex items-center gap-2 bg-green-100 text-green-800 font-bold px-4 py-2 rounded-full border border-green-200 shadow-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+            </svg>
+            {t('hero.badge_free')}
+          </div>
+          
+          <Link to="/Tour01" className="bg-red-700 text-white text-xl font-bold px-8 py-4 rounded-xl shadow-lg hover:bg-red-800 hover:scale-105 transition-all w-full sm:w-auto text-center ring-4 ring-red-100">
+            {t('hero.cta_book')}
+          </Link>
+          
+          <div className="text-gray-700 font-medium flex items-center bg-gray-100 px-5 py-3 rounded-xl mt-2 w-full sm:w-auto border border-gray-200">
+            {t('hero.schedule')}
+          </div>
+        </div>
       </div>
 
       <Carousel slides={slides} interval={4000} />

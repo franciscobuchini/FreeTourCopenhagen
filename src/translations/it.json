@@ -286,5 +286,13 @@
     "a2": "Sì, la prenotazione è obbligatoria. Puoi assicurarti facilmente un posto tramite il nostro sito web o inviandoci un messaggio su WhatsApp.",
     "q3": "In quali lingue sono offerti i tour?",
     "a3": "Offriamo i nostri tour in tre lingue: spagnolo, inglese e italiano. Al momento della prenotazione puoi scegliere la lingua che preferisci."
+  },
+  "whatsapp": {
+    "default_message": "Ciao, vorrei ricevere maggiori informazioni sui tour."
+  },
+  "hero": {
+    "cta_book": "Vedi i Tour e Prenota",
+    "badge_free": "È Gratis! (A offerta libera)",
+    "schedule": "📅 Dal Lunedì al Sabato | ⏰ 10:30 AM e 14:00 PM"
   }
 }

@@ -287,5 +287,13 @@
     "a2": "Yes, reservations are mandatory. You can easily secure your spot through our website or by sending us a message on WhatsApp.",
     "q3": "In what languages are the tours offered?",
     "a3": "We offer our tours in three languages: Spanish, English, and Italian. When booking, you can choose your preferred language."
+  },
+  "whatsapp": {
+    "default_message": "Hello, I would like to get more information about the tours."
+  },
+  "hero": {
+    "cta_book": "View Tours & Book",
+    "badge_free": "It's Free! (Tip-based)",
+    "schedule": "📅 Monday to Saturday | ⏰ 10:30 AM & 2:00 PM"
   }
 }

@@ -194,7 +194,7 @@ export const blogPosts = [
           <p>En Copenhague hay más bicicletas que habitantes, y no es casualidad. Con cientos de kilómetros de ciclovías separadas del tráfico, la ciudad está diseñada de cero pensando en el ciclista. Si quieres vivir la verdadera experiencia danesa, subirte a dos ruedas es obligatorio.</p>
           
           <h3>1. Dónde alquilar tu bicicleta</h3>
-          <p>Encontrarás tiendas de alquiler en casi cada esquina de la ciudad, especialmente cerca de estaciones de tren como Nørreport o la Estación Central. El alquiler por día suele costar alrededor de 100-150 DKK. Otra opción muy popular y cómoda es usar las aplicaciones móviles como <strong>Donkey Republic</strong> o <strong>Tier</strong>, que te permiten desbloquear bicicletas naranjas o verdes repartidas por toda la ciudad simplemente con tu teléfono.</p>
+          <p>Encontrarás tiendas de alquiler en casi cada esquina de la ciudad, pero la opción más recomendada es utilizar nuestro servicio exclusivo. En <strong>Free Tour CPH</strong> ofrecemos <a href="/alquiler-bicicletas" style="color: #dc2626; font-weight: bold; text-decoration: underline;">Alquiler de Bicicletas Clásicas y Eléctricas</a> a los mejores precios de la ciudad. Puedes reservar la tuya online en segundos y recogerla en nuestro punto céntrico.</p>
           
           <h3>2. Reglas básicas que debes conocer</h3>
           <p>Los daneses se toman muy en serio el tráfico de bicicletas, así que para evitar problemas o multas, sigue estas reglas de oro:</p>
@@ -218,7 +218,7 @@ export const blogPosts = [
           <p>There are more bicycles than inhabitants in Copenhagen, and it's no coincidence. With hundreds of kilometers of bike lanes separated from traffic, the city is designed from the ground up with the cyclist in mind. If you want to live the true Danish experience, getting on two wheels is a must.</p>
           
           <h3>1. Where to rent your bike</h3>
-          <p>You'll find rental shops on almost every corner of the city, especially near train stations like Nørreport or Central Station. Daily rentals usually cost around 100-150 DKK. Another very popular and convenient option is to use mobile apps like <strong>Donkey Republic</strong> or <strong>Tier</strong>, which allow you to unlock orange or green bikes scattered throughout the city using just your phone.</p>
+          <p>You'll find rental shops on almost every corner of the city, but the most recommended option is to use our exclusive service. At <strong>Free Tour CPH</strong> we offer <a href="/alquiler-bicicletas" style="color: #dc2626; font-weight: bold; text-decoration: underline;">Classic and Electric Bike Rentals</a> at the best prices in town. You can book yours online in seconds and pick it up at our central location.</p>
           
           <h3>2. Basic rules you must know</h3>
           <p>Danes take bicycle traffic very seriously, so to avoid problems or fines, follow these golden rules:</p>
@@ -242,7 +242,7 @@ export const blogPosts = [
           <p>A Copenaghen ci sono più biciclette che abitanti, e non è una coincidenza. Con centinaia di chilometri di piste ciclabili separate dal traffico, la città è stata progettata da zero pensando ai ciclisti. Se vuoi vivere la vera esperienza danese, salire su due ruote è d'obbligo.</p>
           
           <h3>1. Dove noleggiare la tua bicicletta</h3>
-          <p>Troverai negozi di noleggio in quasi ogni angolo della città, specialmente vicino alle stazioni ferroviarie come Nørreport o la Stazione Centrale. Il noleggio giornaliero di solito costa circa 100-150 DKK. Un'altra opzione molto popolare e conveniente è utilizzare app mobili come <strong>Donkey Republic</strong> o <strong>Tier</strong>, che ti permettono di sbloccare biciclette arancioni o verdi sparse per tutta la città semplicemente usando il tuo telefono.</p>
+          <p>Troverai negozi di noleggio in quasi ogni angolo della città, ma l'opzione più raccomandata è utilizzare il nostro servizio esclusivo. Da <strong>Free Tour CPH</strong> offriamo <a href="/alquiler-bicicletas" style="color: #dc2626; font-weight: bold; text-decoration: underline;">Noleggio di Biciclette Classiche ed Elettriche</a> ai migliori prezzi della città. Puoi prenotare la tua online in pochi secondi e ritirarla nel nostro punto centrale.</p>
           
           <h3>2. Regole di base che devi conoscere</h3>
           <p>I danesi prendono molto sul serio il traffico delle biciclette, quindi per evitare problemi o multe, segui queste regole d'oro:</p>

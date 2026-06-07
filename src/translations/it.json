@@ -26,7 +26,8 @@
     "tour03": "Tour Speciali",
     "tour04": "Pub Crawl",
     "blog": "Blog",
-    "b2b": "B2B"
+    "b2b": "B2B",
+    "bike_rental": "Noleggio Bici"
   },
   "footer": {
     "about_title": "Info su Free Tour Cph",
@@ -294,5 +295,30 @@
     "cta_book": "Vedi i Tour e Prenota",
     "badge_free": "È Gratis! (A offerta libera)",
     "schedule": "📅 Dal Lunedì al Sabato | ⏰ 10:30 AM e 14:00 PM"
+  },
+  "bike_rental": {
+    "title": "Noleggio Biciclette",
+    "subtitle": "Esplora Copenaghen come un vero locale. Prenota oggi la tua bici e ritirala nel nostro punto centrale.",
+    "pickup_title": "Punto di Ritiro",
+    "pickup_address": "Borgergade 30, 1300 København",
+    "normal_bike": "Bicicletta Classica",
+    "normal_price": "150 DKK / giorno",
+    "ebike": "Bicicletta Elettrica",
+    "ebike_price": "450 DKK / giorno",
+    "select_btn": "Seleziona",
+    "form_title": "Genera Voucher",
+    "first_name": "Nome",
+    "last_name": "Cognome",
+    "email": "Email",
+    "generate_btn": "Genera Voucher",
+    "generating": "Generazione in corso...",
+    "voucher_ready": "Il tuo voucher è pronto!",
+    "download_print": "Stampa / Salva PDF",
+    "close": "Chiudi",
+    "voucher_title": "VOUCHER DI NOLEGGIO",
+    "presented_to": "Presentato a:",
+    "bike_type": "Tipo di Bici:",
+    "email_sent": "Ti abbiamo anche inviato una copia via email.",
+    "email_error": "Si è verificato un errore nell'invio dell'email, ma puoi stampare questo voucher."
   }
 }

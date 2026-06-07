@@ -17,6 +17,7 @@ import B2B from './pages/B2B';
 import AdminPanel from './pages/AdminPanel';
 import BlogList from './pages/BlogList';
 import BlogPost from './pages/BlogPost';
+import BikeRental from './pages/BikeRental';
 import WhatsAppButton from './components/WhatsAppButton';
 
 // Importar y ejecutar la configuración de i18n
@@ -50,6 +51,7 @@ export default function App() {
                   <Route path="/b2b" element={<B2B />} />
                   <Route path="/blog" element={<BlogList />} />
                   <Route path="/blog/:slug" element={<BlogPost />} />
+                  <Route path="/alquiler-bicicletas" element={<BikeRental />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
                 <WhatsAppButton />

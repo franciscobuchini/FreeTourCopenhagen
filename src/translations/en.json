@@ -26,7 +26,8 @@
     "tour03": "Special Tours",
     "tour04": "Pub Crawl",
     "blog": "Blog",
-    "b2b": "B2B"
+    "b2b": "B2B",
+    "bike_rental": "Bike Rental"
   },
   "footer": {
     "about_title": "About Free Tour Cph",
@@ -295,5 +296,30 @@
     "cta_book": "View Tours & Book",
     "badge_free": "It's Free! (Tip-based)",
     "schedule": "📅 Monday to Saturday | ⏰ 10:30 AM & 2:00 PM"
+  },
+  "bike_rental": {
+    "title": "Bike Rental",
+    "subtitle": "Explore Copenhagen like a true local. Book your bike today and pick it up at our central location.",
+    "pickup_title": "Pick-up Location",
+    "pickup_address": "Borgergade 30, 1300 København",
+    "normal_bike": "Classic Bike",
+    "normal_price": "150 DKK / day",
+    "ebike": "Electric Bike",
+    "ebike_price": "450 DKK / day",
+    "select_btn": "Select",
+    "form_title": "Generate Voucher",
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "email": "Email",
+    "generate_btn": "Generate Voucher",
+    "generating": "Generating...",
+    "voucher_ready": "Your voucher is ready!",
+    "download_print": "Print / Save as PDF",
+    "close": "Close",
+    "voucher_title": "RENTAL VOUCHER",
+    "presented_to": "Presented to:",
+    "bike_type": "Bike Type:",
+    "email_sent": "We have also sent a copy to your email.",
+    "email_error": "There was an error sending the email, but you can print this voucher."
   }
 }

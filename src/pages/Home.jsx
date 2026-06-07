@@ -3,6 +3,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Carousel from '../components/Carousel';
 import useSEO from '../hooks/useSEO';
+import cphImage from '../assets/cph.webp';
 
 export default function Home() {
   const { t } = useTranslation();
@@ -19,7 +20,7 @@ export default function Home() {
       buttonText: t('home.slides.0.buttonText'),
       link: '/Tour01',
       internal: true,
-      image: 'https://www.princess.com/content/dam/princess-headless/shorex/ports/copenhagen-denmark-waterway-night.jpg',
+      image: cphImage,
     },
     {
       title: t('home.slides.1.title'),

@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 /**
  * Custom hook to inject dynamic SEO metadata per page.
@@ -7,7 +8,14 @@ import { useEffect } from 'react';
  * @param {string} options.description - The page meta description
  */
 export default function useSEO({ title, description }) {
+  const { i18n } = useTranslation();
+
   useEffect(() => {
+    // Update HTML lang attribute based on current language
+    if (i18n.language) {
+      document.documentElement.lang = i18n.language;
+    }
+
     if (title) {
       document.title = title;
     }
@@ -22,5 +30,5 @@ export default function useSEO({ title, description }) {
         document.head.appendChild(metaDescription);
       }
     }
-  }, [title, description]);
+  }, [title, description, i18n.language]);
 }

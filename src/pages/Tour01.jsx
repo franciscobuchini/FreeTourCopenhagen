@@ -3,6 +3,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Tour from '../components/Tour';
 import useSEO from '../hooks/useSEO';
+import cphImage from '../assets/cph.webp';
 
 export default function Tour01() {
   const { t } = useTranslation();
@@ -29,7 +30,7 @@ export default function Tour01() {
     <Tour
       title={t('tour01.title')}
       description={t('tour01.description', { returnObjects: true })}
-      imageSrc="https://www.princess.com/content/dam/princess-headless/shorex/ports/copenhagen-denmark-waterway-night.jpg"
+      imageSrc={cphImage}
       detailsData={detailsData}
       onBooking={handleBooking}
     />

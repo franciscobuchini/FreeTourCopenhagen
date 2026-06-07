@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import Carousel from '../components/Carousel';
 import useSEO from '../hooks/useSEO';
-import cphImage from '../assets/cph.webp';
 
 export default function Home() {
   const { t } = useTranslation();
@@ -21,7 +20,7 @@ export default function Home() {
       buttonText: t('home.slides.0.buttonText'),
       link: '/Tour01',
       internal: true,
-      image: cphImage,
+      image: '/images/blog/mochilero-nyhavn-free-tour-copenhague.png',
     },
     {
       title: t('home.slides.1.title'),

@@ -4,7 +4,7 @@ import useSEO from '../hooks/useSEO';
 import normalBikeImg from '../assets/bikes/normal-bike.png';
 import eBikeImg from '../assets/bikes/e-bike.png';
 import emailjs from '@emailjs/browser';
-import { SERVICE_ID, PUBLIC_KEY, TEMPLATE_ID_BOOKING } from '../config/email';
+import { SERVICE_ID, PUBLIC_KEY, TEMPLATE_ID_BIKERENTAL } from '../config/email';
 
 export default function BikeRental() {
   const { t, i18n } = useTranslation();
@@ -60,7 +60,7 @@ export default function BikeRental() {
     };
 
     try {
-      await emailjs.send(SERVICE_ID, TEMPLATE_ID_BOOKING, templateParams, PUBLIC_KEY);
+      await emailjs.send(SERVICE_ID, TEMPLATE_ID_BIKERENTAL, templateParams, PUBLIC_KEY);
       setEmailStatus('success');
     } catch (error) {
       console.error('EmailJS Error:', error);

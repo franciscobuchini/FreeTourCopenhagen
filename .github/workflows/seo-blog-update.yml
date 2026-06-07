@@ -1,0 +1,39 @@
+name: Sunday SEO Blog Update
+
+on:
+  schedule:
+    # Runs at 03:00 UTC every Sunday
+    - cron: '0 3 * * 0'
+  workflow_dispatch: # Allows manual trigger from GitHub Actions UI
+
+jobs:
+  seo-update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Needed to push the commit
+      
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run SEO Update Script
+        run: node scripts/seo-update.js
+
+      - name: Commit and Push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/data/blogData.js
+          
+          # Only commit if there are changes
+          if ! git diff --staged --quiet; then
+            git commit -m "chore: automatic SEO blog update"
+            git push origin main
+          else
+            echo "No changes to commit."
+          fi

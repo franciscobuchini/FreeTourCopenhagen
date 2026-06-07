@@ -13,6 +13,19 @@ export default function BlogList() {
     description: t('seo.blog.description')
   });
 
+  // Calculate a consistent rotation index based on the current week
+  const getWeekRotation = () => {
+    const now = new Date();
+    // Milliseconds in a week
+    const weekMs = 1000 * 60 * 60 * 24 * 7;
+    // Offset by 4 days to make the week start on Sunday (Unix epoch 1970-01-01 was Thursday)
+    return Math.floor((now.getTime() + (4 * 24 * 60 * 60 * 1000)) / weekMs);
+  };
+
+  const weekId = getWeekRotation();
+  const shift = weekId % Math.max(blogPosts.length, 1);
+  const rotatedPosts = [...blogPosts.slice(shift), ...blogPosts.slice(0, shift)];
+
   return (
     <div className="flex-1 my-10 px-4 max-w-7xl mx-auto">
       <div className="text-center mb-12">
@@ -25,7 +38,7 @@ export default function BlogList() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {blogPosts.map((post) => {
+        {rotatedPosts.map((post) => {
           const postData = post.translations[currentLang] || post.translations['es'];
           
           return (

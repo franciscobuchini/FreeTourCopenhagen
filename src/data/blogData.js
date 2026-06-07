@@ -86,7 +86,7 @@ export const blogPosts = [
   {
     id: 2,
     slug: 'como-llegar-del-aeropuerto-de-copenhague-al-centro',
-    image: '/images/blog/como-llegar-aeropuerto-copenhague-centro.png',
+    image: '/images/blog/metro-copenhagen.jpg',
     date: '2026-04-18',
     translations: {
       es: {
@@ -102,7 +102,7 @@ export const blogPosts = [
           <p>Si tu hotel está cerca de Tivoli o la Estación Central (København H), el tren es tu mejor aliado. Se toma también en la Terminal 3 y tarda aproximadamente 12 minutos.</p>
           
           <h3>Billetes y Zonas</h3>
-          <p>Para llegar al centro, necesitas comprar un billete de "3 Zonas". Puedes comprarlo en las máquinas rojas de la terminal o en el mostrador de información. Cuesta alrededor de 36 DKK.</p>
+          <p>Para llegar al centro, necesitas comprar un billete de "3 Zonas". Puedes comprarlo en las máquinas rojas de la terminal, en el mostrador de información, o directamente desde tu móvil descargando la aplicación oficial en <a href="https://www.rejsebillet.dk/da-dk" target="_blank" rel="noopener noreferrer" style="color: #dc2626; font-weight: bold; text-decoration: underline;">Rejsebillet.dk</a>. Cuesta alrededor de 36 DKK.</p>
           
           <h3>Taxi</h3>
           <p>Si viajas con mucho equipaje o en un grupo grande, los taxis están disponibles justo afuera de la terminal. Un viaje al centro suele costar entre 250 y 300 DKK, y todos aceptan tarjetas de crédito.</p>
@@ -121,7 +121,7 @@ export const blogPosts = [
           <p>If your hotel is near Tivoli or the Central Station (København H), the train is your best ally. It's also taken at Terminal 3 and takes about 12 minutes.</p>
           
           <h3>Tickets and Zones</h3>
-          <p>To get to the center, you need to buy a "3 Zone" ticket. You can buy it at the red machines in the terminal or at the information desk. It costs around 36 DKK.</p>
+          <p>To get to the center, you need to buy a "3 Zone" ticket. You can buy it at the red machines in the terminal, at the information desk, or directly from your phone by downloading the official app at <a href="https://www.rejsebillet.dk/da-dk" target="_blank" rel="noopener noreferrer" style="color: #dc2626; font-weight: bold; text-decoration: underline;">Rejsebillet.dk</a>. It costs around 36 DKK.</p>
           
           <h3>Taxi</h3>
           <p>If you're traveling with a lot of luggage or in a large group, taxis are available right outside the terminal. A trip to the center usually costs between 250 and 300 DKK, and they all accept credit cards.</p>

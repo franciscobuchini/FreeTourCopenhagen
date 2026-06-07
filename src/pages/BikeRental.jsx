@@ -54,7 +54,7 @@ export default function BikeRental() {
       tour_time: 'Anytime',
       participants: '1',
       language: i18n.language,
-      notes: `Voucher Request for ${selectedBike.type}. Pick up at ${t('bike_rental.pickup_address')}.`,
+      notes: `⚠️ IMPORTANTE / IMPORTANT ⚠️: IGNORA LA DIRECCIÓN DE CITY HALL SQUARE ABAJO. EL PUNTO DE RECOGIDA DE LA BICI ES: ${t('bike_rental.pickup_address')}. | Voucher Request for ${selectedBike.type}.`,
       user_email: formData.email,
       name: `${formData.firstName} ${formData.lastName}`
     };

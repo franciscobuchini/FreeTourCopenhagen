@@ -180,5 +180,85 @@ export const blogPosts = [
         `
       }
     }
+  },
+  {
+    id: 4,
+    slug: 'guia-definitiva-para-moverte-en-bicicleta-por-copenhague',
+    image: '/images/blog/biking_in_copenhagen.png',
+    date: '2026-06-07',
+    translations: {
+      es: {
+        title: 'La guía definitiva para moverte en bicicleta por Copenhague',
+        excerpt: 'Descubre por qué Copenhague es la mejor ciudad del mundo para andar en bicicleta y cómo alquilar una durante tu visita.',
+        content: `
+          <p>En Copenhague hay más bicicletas que habitantes, y no es casualidad. Con cientos de kilómetros de ciclovías separadas del tráfico, la ciudad está diseñada de cero pensando en el ciclista. Si quieres vivir la verdadera experiencia danesa, subirte a dos ruedas es obligatorio.</p>
+          
+          <h3>1. Dónde alquilar tu bicicleta</h3>
+          <p>Encontrarás tiendas de alquiler en casi cada esquina de la ciudad, especialmente cerca de estaciones de tren como Nørreport o la Estación Central. El alquiler por día suele costar alrededor de 100-150 DKK. Otra opción muy popular y cómoda es usar las aplicaciones móviles como <strong>Donkey Republic</strong> o <strong>Tier</strong>, que te permiten desbloquear bicicletas naranjas o verdes repartidas por toda la ciudad simplemente con tu teléfono.</p>
+          
+          <h3>2. Reglas básicas que debes conocer</h3>
+          <p>Los daneses se toman muy en serio el tráfico de bicicletas, así que para evitar problemas o multas, sigue estas reglas de oro:</p>
+          <ul>
+            <li><strong>Mantente siempre a la derecha:</strong> Las ciclovías tienen "carril lento" a la derecha y "carril rápido" a la izquierda. Si vas paseando, mantente pegado al borde derecho.</li>
+            <li><strong>Usa las manos para señalizar:</strong> Si vas a frenar, levanta una mano en alto (la palma plana hacia adelante). Si vas a doblar, estira el brazo hacia el lado correspondiente.</li>
+            <li><strong>No vayas por la acera de peatones:</strong> Las bicicletas tienen su propio espacio. Conducir por el espacio de los peatones está mal visto y puede significar una multa.</li>
+            <li><strong>Las luces son obligatorias de noche:</strong> Una luz blanca adelante y una roja atrás. Si alquilas, asegúrate de que funcionen.</li>
+          </ul>
+
+          <h3>3. Las mejores rutas escénicas</h3>
+          <p>Una vez que tengas tu bici, te recomendamos dar un paseo por los lagos de Copenhague (Søerne), cruzar el puente ciclista Inderhavnsbroen hacia Christianshavn, y por qué no, aventurarte hasta la playa de Amager Strandpark si es un día soleado.</p>
+
+          <p>Moverse en bicicleta no solo es la forma más rápida y económica de recorrer Copenhague, sino que te hará sentir parte de la vibrante energía de la ciudad. ¡A pedalear!</p>
+        `
+      },
+      en: {
+        title: 'The ultimate guide to getting around Copenhagen by bike',
+        excerpt: 'Discover why Copenhagen is the best cycling city in the world and how to rent a bike during your visit.',
+        content: `
+          <p>There are more bicycles than inhabitants in Copenhagen, and it's no coincidence. With hundreds of kilometers of bike lanes separated from traffic, the city is designed from the ground up with the cyclist in mind. If you want to live the true Danish experience, getting on two wheels is a must.</p>
+          
+          <h3>1. Where to rent your bike</h3>
+          <p>You'll find rental shops on almost every corner of the city, especially near train stations like Nørreport or Central Station. Daily rentals usually cost around 100-150 DKK. Another very popular and convenient option is to use mobile apps like <strong>Donkey Republic</strong> or <strong>Tier</strong>, which allow you to unlock orange or green bikes scattered throughout the city using just your phone.</p>
+          
+          <h3>2. Basic rules you must know</h3>
+          <p>Danes take bicycle traffic very seriously, so to avoid problems or fines, follow these golden rules:</p>
+          <ul>
+            <li><strong>Always stay to the right:</strong> Bike lanes have a "slow lane" on the right and a "fast lane" on the left. If you are cruising, stick to the right edge.</li>
+            <li><strong>Use your hands to signal:</strong> If you are going to stop, raise a hand up (flat palm forward). If you are turning, stick your arm out to the corresponding side.</li>
+            <li><strong>Do not ride on the pedestrian sidewalk:</strong> Bicycles have their own space. Riding in the pedestrian space is frowned upon and can result in a fine.</li>
+            <li><strong>Lights are mandatory at night:</strong> A white light in front and a red one in the back. If you rent, make sure they work.</li>
+          </ul>
+
+          <h3>3. The best scenic routes</h3>
+          <p>Once you have your bike, we recommend taking a ride around the Copenhagen Lakes (Søerne), crossing the Inderhavnsbroen cycling bridge towards Christianshavn, and why not, venturing out to Amager Strandpark beach if it's a sunny day.</p>
+
+          <p>Getting around by bike is not only the fastest and cheapest way to explore Copenhagen, but it will also make you feel part of the city's vibrant energy. Happy pedaling!</p>
+        `
+      },
+      it: {
+        title: 'La guida definitiva per muoversi in bicicletta a Copenaghen',
+        excerpt: 'Scopri perché Copenaghen è la migliore città ciclabile del mondo e come noleggiare una bici durante la tua visita.',
+        content: `
+          <p>A Copenaghen ci sono più biciclette che abitanti, e non è una coincidenza. Con centinaia di chilometri di piste ciclabili separate dal traffico, la città è stata progettata da zero pensando ai ciclisti. Se vuoi vivere la vera esperienza danese, salire su due ruote è d'obbligo.</p>
+          
+          <h3>1. Dove noleggiare la tua bicicletta</h3>
+          <p>Troverai negozi di noleggio in quasi ogni angolo della città, specialmente vicino alle stazioni ferroviarie come Nørreport o la Stazione Centrale. Il noleggio giornaliero di solito costa circa 100-150 DKK. Un'altra opzione molto popolare e conveniente è utilizzare app mobili come <strong>Donkey Republic</strong> o <strong>Tier</strong>, che ti permettono di sbloccare biciclette arancioni o verdi sparse per tutta la città semplicemente usando il tuo telefono.</p>
+          
+          <h3>2. Regole di base che devi conoscere</h3>
+          <p>I danesi prendono molto sul serio il traffico delle biciclette, quindi per evitare problemi o multe, segui queste regole d'oro:</p>
+          <ul>
+            <li><strong>Resta sempre a destra:</strong> Le piste ciclabili hanno una "corsia lenta" a destra e una "corsia veloce" a sinistra. Se stai passeggiando, mantieniti sul bordo destro.</li>
+            <li><strong>Usa le mani per segnalare:</strong> Se stai per fermarti, alza una mano (palmo piatto in avanti). Se stai girando, stendi il braccio verso il lato corrispondente.</li>
+            <li><strong>Non andare sul marciapiede pedonale:</strong> Le biciclette hanno il loro spazio. Guidare nello spazio pedonale è mal visto e può comportare una multa.</li>
+            <li><strong>Le luci sono obbligatorie di notte:</strong> Una luce bianca davanti e una rossa dietro. Se noleggi, assicurati che funzionino.</li>
+          </ul>
+
+          <h3>3. I migliori percorsi panoramici</h3>
+          <p>Una volta che hai la tua bici, ti consigliamo di fare un giro intorno ai Laghi di Copenaghen (Søerne), attraversare il ponte ciclabile Inderhavnsbroen verso Christianshavn e, perché no, avventurarti fino alla spiaggia di Amager Strandpark se è una giornata di sole.</p>
+
+          <p>Muoversi in bicicletta non è solo il modo più veloce ed economico per esplorare Copenaghen, ma ti farà anche sentire parte dell'energia vibrante della città. Buone pedalate!</p>
+        `
+      }
+    }
   }
 ];

@@ -278,5 +278,14 @@
     "custom_lang_label": "Specify Language",
     "custom_lang_placeholder": "e.g. German, French, etc.",
     "to_be_confirmed": "To be confirmed"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "q1": "How much does the free tour cost?",
+    "a1": "Our tours are 'Tip based'. This means there is no fixed price, but you decide at the end of the tour how much to leave based on how much you enjoyed the experience.",
+    "q2": "Do I need to book in advance?",
+    "a2": "Yes, reservations are mandatory. You can easily secure your spot through our website or by sending us a message on WhatsApp.",
+    "q3": "In what languages are the tours offered?",
+    "a3": "We offer our tours in three languages: Spanish, English, and Italian. When booking, you can choose your preferred language."
   }
 }

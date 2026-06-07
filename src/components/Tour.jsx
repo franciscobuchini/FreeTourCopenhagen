@@ -32,28 +32,26 @@ export default function Tour({
 
   const schemaMarkup = {
     "@context": "https://schema.org/",
-    "@type": "Product",
+    "@type": "TouristTrip",
     "name": title,
     "image": imageSrc,
     "description": descriptionText,
-    "brand": {
-      "@type": "Brand",
-      "name": "Free Tour CPH"
+    "touristType": [
+      "Sightseeing",
+      "Walking Tour",
+      "Boat Tour"
+    ],
+    "provider": {
+      "@type": "Organization",
+      "name": "Free Tour CPH",
+      "url": "https://freetourcph.com"
     },
     "offers": {
       "@type": "Offer",
       "priceCurrency": "EUR",
       "price": getNumericPrice(detailsData?.price),
       "availability": "https://schema.org/InStock",
-      "seller": {
-        "@type": "Organization",
-        "name": "Free Tour CPH"
-      }
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "238"
+      "url": "https://freetourcph.com"
     }
   };
 

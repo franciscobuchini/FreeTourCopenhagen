@@ -82,6 +82,7 @@ function Footer() {
 
       <div className="mt-12 overflow-hidden">
         <img
+          loading="lazy"
           src={FooterImg}
           className="w-full object-cover object-center h-36"
           alt={t('footer.image_alt')}

@@ -58,12 +58,48 @@ export default function Home() {
     }
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": t('faq.q1'),
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": t('faq.a1')
+        }
+      },
+      {
+        "@type": "Question",
+        "name": t('faq.q2'),
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": t('faq.a2')
+        }
+      },
+      {
+        "@type": "Question",
+        "name": t('faq.q3'),
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": t('faq.a3')
+        }
+      }
+    ]
+  };
+
   return (
     <div className="flex-1 my-10 px-4">
       {/* Schema Markup for TravelAgency (Google Rich Snippets) */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
+      />
+      {/* Schema Markup for FAQPage */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <div className="px-4 py-2">
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-red-800">
@@ -126,6 +162,21 @@ export default function Home() {
         <p className="text-gray-700 leading-relaxed">
           {t('home.seo_guide.why_us_text')}
         </p>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="mt-10 p-6 bg-white rounded-lg shadow-sm border border-gray-100">
+        <h2 className="text-xl sm:text-2xl font-semibold text-red-800 mb-6 text-center">
+          {t('faq.title')}
+        </h2>
+        <div className="space-y-6 max-w-4xl mx-auto">
+          {[1, 2, 3].map(num => (
+            <div key={num} className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+              <h3 className="text-lg font-bold text-gray-800 mb-2">{t(`faq.q${num}`)}</h3>
+              <p className="text-gray-700">{t(`faq.a${num}`)}</p>
+            </div>
+          ))}
+        </div>
       </section>
     </div>
   );

@@ -34,9 +34,16 @@ export default function Carousel({ slides = [], interval = 5000 }) {
   {slides.map((slide, index) => (
     <div
       key={index}
-      className="flex-shrink-0 align-top relative w-full h-full bg-center bg-cover"
-      style={{ backgroundImage: `url(${slide.image})` }}
+      className="flex-shrink-0 align-top relative w-full h-full overflow-hidden"
     >
+      {/* SEO Indexable Image */}
+      <img 
+        src={slide.image} 
+        alt={slide.title || 'Tour Copenhagen'}
+        className="absolute inset-0 w-full h-full object-cover"
+        loading={index === 0 ? "eager" : "lazy"}
+      />
+      
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90"></div>
 

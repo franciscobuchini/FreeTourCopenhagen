@@ -277,5 +277,14 @@
     "custom_lang_label": "Specificare Lingua",
     "custom_lang_placeholder": "Es: Tedesco, Francese, ecc.",
     "to_be_confirmed": "Da confermare"
+  },
+  "faq": {
+    "title": "Domande Frequenti",
+    "q1": "Quanto costa il tour gratuito?",
+    "a1": "I nostri tour sono 'Tip based' (basati sulle mance). Questo significa che non c'è un prezzo fisso, ma decidi tu alla fine del tour quanto lasciare in base a quanto hai apprezzato l'esperienza.",
+    "q2": "È necessario prenotare in anticipo?",
+    "a2": "Sì, la prenotazione è obbligatoria. Puoi assicurarti facilmente un posto tramite il nostro sito web o inviandoci un messaggio su WhatsApp.",
+    "q3": "In quali lingue sono offerti i tour?",
+    "a3": "Offriamo i nostri tour in tre lingue: spagnolo, inglese e italiano. Al momento della prenotazione puoi scegliere la lingua che preferisci."
   }
 }

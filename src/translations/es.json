@@ -254,14 +254,6 @@
     "no": "No",
     "luggage_note": "🧳 <strong>Capacidad Reducida:</strong> Para tours de desembarque con maletas, se calcula un uso máximo del 70% de los asientos del bus.",
     "auth_required": "Contraseña requerida",
-    "auth_subtitle": "Ingresa la contraseña para ver el desglose de precios.",
-    "cancel": "Cancelar",
-    "confirm": "Confirmar",
-    "header_subtitle": "Generador rápido de cotizaciones para agentes",
-    "info_transport": "Transporte",
-    "info_duration": "Duración",
-    "info_sights": "Puntos a visitar",
-    "info_includes": "Incluye",
     "info_no_venues": "Sin venues incluidos",
     "trust_title": "¿Por qué elegirnos?",
     "trust_subtitle": "Tu socio de confianza en Copenhague",
@@ -277,5 +269,14 @@
     "custom_lang_label": "Especificar Idioma",
     "custom_lang_placeholder": "Ej: Alemán, Francés, etc.",
     "to_be_confirmed": "A confirmar"
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "q1": "¿Cuánto cuesta el free tour?",
+    "a1": "Nuestros tours son 'Tip based' (basados en propinas). Esto significa que no hay un precio fijo, sino que tú decides al final del recorrido cuánto dejar de acuerdo a lo mucho que hayas disfrutado la experiencia.",
+    "q2": "¿Hay que reservar?",
+    "a2": "Sí, las reservas son obligatorias. Puedes asegurar tu lugar fácilmente a través de nuestra página web o enviándonos un mensaje por WhatsApp.",
+    "q3": "¿En qué idiomas dan los tours?",
+    "a3": "Ofrecemos nuestros tours en tres idiomas: Español, Inglés e Italiano. Al momento de reservar podrás elegir el idioma de tu preferencia."
   }
 }

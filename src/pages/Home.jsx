@@ -20,7 +20,7 @@ export default function Home() {
       buttonText: t('home.slides.0.buttonText'),
       link: '/Tour01',
       internal: true,
-      image: '/images/blog/nyhavn.jpg',
+      image: '/images/tours/carousel-1.jpg',
     },
     {
       title: t('home.slides.1.title'),
@@ -28,8 +28,32 @@ export default function Home() {
       buttonText: t('home.slides.1.buttonText'),
       link: '/Tour02',
       internal: true,
-      image: 'https://media.cntraveler.com/photos/5c005edf7732ca62ae9f71bc/16:9/w_2560,c_limit/GoBoatCopenhagen_Abdellah-Ihadian_GoBoat-Abdellah-Ihadian-5561.jpg',
+      image: '/images/tours/carousel-4.jpg',
     },
+    {
+      title: t('home.slides.0.title'),
+      description: t('home.slides.0.description'),
+      buttonText: t('home.slides.0.buttonText'),
+      link: '/Tour01',
+      internal: true,
+      image: '/images/tours/carousel-2.jpg',
+    },
+    {
+      title: t('home.slides.1.title'),
+      description: t('home.slides.1.description'),
+      buttonText: t('home.slides.1.buttonText'),
+      link: '/Tour02',
+      internal: true,
+      image: '/images/tours/carousel-5.jpg',
+    },
+    {
+      title: t('home.slides.0.title'),
+      description: t('home.slides.0.description'),
+      buttonText: t('home.slides.0.buttonText'),
+      link: '/Tour01',
+      internal: true,
+      image: '/images/tours/carousel-3.jpg',
+    }
   ];
 
   const schemaMarkup = {

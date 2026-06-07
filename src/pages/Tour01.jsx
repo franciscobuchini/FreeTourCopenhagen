@@ -30,6 +30,13 @@ export default function Tour01() {
       title={t('tour01.title')}
       description={t('tour01.description', { returnObjects: true })}
       imageSrc="/images/blog/nyhavn.jpg"
+      carouselImages={[
+        "/images/tours/carousel-1.jpg",
+        "/images/tours/carousel-2.jpg",
+        "/images/tours/carousel-3.jpg",
+        "/images/tours/carousel-4.jpg",
+        "/images/tours/carousel-5.jpg"
+      ]}
       detailsData={detailsData}
       onBooking={handleBooking}
     />

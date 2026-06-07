@@ -3,6 +3,7 @@ import React from 'react';
 import BookingCalendar from '../components/BookingCalendar';
 import TourDetails from '../components/TourDetails';
 import Reviews from '../components/Reviews';
+import Carousel from '../components/Carousel';
 
 /**
  * Generic Tour page component
@@ -10,6 +11,7 @@ import Reviews from '../components/Reviews';
  * @param {string} props.title - Heading title
  * @param {string} props.description - Description paragraph(s)
  * @param {string} props.imageSrc - Hero image URL
+ * @param {Array} props.carouselImages - Array of carousel image URLs
  * @param {Object} props.detailsData - Props for <TourDetails />
  * @param {Function} props.onBooking - booking handler
  * @param {number} [props.maxParticipants] - overrides default participants
@@ -18,6 +20,7 @@ export default function Tour({
   title,
   description,
   imageSrc,
+  carouselImages,
   detailsData,
   onBooking,
   maxParticipants,
@@ -63,12 +66,19 @@ export default function Tour({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
       />
       <div className="overflow-hidden w-screen -mt-20 sm:-mx-8 md:-mx-16 lg:-mx-24 xl:-mx-36">
-        <img
-          src={imageSrc}
-          alt={title}
-          fetchpriority="high"
-          className="w-screen h-64 md:h-80 lg:h-128 object-cover"
-        />
+        {carouselImages && carouselImages.length > 0 ? (
+          <Carousel 
+            slides={carouselImages.map(img => ({ image: img }))} 
+            interval={3500} 
+          />
+        ) : (
+          <img
+            src={imageSrc}
+            alt={title}
+            fetchpriority="high"
+            className="w-screen h-64 md:h-80 lg:h-128 object-cover"
+          />
+        )}
       </div>
 <main className="flex-1 mb-20 md:mx-4 rounded-2xl bg-gray-50">
   <div className="flex flex-col lg:flex-row gap-10 p-4 sm:p-6 md:p-8 lg:p-10">

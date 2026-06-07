@@ -20,7 +20,7 @@ export default function Home() {
       buttonText: t('home.slides.0.buttonText'),
       link: '/Tour01',
       internal: true,
-      image: '/images/tours/carousel-1.jpg',
+      image: '/images/blog/nyhavn.jpg',
     },
     {
       title: t('home.slides.1.title'),
@@ -28,32 +28,16 @@ export default function Home() {
       buttonText: t('home.slides.1.buttonText'),
       link: '/Tour02',
       internal: true,
-      image: '/images/tours/carousel-4.jpg',
+      image: 'https://media.cntraveler.com/photos/5c005edf7732ca62ae9f71bc/16:9/w_2560,c_limit/GoBoatCopenhagen_Abdellah-Ihadian_GoBoat-Abdellah-Ihadian-5561.jpg',
     },
-    {
-      title: t('home.slides.0.title'),
-      description: t('home.slides.0.description'),
-      buttonText: t('home.slides.0.buttonText'),
-      link: '/Tour01',
-      internal: true,
-      image: '/images/tours/carousel-2.jpg',
-    },
-    {
-      title: t('home.slides.1.title'),
-      description: t('home.slides.1.description'),
-      buttonText: t('home.slides.1.buttonText'),
-      link: '/Tour02',
-      internal: true,
-      image: '/images/tours/carousel-5.jpg',
-    },
-    {
-      title: t('home.slides.0.title'),
-      description: t('home.slides.0.description'),
-      buttonText: t('home.slides.0.buttonText'),
-      link: '/Tour01',
-      internal: true,
-      image: '/images/tours/carousel-3.jpg',
-    }
+  ];
+
+  const miniCarouselSlides = [
+    { image: '/images/tours/carousel-1.jpg' },
+    { image: '/images/tours/carousel-2.jpg' },
+    { image: '/images/tours/carousel-3.jpg' },
+    { image: '/images/tours/carousel-4.jpg' },
+    { image: '/images/tours/carousel-5.jpg' }
   ];
 
   const schemaMarkup = {
@@ -221,6 +205,14 @@ export default function Home() {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* Mini Photo Carousel */}
+      <section className="mt-10 mb-6">
+        <h2 className="text-xl sm:text-2xl font-semibold text-red-800 mb-2 text-center">
+          {t('home.photos_title', { defaultValue: 'Nuestros Tours en Acción' })}
+        </h2>
+        <Carousel slides={miniCarouselSlides} className="h-48 sm:h-64 md:h-80 lg:h-96" interval={3000} />
       </section>
     </div>
   );

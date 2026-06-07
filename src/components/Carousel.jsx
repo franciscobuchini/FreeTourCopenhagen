@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-export default function Carousel({ slides = [], interval = 5000 }) {
+export default function Carousel({ slides = [], interval = 5000, className }) {
   const [current, setCurrent] = useState(0);
   const length = slides.length;
 
@@ -20,7 +20,7 @@ export default function Carousel({ slides = [], interval = 5000 }) {
   const handlePrev = () => setCurrent(prev => (prev === 0 ? length - 1 : prev - 1));
 
   return (
-    <div className="relative w-full overflow-hidden mt-8 h-96 lg:h-140 rounded-2xl">
+    <div className={`relative w-full overflow-hidden mt-8 rounded-2xl ${className || 'h-96 lg:h-140'}`}>
       {/* Preload first slide image for speed optimization (LCP) */}
       {slides.length > 0 && (
         <link rel="preload" as="image" href={slides[0].image} fetchpriority="high" />

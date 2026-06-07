@@ -19,14 +19,14 @@ export const blogPosts = [
           <p>En el diseño podrás encontrar los íconos más representativos de nuestros tours y de la ciudad: La famosa <strong>Sirenita</strong>, las coloridas casas de <strong>Nyhavn</strong>, la clásica <strong>bicicleta de carga danesa (Christiania bike)</strong> y, por supuesto, nuestro simpático <strong>Guardia Real</strong>.</p>
           
           <h3>¿Cómo conseguirlos?</h3>
-          <p>Es muy fácil. Al finalizar cualquiera de nuestros tours (Grand Tour of Copenhagen, Christianshavn o Pub Crawl), simplemente pídele a tu guía que te muestre los imanes y pegatinas. ¡Tienen un precio súper accesible para que te lleves el mejor recuerdo de tu paso por Dinamarca!</p>
+          <p>¡Es muy fácil y totalmente <strong>GRATIS</strong>! Al finalizar cualquiera de nuestros tours (Grand Tour of Copenhagen, Christianshavn o Pub Crawl), simplemente pídele a tu guía tu imán o pegatina de regalo. Es nuestra forma de darte las gracias por elegirnos y para que te lleves el mejor recuerdo de tu paso por Dinamarca.</p>
           
           <p>No olvides sacarles una foto en tu nevera/heladera cuando llegues a casa y etiquetarnos en Instagram. ¡Nos encanta ver hasta dónde viajan nuestros souvenirs!</p>
         `
       },
       en: {
         title: 'Take Home an Unforgettable Memory! Our New Merchandise',
-        excerpt: 'Discover our new exclusive magnets and stickers featuring the Free Tour CPH design. The perfect souvenir of your visit to Copenhagen.',
+        excerpt: 'Discover our new exclusive magnets and stickers featuring the Free Tour CPH design. A completely free souvenir of your visit to Copenhagen.',
         content: `
           <p>We are thrilled to announce our new official Free Tour CPH merchandise line!</p>
           
@@ -36,14 +36,14 @@ export const blogPosts = [
           <p>In the design, you will find the most representative icons of our tours and the city: The famous <strong>Little Mermaid</strong>, the colorful houses of <strong>Nyhavn</strong>, the classic <strong>Danish cargo bike (Christiania bike)</strong>, and of course, our friendly <strong>Royal Guard</strong>.</p>
           
           <h3>How to get them?</h3>
-          <p>It's very easy. At the end of any of our tours (Grand Tour of Copenhagen, Christianshavn, or Pub Crawl), simply ask your guide to show you the magnets and stickers. They are super affordable so you can take home the best souvenir of your time in Denmark!</p>
+          <p>It's very easy and completely <strong>FREE</strong>! At the end of any of our tours (Grand Tour of Copenhagen, Christianshavn, or Pub Crawl), simply ask your guide for your complimentary magnet or sticker. It's our way of saying thank you for choosing us, so you can take home the best souvenir of your time in Denmark.</p>
           
           <p>Don't forget to take a picture of them on your fridge when you get home and tag us on Instagram. We love seeing how far our souvenirs travel!</p>
         `
       },
       it: {
         title: 'Porta a Casa un Ricordo Indimenticabile! Il Nostro Nuovo Merchandising',
-        excerpt: 'Scopri i nostri nuovi magneti e adesivi esclusivi con il design di Free Tour CPH. Il souvenir perfetto della tua visita a Copenaghen.',
+        excerpt: 'Scopri i nostri nuovi magneti e adesivi esclusivi con il design di Free Tour CPH. Un souvenir completamente gratuito della tua visita a Copenaghen.',
         content: `
           <p>Siamo entusiasti di annunciare la nostra nuova linea ufficiale di merchandising Free Tour CPH!</p>
           
@@ -53,7 +53,7 @@ export const blogPosts = [
           <p>Nel design potrai trovare le icone più rappresentative dei nostri tour e della città: La famosa <strong>Sirenetta</strong>, le colorate case di <strong>Nyhavn</strong>, la classica <strong>bici da carico danese (Christiania bike)</strong> e, naturalmente, il nostro simpatico <strong>Guardia Reale</strong>.</p>
           
           <h3>Come ottenerli?</h3>
-          <p>È semplicissimo. Alla fine di uno qualsiasi dei nostri tour (Grand Tour of Copenhagen, Christianshavn o Pub Crawl), chiedi semplicemente alla tua guida di mostrarti i magneti e gli adesivi. Hanno un prezzo super accessibile per permetterti di portare a casa il miglior ricordo del tuo viaggio in Danimarca!</p>
+          <p>È semplicissimo e totalmente <strong>GRATUITO</strong>! Alla fine di uno qualsiasi dei nostri tour (Grand Tour of Copenhagen, Christianshavn o Pub Crawl), chiedi semplicemente alla tua guida il tuo magnete o adesivo in omaggio. È il nostro modo per ringraziarti di averci scelto e per farti portare a casa il miglior ricordo del tuo viaggio in Danimarca.</p>
           
           <p>Non dimenticare di scattare una foto quando li attacchi al frigorifero di casa e di taggarci su Instagram. Adoriamo vedere fin dove viaggiano i nostri souvenir!</p>
         `

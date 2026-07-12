@@ -63,6 +63,7 @@ export default function BikeRental() {
       email: formData.email,
       reply_to: formData.email,
       to_email: formData.email,
+      cc_email: 'parabarmdz@gmail.com',
       name: `${formData.firstName} ${formData.lastName}`,
       user_name: `${formData.firstName} ${formData.lastName}`
     };

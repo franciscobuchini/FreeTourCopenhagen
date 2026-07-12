@@ -60,7 +60,11 @@ export default function BikeRental() {
       language: i18n.language,
       notes: `⚠️ IMPORTANTE / IMPORTANT ⚠️: IGNORA LA DIRECCIÓN DE CITY HALL SQUARE ABAJO. EL PUNTO DE RECOGIDA DE LA BICI ES: ${actualPickupAddress}. | Voucher Request for ${selectedBike.type}.`,
       user_email: formData.email,
-      name: `${formData.firstName} ${formData.lastName}`
+      email: formData.email,
+      reply_to: formData.email,
+      to_email: formData.email,
+      name: `${formData.firstName} ${formData.lastName}`,
+      user_name: `${formData.firstName} ${formData.lastName}`
     };
 
     try {

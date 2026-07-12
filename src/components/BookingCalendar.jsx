@@ -60,6 +60,7 @@ export default function BookingCalendar({ tourName, maxParticipants = 30 }) {
     const templateParams = {
       tour_name: tourName,
       user_name: name,
+      name: name,
       cc_email: 'parabarmdz@gmail.com',
       tour_date: date,
       tour_time: time,
@@ -67,6 +68,9 @@ export default function BookingCalendar({ tourName, maxParticipants = 30 }) {
       language: languageLabel,
       notes,
       user_email: mail,
+      email: mail,
+      reply_to: mail,
+      to_email: mail,
     };
 
     setSending(true);

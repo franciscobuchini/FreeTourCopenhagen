@@ -37,7 +37,10 @@ export default function Home() {
     { image: '/images/tours/carousel-2.jpg' },
     { image: '/images/tours/carousel-3.jpg' },
     { image: '/images/tours/carousel-4.jpg' },
-    { image: '/images/tours/carousel-5.jpg' }
+    { image: '/images/tours/carousel-5.jpg' },
+    { image: '/images/tours/carousel-6.jpg' },
+    { image: '/images/tours/carousel-7.jpg' },
+    { image: '/images/tours/carousel-8.jpg' }
   ];
 
   const schemaMarkup = {

@@ -35,7 +35,9 @@ export default function Tour02() {
       imageSrc="https://media.cntraveler.com/photos/5c005edf7732ca62ae9f71bc/16:9/w_2560,c_limit/GoBoatCopenhagen_Abdellah-Ihadian_GoBoat-Abdellah-Ihadian-5561.jpg"
       carouselImages={[
         "/images/tours/carousel-4.jpg",
-        "/images/tours/carousel-5.jpg"
+        "/images/tours/carousel-5.jpg",
+        "/images/tours/carousel-6.jpg",
+        "/images/tours/carousel-7.jpg"
       ]}
       detailsData={detailsData}
       onBooking={handleBooking}

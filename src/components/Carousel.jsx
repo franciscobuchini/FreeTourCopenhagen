@@ -5,16 +5,17 @@ export default function Carousel({ slides = [], interval = 5000, className }) {
   const [current, setCurrent] = useState(0);
   const length = slides.length;
 
-  // If no slides provided, don't render carousel
-  if (!Array.isArray(slides) || length === 0) return null;
-
   // Auto-play effect
   useEffect(() => {
+    if (!Array.isArray(slides) || length === 0) return;
     const timer = setInterval(() => {
       setCurrent(prev => (prev === length - 1 ? 0 : prev + 1));
     }, interval);
     return () => clearInterval(timer);
-  }, [current, interval, length]);
+  }, [current, interval, length, slides]);
+
+  // If no slides provided, don't render carousel
+  if (!Array.isArray(slides) || length === 0) return null;
 
   const handleNext = () => setCurrent(prev => (prev === length - 1 ? 0 : prev + 1));
   const handlePrev = () => setCurrent(prev => (prev === 0 ? length - 1 : prev - 1));

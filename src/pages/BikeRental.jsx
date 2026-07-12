@@ -63,8 +63,8 @@ export default function BikeRental() {
       email: formData.email,
       reply_to: formData.email,
       to_email: formData.email,
-      cc_email: 'parabarmdz@gmail.com, buchinisantiago@gmail.com',
-      bcc_email: 'parabarmdz@gmail.com, buchinisantiago@gmail.com',
+      cc_email: 'parabarmdz@gmail.com, buchinisantiago@gmail.com, info@freetourcph.com',
+      bcc_email: 'parabarmdz@gmail.com, buchinisantiago@gmail.com, info@freetourcph.com',
       name: `${formData.firstName} ${formData.lastName}`,
       user_name: `${formData.firstName} ${formData.lastName}`
     };

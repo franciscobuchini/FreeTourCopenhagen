@@ -207,6 +207,7 @@ export default function BookingCalendar({ tourName, maxParticipants = 30 }) {
 
       <button
         type="submit"
+        onClick={handleSubmit}
         disabled={!name || !date || !time || !participants || !language || !mail || sending}
         className="w-full py-2 px-4 bg-blue-700 text-white rounded-2xl transition duration-300 hover:bg-blue-800 disabled:opacity-50 disabled:cursor-not-allowed"
       >

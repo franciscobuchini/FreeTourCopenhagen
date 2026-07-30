@@ -57,6 +57,13 @@ export default function BookingCalendar({ tourName, maxParticipants = 30 }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     const languageLabel = languages.find((l) => l.code === language)?.label || '';
+    const [hour, minute] = time.split(':');
+    const endHour = parseInt(hour, 10) + 2;
+    const startDateStr = date.replace(/-/g, '') + 'T' + hour + minute + '00';
+    const endDateStr = date.replace(/-/g, '') + 'T' + String(endHour).padStart(2, '0') + minute + '00';
+    const eventDetails = `Reserva / Booking: ${tourName}\nNombre / Name: ${name}\nPersonas / People: ${participants}\nIdioma / Language: ${languageLabel}\nNotas / Notes: ${notes}`;
+    const calendarLink = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent('Free Tour CPH: ' + tourName)}&dates=${startDateStr}/${endDateStr}&ctz=Europe/Copenhagen&details=${encodeURIComponent(eventDetails)}`;
+
     const templateParams = {
       tour_name: tourName,
       user_name: name,
@@ -72,6 +79,7 @@ export default function BookingCalendar({ tourName, maxParticipants = 30 }) {
       email: mail,
       reply_to: mail,
       to_email: mail,
+      calendar_link: calendarLink,
     };
 
     setSending(true);

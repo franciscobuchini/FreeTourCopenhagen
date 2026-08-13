@@ -41,8 +41,8 @@ export default function BookingCalendar({ tourName, maxParticipants = 30 }) {
   const [language, setLanguage] = useState('');
   const [notes, setNotes] = useState('');
   const [mail, setMail] = useState('');
+  const [phone, setPhone] = useState('');
   const [sending, setSending] = useState(false);
-
   const minSelectableDate = getTodayPlusDays(3);
 
   const handleDateChange = (e) => {
@@ -79,6 +79,7 @@ export default function BookingCalendar({ tourName, maxParticipants = 30 }) {
       email: mail,
       reply_to: mail,
       to_email: mail,
+      phone: phone || 'No indicado',
       calendar_link: calendarLink,
     };
 
@@ -94,6 +95,7 @@ export default function BookingCalendar({ tourName, maxParticipants = 30 }) {
         setLanguage('');
         setNotes('');
         setMail('');
+        setPhone('');
       })
       .catch((error) => {
         console.error('Error al enviar email:', error.text);
@@ -210,6 +212,17 @@ export default function BookingCalendar({ tourName, maxParticipants = 30 }) {
           value={mail}
           onChange={(e) => setMail(e.target.value)}
           className="mt-1 block w-full rounded-2xl border border-gray-300 p-2 hover:cursor-pointer"
+        />
+      </label>
+
+      <label>
+        <span className="block font-medium text-gray-600">{t('booking.phone')}</span>
+        <input
+          type="tel"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          className="mt-1 block w-full rounded-2xl border border-gray-300 p-2 hover:cursor-pointer"
+          placeholder="+45 12 34 56 78"
         />
       </label>
 

@@ -14,6 +14,7 @@
     "select_language": "Seleziona la lingua",
     "notes": "Note o richieste speciali:",
     "contact_email": "Email di contatto:",
+    "phone": "Telefono (opzionale per emergenze):",
     "reserving": "Prenotando...",
     "reserve": "Prenota il Tour",
     "success": "Prenotazione per \"{{tour}}\" inviata con successo. Grazie!",

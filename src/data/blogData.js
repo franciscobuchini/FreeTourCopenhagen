@@ -2,6 +2,53 @@
 
 export const blogPosts = [
   {
+    id: 6,
+    slug: 'como-reconocer-a-nuestros-guias',
+    image: '/images/blog/guide-look-1.jpg',
+    date: '2026-08-13',
+    translations: {
+      es: {
+        title: '¿Cómo reconocer a nuestros guías en Copenhague?',
+        excerpt: 'Descubre cómo encontrar fácilmente a nuestros guías en el punto de encuentro. ¡Busca nuestros paraguas característicos!',
+        content: `
+          <p>Llegar al punto de encuentro en la Plaza del Ayuntamiento (Rådhuspladsen) es el primer paso para una aventura increíble, ¡y queremos asegurarnos de que nos encuentres sin ningún problema!</p>
+          
+          <p>Para que nos reconozcas al instante, nuestros guías siempre llevan nuestro cartel oficial de <strong>Free Tour Copenhagen</strong> y, muy importante, abren nuestros llamativos paraguas con el patrón de la bandera danesa.</p>
+          
+          <img src="/images/blog/guide-look-2.jpg" alt="Nuestros guías en acción" class="w-full max-w-md mx-auto my-6 rounded-xl shadow-md" />
+          
+          <p>No importa si el día está soleado o si llueve (¡algo muy común en Copenhague!), nuestros paraguas siempre estarán en alto esperándote. ¡Acércate, salúdanos y prepárate para disfrutar de la ciudad!</p>
+        `
+      },
+      en: {
+        title: 'How to spot our guides in Copenhagen?',
+        excerpt: 'Find out how to easily spot our guides at the meeting point. Look for our characteristic umbrellas!',
+        content: `
+          <p>Arriving at the meeting point at City Hall Square (Rådhuspladsen) is the first step to an amazing adventure, and we want to make sure you find us without any trouble!</p>
+          
+          <p>To spot us instantly, our guides always carry our official <strong>Free Tour Copenhagen</strong> sign and, most importantly, hold up our eye-catching umbrellas with the Danish flag pattern.</p>
+          
+          <img src="/images/blog/guide-look-2.jpg" alt="Our guides in action" class="w-full max-w-md mx-auto my-6 rounded-xl shadow-md" />
+          
+          <p>Whether it's sunny or raining (very common in Copenhagen!), our umbrellas will always be up waiting for you. Come over, say hi, and get ready to enjoy the city!</p>
+        `
+      },
+      it: {
+        title: 'Come riconoscere le nostre guide a Copenaghen?',
+        excerpt: 'Scopri come trovare facilmente le nostre guide al punto di incontro. Cerca i nostri caratteristici ombrelli!',
+        content: `
+          <p>Arrivare al punto di incontro nella Piazza del Municipio (Rådhuspladsen) è il primo passo per un'avventura incredibile e vogliamo assicurarci che tu ci trovi senza problemi!</p>
+          
+          <p>Per riconoscerci all'istante, le nostre guide portano sempre il nostro cartello ufficiale <strong>Free Tour Copenhagen</strong> e, cosa più importante, tengono aperti i nostri vistosi ombrelli con il motivo della bandiera danese.</p>
+          
+          <img src="/images/blog/guide-look-2.jpg" alt="Le nostre guide in azione" class="w-full max-w-md mx-auto my-6 rounded-xl shadow-md" />
+          
+          <p>Che ci sia il sole o che piova (molto comune a Copenaghen!), i nostri ombrelli saranno sempre aperti ad aspettarti. Avvicinati, salutaci e preparati a goderti la città!</p>
+        `
+      }
+    }
+  },
+  {
     id: 5,
     slug: 'nuevo-merchandising-free-tour-copenhague',
     image: '/images/blog/merch.jpg',

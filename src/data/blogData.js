@@ -115,7 +115,7 @@ export const blogPosts = [
     translations: {
       es: {
         title: '10 consejos para viajar a Copenhague con poco presupuesto',
-        excerpt: 'Descubre cómo disfrutar de la ciudad más acogedora del norte de Europa sin arruinar tu bolsillo. ', // seo-toggled
+        excerpt: 'Descubre cómo disfrutar de la ciudad más acogedora del norte de Europa sin arruinar tu bolsillo. ' // seo-toggled
         content: `
           <p>Copenhague es conocida por ser una ciudad costosa, pero no tiene por qué ser imposible visitarla con poco presupuesto. Aquí te dejamos nuestros 10 mejores consejos locales:</p>
           
@@ -369,4 +369,4 @@ export const blogPosts = [
   }
 ];
 
-// LAST_SEO_UPDATE: 2026-08-09T04:16:28.101Z
+// LAST_SEO_UPDATE: 2026-08-16T03:45:53.440Z

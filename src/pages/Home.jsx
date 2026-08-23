@@ -218,7 +218,7 @@ export default function Home() {
         <h2 className="text-xl sm:text-2xl font-semibold text-red-800 mb-2 text-center">
           {t('home.photos_title', { defaultValue: 'Nuestros Tours en Acción' })}
         </h2>
-        <Carousel slides={miniCarouselSlides} className="h-48 sm:h-64 md:h-80 lg:h-96" interval={3000} />
+        <Carousel slides={miniCarouselSlides} className="h-64 sm:h-80 md:h-96 lg:h-[32rem]" interval={3000} />
       </section>
     </div>
   );

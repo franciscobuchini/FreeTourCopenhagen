@@ -21,7 +21,7 @@ export default function Carousel({ slides = [], interval = 5000, className }) {
   const handlePrev = () => setCurrent(prev => (prev === 0 ? length - 1 : prev - 1));
 
   return (
-    <div className={`relative w-full overflow-hidden mt-8 rounded-2xl ${className || 'h-96 lg:h-140'}`}>
+    <div className={`relative w-full overflow-hidden mt-8 rounded-2xl ${className || 'h-[28rem] md:h-[36rem] lg:h-[42rem]'}`}>
       {/* Preload first slide image for speed optimization (LCP) */}
       {slides.length > 0 && (
         <link rel="preload" as="image" href={slides[0].image} fetchpriority="high" />

@@ -119,7 +119,7 @@ export default function Tour({
       </h2>
       <Carousel 
         slides={carouselImages.map(img => ({ image: img }))} 
-        className="h-48 sm:h-64 md:h-80 lg:h-96" 
+        className="h-64 sm:h-80 md:h-96 lg:h-[32rem]" 
         interval={3000} 
       />
     </section>

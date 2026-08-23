@@ -40,7 +40,10 @@ export default function Home() {
     { image: '/images/tours/carousel-5.jpg' },
     { image: '/images/tours/carousel-6.jpg' },
     { image: '/images/tours/carousel-7.jpg' },
-    { image: '/images/tours/carousel-8.jpg' }
+    { image: '/images/tours/carousel-8.jpg' },
+    { image: '/images/tours/carousel-9.jpg' },
+    { image: '/images/tours/carousel-10.jpg' },
+    { image: '/images/tours/carousel-11.jpg' }
   ];
 
   const schemaMarkup = {

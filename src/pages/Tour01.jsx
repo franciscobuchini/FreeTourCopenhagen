@@ -34,7 +34,10 @@ export default function Tour01() {
         "/images/tours/carousel-1.jpg",
         "/images/tours/carousel-2.jpg",
         "/images/tours/carousel-3.jpg",
-        "/images/tours/carousel-8.jpg"
+        "/images/tours/carousel-8.jpg",
+        "/images/tours/carousel-9.jpg",
+        "/images/tours/carousel-10.jpg",
+        "/images/tours/carousel-11.jpg"
       ]}
       detailsData={detailsData}
       onBooking={handleBooking}
